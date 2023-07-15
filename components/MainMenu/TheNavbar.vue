@@ -16,8 +16,8 @@ interface MenuItems {
 }
 
 const itemsList: MenuItems[] = [
-  { text: 'test', link: 'test' },
-  { text: 'test1', link: 'test1' },
-  { text: 'test2', link: 'test2' },
+  { text: 'sklep', link: 'test' },
+  { text: 'faq', link: 'test1' },
+  { text: 'blog', link: 'test2' },
 ]
 </script>

@@ -1,8 +1,10 @@
 <template>
   <li
-    class="after:content-[''] after:w-0 after:h-[4px] after:bg-red-500 after:block after:rounded-lg hover:after:w-full hover:after:transition-[width] ease-in-out"
+    class="after:content-[''] after:h-[4px] after:w-0 after:bg-red-500 after:block after:rounded-lg hover:after:w-full after:transition-[width] ease-in-out p-3"
   >
-    <nuxt-link :to="props.name" class="px-5">{{ props.link }}</nuxt-link>
+    <nuxt-link :to="props.link" class="px-5 uppercase">{{
+      props.name
+    }}</nuxt-link>
   </li>
 </template>
 
