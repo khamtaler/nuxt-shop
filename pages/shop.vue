@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <MainMenu />
-    <slot />
-    <MainFooter />
-  </div>
+  <div>SHOP TEST</div>
 </template>
 
 <script setup></script>

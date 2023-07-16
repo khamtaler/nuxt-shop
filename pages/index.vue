@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <MainMenu />
-  </div>
+  <div>Main Test</div>
 </template>
 
 <script setup></script>
