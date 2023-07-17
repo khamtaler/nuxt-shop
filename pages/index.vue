@@ -16,16 +16,11 @@
         </div>
       </div>
     </div>
-    <div>
-      <ShopItemTile
-        v-for="item in productsList"
-        :key="item.sku"
-        :sku="item.sku"
-        :imageUrl="item.imageUrl"
-        :text="item.text"
-        :price="item.price"
-        :promotionPrice="item.promotionPrice"
-      />
+
+    <div class="mx-5 flex flex-col items-center">
+      <h3 class="my-5 text-center text-5xl">Our Products</h3>
+      <ProductsContainer :products="productsList" />
+      <BaseButton text="View all poroducts" link="shop" />
     </div>
   </div>
 </template>
@@ -37,35 +32,35 @@ let i = 0
 let j = 0
 const speed = 100
 
-function typeWriterWelcome() {
+function writeWelcome() {
   if (i < welcomeText.length && welcomeText) {
     let welcome = document.querySelector('#Welcome') as HTMLHeadingElement
     if (greetingsText.charAt(i) === ' ') {
       welcome.innerHTML += welcomeText.charAt(i)
       i++
-      setTimeout(typeWriterWelcome, 0)
+      setTimeout(writeWelcome, 0)
       return
     }
 
     welcome.innerHTML += welcomeText.charAt(i)
     i++
-    setTimeout(typeWriterWelcome, speed)
+    setTimeout(writeWelcome, speed)
   }
 }
 
-function typeWriterGreetings() {
+function writeGreetings() {
   if (j < greetingsText.length && greetingsText) {
     let greetings = document.querySelector('#Greetings') as HTMLHeadingElement
     if (greetingsText.charAt(j) === ' ') {
       greetings.innerHTML += greetingsText.charAt(j)
       j++
-      setTimeout(typeWriterGreetings, 100)
+      setTimeout(writeGreetings, 100)
       return
     }
 
     greetings.innerHTML += greetingsText.charAt(j)
     j++
-    setTimeout(typeWriterGreetings, getRandomIntInclusive(50, 200))
+    setTimeout(writeGreetings, getRandomIntInclusive(50, 200))
   }
 }
 
@@ -76,9 +71,9 @@ function getRandomIntInclusive(min: number, max: number) {
 }
 
 onMounted(() => {
-  typeWriterWelcome()
+  writeWelcome()
   setTimeout(() => {
-    typeWriterGreetings()
+    writeGreetings()
   }, speed * welcomeText.length)
 })
 
@@ -86,44 +81,56 @@ interface ProductItem {
   sku: String
   imageUrl: String
   text: String
-  price: Number
-  promotionPrice: Number
+  desc: String
+  price: number
+  currency: String
+  promotionPrice: number
 }
 
 const productsList: ProductItem[] = [
   {
     sku: '1',
-    imageUrl: '/',
+    imageUrl: 'rock.png',
     text: 'Product 1',
+    desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
     price: 100,
+    currency: '$',
     promotionPrice: 90,
   },
   {
     sku: '2',
-    imageUrl: '/',
+    imageUrl: 'rock1.png',
     text: 'Product 2',
     price: 900,
+    desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
+    currency: '$',
     promotionPrice: 900,
   },
   {
     sku: '3',
-    imageUrl: '/',
+    imageUrl: 'rock2.png',
     text: 'Product 3',
     price: 800,
+    desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
+    currency: '$',
     promotionPrice: 400,
   },
   {
     sku: '4',
-    imageUrl: '/',
+    imageUrl: 'rock3.png',
     text: 'Product 4',
     price: 110,
+    desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
+    currency: '$',
     promotionPrice: 90,
   },
   {
     sku: '5',
-    imageUrl: '/',
+    imageUrl: 'rock.png',
     text: 'Product 5',
     price: 110,
+    desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
+    currency: '$',
     promotionPrice: 90,
   },
 ]
