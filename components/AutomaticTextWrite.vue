@@ -1,0 +1,80 @@
+<template>
+  <div
+    class="grid min-h-[400px] items-stretch justify-stretch bg-[url('@/images/wallpaper.png')]"
+  >
+    <div
+      class="flex h-full w-full items-center justify-center bg-gradient-to-r from-transparent via-black to-transparent"
+    >
+      <div class="p-6 text-center text-white">
+        <h2 id="Welcome" class="mb-5 text-5xl"></h2>
+        <p id="Greetings"></p>
+        <ClientOnly>
+          <font-awesome-icon
+            :icon="['fas', 'chevron-down']"
+            class="mt-10 animate-bounce text-4xl"
+          />
+        </ClientOnly>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+interface Props {
+  header: String
+  text: String
+}
+
+const props = defineProps<Props>()
+
+let i = 0
+let j = 0
+const speed = 100
+
+function writeWelcome() {
+  if (i < props.header.length && props.header) {
+    let welcome = document.querySelector('#Welcome') as HTMLHeadingElement
+    if (props.header.charAt(i) === ' ') {
+      welcome.innerHTML += props.header.charAt(i)
+      i++
+      setTimeout(writeWelcome, 0)
+      return
+    }
+
+    welcome.innerHTML += props.header.charAt(i)
+    i++
+    setTimeout(writeWelcome, speed)
+  }
+}
+
+function writeGreetings() {
+  if (j < props.text.length && props.text) {
+    let greetings = document.querySelector('#Greetings') as HTMLHeadingElement
+    if (props.text.charAt(j) === ' ') {
+      greetings.innerHTML += props.text.charAt(j)
+      j++
+      setTimeout(writeGreetings, 100)
+      return
+    }
+
+    greetings.innerHTML += props.text.charAt(j)
+    j++
+    setTimeout(writeGreetings, getRandomIntInclusive(50, 200))
+  }
+}
+
+function getRandomIntInclusive(min: number, max: number) {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+onMounted(() => {
+  writeWelcome()
+  setTimeout(() => {
+    writeGreetings()
+  }, speed * props.header.length)
+})
+</script>
+
+<style scoped></style>
