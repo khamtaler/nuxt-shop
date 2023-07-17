@@ -2,7 +2,7 @@
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt'],
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', 'nuxt-swiper'],
   vite: {
     server: {
       fs: {

@@ -9,6 +9,9 @@
       <ProductsContainer :products="productsList" />
       <BaseButton text="View all poroducts" link="shop" />
     </div>
+    <div>
+      <Swiperer />
+    </div>
   </div>
 </template>
 
