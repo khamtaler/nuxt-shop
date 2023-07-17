@@ -3,22 +3,69 @@
     <div
       class="grid min-h-[400px] items-stretch justify-stretch bg-[url('@/public/images/wallpaper.png')]"
     >
-      <div class="grid h-full w-full grid-cols-2 bg-gradient-to-r from-black">
-        <div class="p-6 text-white">
-          <h2 class="text-5xl">test</h2>
-          <p>U nas se kupisz co tam se chcesz</p>
+      <div
+        class="flex h-full w-full items-center justify-center bg-gradient-to-r from-transparent via-black to-transparent"
+      >
+        <div class="p-6 text-center text-white">
+          <h2 id="Welcome" class="mb-5 text-5xl"></h2>
+          <p id="Greetings"></p>
+          <font-awesome-icon
+            :icon="['fas', 'chevron-down']"
+            class="mt-10 animate-bounce text-4xl"
+          />
         </div>
       </div>
     </div>
-    <!-- <figure>
-      <img
-        src="@/public/images/wallpaper.png"
-        class="max-h-[500px] w-full object-cover"
-      />
-    </figure> -->
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const welcomeText = 'Welcome'
+const greetingsText = 'Scroll down the page to find our products :)'
+let i = 0
+let j = 0
+const speed = 100
+
+function typeWriterWelcome() {
+  if (i < welcomeText.length) {
+    if (greetingsText.charAt(i) === ' ') {
+      document.querySelector('#Welcome').innerHTML += welcomeText.charAt(i)
+      i++
+      setTimeout(typeWriterWelcome, 0)
+      return
+    }
+    document.querySelector('#Welcome').innerHTML += welcomeText.charAt(i)
+    i++
+    setTimeout(typeWriterWelcome, speed)
+  }
+}
+
+function typeWriterGreetings() {
+  if (j < greetingsText.length) {
+    if (greetingsText.charAt(j) === ' ') {
+      document.querySelector('#Greetings').innerHTML += greetingsText.charAt(j)
+      j++
+      setTimeout(typeWriterGreetings, 100)
+      return
+    }
+    document.querySelector('#Greetings').innerHTML += greetingsText.charAt(j)
+    j++
+    setTimeout(typeWriterGreetings, getRandomIntInclusive(50, 200))
+  }
+}
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min + 1) + min) // The maximum is inclusive and the minimum is inclusive
+}
+
+onMounted(() => {
+  typeWriterWelcome()
+  setTimeout(() => {
+    typeWriterGreetings()
+  }, speed * welcomeText.length)
+})
+</script>
 
 <style lang="scss" scoped></style>

@@ -12,6 +12,9 @@ module.exports = {
       transitionProperty: {
         width: 'width',
       },
+      colors: {
+        transparent: 'rgba(0,0,0,0)',
+      },
     },
   },
   plugins: [],
