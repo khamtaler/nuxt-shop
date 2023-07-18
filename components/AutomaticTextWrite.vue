@@ -23,40 +23,44 @@
 import { Header } from '../ts/interfaces/header'
 
 const props = defineProps<Header>()
-
+console.log(props.header, props.text)
 let i = 0
 let j = 0
 const speed = 100
 
-function writeWelcome() {
-  if (i < props.header.length && props.header) {
+function writeWelcome(text: string) {
+  if (i < text.length && text) {
     let welcome = document.querySelector('#Welcome') as HTMLHeadingElement
-    if (props.header.charAt(i) === ' ') {
-      welcome.innerHTML += props.header.charAt(i)
+    if (text.charAt(i) === ' ') {
+      welcome.innerHTML += text.charAt(i)
       i++
       setTimeout(writeWelcome, 0)
       return
     }
 
-    welcome.innerHTML += props.header.charAt(i)
+    welcome.innerHTML += text.charAt(i)
     i++
-    setTimeout(writeWelcome, speed)
+    setTimeout(() => {
+      writeWelcome(props.header)
+    }, speed)
   }
 }
 
-function writeGreetings() {
-  if (j < props.text.length && props.text) {
+function writeGreetings(text: string) {
+  if (j < text.length && text) {
     let greetings = document.querySelector('#Greetings') as HTMLHeadingElement
-    if (props.text.charAt(j) === ' ') {
-      greetings.innerHTML += props.text.charAt(j)
+    if (text.charAt(j) === ' ') {
+      greetings.innerHTML += text.charAt(j)
       j++
-      setTimeout(writeGreetings, 100)
+      setTimeout(() => {
+        writeGreetings(props.text)
+      }, 100)
       return
     }
 
-    greetings.innerHTML += props.text.charAt(j)
+    greetings.innerHTML += text.charAt(j)
     j++
-    setTimeout(writeGreetings, getRandomIntInclusive(50, 200))
+    setTimeout(() => writeGreetings(props.text), getRandomIntInclusive(50, 200))
   }
 }
 
@@ -67,9 +71,9 @@ function getRandomIntInclusive(min: number, max: number) {
 }
 
 onMounted(() => {
-  writeWelcome()
+  writeWelcome(props.header)
   setTimeout(() => {
-    writeGreetings()
+    writeGreetings(props.text)
   }, speed * props.header.length)
 })
 </script>
