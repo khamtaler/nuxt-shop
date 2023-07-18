@@ -5,12 +5,14 @@
       text="Scroll down the page to find our products :)"
     />
     <div class="mx-5 flex flex-col items-center">
-      <h3 class="my-5 text-center text-5xl">Our Products</h3>
+      <h3 class="my-5 text-center text-5xl underline">Our top products</h3>
       <ProductsContainer :products="productsList" />
       <BaseButton text="View all poroducts" link="shop" />
     </div>
-    <div>
-      <Swiperer />
+
+    <div class="mt-[100px]">
+      <h2 class="text-center text-2xl">View our most selling products!</h2>
+      <ProductsSwiper :products="productsList" />
     </div>
   </div>
 </template>
@@ -72,7 +74,36 @@ const productsList: ProductItem[] = [
     currency: '$',
     promotionPrice: 90,
   },
+  {
+    sku: '6',
+    imageUrl: 'rock2.png',
+    text: 'Product 6',
+    price: 800,
+    desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
+    currency: '$',
+    promotionPrice: 400,
+  },
+  {
+    sku: '7',
+    imageUrl: 'rock3.png',
+    text: 'Product 7',
+    price: 110,
+    desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
+    currency: '$',
+    promotionPrice: 90,
+  },
+  {
+    sku: '8',
+    imageUrl: 'rock.png',
+    text: 'Product 8',
+    price: 110,
+    desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
+    currency: '$',
+    promotionPrice: 90,
+  },
 ]
+console.log('main')
+console.log(productsList)
 </script>
 
 <style lang="scss" scoped></style>
