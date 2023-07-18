@@ -28,19 +28,9 @@
 </template>
 
 <script setup lang="ts">
-interface Product {
-  sku: String
-  imageUrl: String
-  text: String
-  desc: String
-  price: number
-  currency: String
-  promotionPrice?: number
-}
-interface ProductItems extends Array<Product> {}
+import { ProductItems } from '../../ts/interfaces/product'
 
 const props = defineProps({ products: Object as PropType<ProductItems> })
-console.log(props.products)
 </script>
 
 <style lang="scss" scoped>

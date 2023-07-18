@@ -53,12 +53,9 @@
 </template>
 
 <script setup lang="ts">
-interface FooterItems {
-  text: String
-  link: String
-}
+import { Link } from '../../ts/interfaces/link'
 
-const itemsList: FooterItems[] = [
+const itemsList: Link[] = [
   { text: 'shop', link: '/' },
   { text: 'faq', link: '/' },
   { text: 'contact', link: '/' },

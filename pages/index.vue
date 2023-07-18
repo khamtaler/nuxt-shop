@@ -24,20 +24,13 @@
 </template>
 
 <script setup lang="ts">
-interface ProductItem {
-  sku: String
-  imageUrl: String
-  text: String
-  desc: String
-  price: number
-  currency: String
-  promotionPrice: number
-}
+import { ProductItem } from '../ts/interfaces/product'
 
 const productsList: ProductItem[] = [
   {
     sku: '1',
     imageUrl: 'rock.png',
+    imageUrl1: 'rock1.png',
     text: 'Product 1',
     desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
     price: 100,
@@ -46,7 +39,8 @@ const productsList: ProductItem[] = [
   },
   {
     sku: '2',
-    imageUrl: 'rock1.png',
+    imageUrl: 'rock.png',
+    imageUrl1: 'rock1.png',
     text: 'Product 2',
     price: 900,
     desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
@@ -56,6 +50,7 @@ const productsList: ProductItem[] = [
   {
     sku: '3',
     imageUrl: 'rock2.png',
+    imageUrl1: 'rock1.png',
     text: 'Product 3',
     price: 800,
     desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
@@ -64,7 +59,8 @@ const productsList: ProductItem[] = [
   },
   {
     sku: '4',
-    imageUrl: 'rock3.png',
+    imageUrl: 'rock.png',
+    imageUrl1: 'rock2.png',
     text: 'Product 4',
     price: 110,
     desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
@@ -73,7 +69,8 @@ const productsList: ProductItem[] = [
   },
   {
     sku: '5',
-    imageUrl: 'rock.png',
+    imageUrl: 'rock3.png',
+    imageUrl1: 'rock2.png',
     text: 'Product 5',
     price: 110,
     desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
@@ -82,7 +79,8 @@ const productsList: ProductItem[] = [
   },
   {
     sku: '6',
-    imageUrl: 'rock2.png',
+    imageUrl: 'rock.png',
+    imageUrl1: 'rock3.png',
     text: 'Product 6',
     price: 800,
     desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
@@ -91,7 +89,8 @@ const productsList: ProductItem[] = [
   },
   {
     sku: '7',
-    imageUrl: 'rock3.png',
+    imageUrl: 'rock1.png',
+    imageUrl1: 'rock2.png',
     text: 'Product 7',
     price: 110,
     desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
@@ -100,7 +99,8 @@ const productsList: ProductItem[] = [
   },
   {
     sku: '8',
-    imageUrl: 'rock.png',
+    imageUrl: 'rock3.png',
+    imageUrl1: 'rock.png',
     text: 'Product 8',
     price: 110,
     desc: 'To najlepszy kamień jest jaki mógłbyś sobie wymyślić!',
@@ -108,8 +108,6 @@ const productsList: ProductItem[] = [
     promotionPrice: 90,
   },
 ]
-console.log('main')
-console.log(productsList)
 </script>
 
 <style lang="scss" scoped></style>

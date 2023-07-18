@@ -10,12 +10,9 @@
 </template>
 
 <script setup lang="ts">
-interface CategoryTile {
-  image: String
-  name: String
-}
+import { ImageArray } from '../../ts/interfaces/image'
 
-const categories: Array<CategoryTile> = [
+const categories: ImageArray = [
   {
     image: 'rock.png',
     name: 'Rock 1',

@@ -20,11 +20,8 @@
 </template>
 
 <script setup lang="ts">
-interface Tile {
-  name: string
-  image: string
-}
-const props = defineProps<Tile>()
+import { Image } from '../../ts/interfaces/image'
+const props = defineProps<Image>()
 </script>
 
 <style scoped></style>

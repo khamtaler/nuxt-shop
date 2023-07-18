@@ -9,12 +9,9 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
-  text: String
-  link: String
-}
+import { Link } from '../ts/interfaces/link'
 
-const props = defineProps<Props>()
+const props = defineProps<Link>()
 </script>
 
 <style lang="scss" scoped></style>

@@ -20,12 +20,9 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
-  header: String
-  text: String
-}
+import { Header } from '../ts/interfaces/header'
 
-const props = defineProps<Props>()
+const props = defineProps<Header>()
 
 let i = 0
 let j = 0

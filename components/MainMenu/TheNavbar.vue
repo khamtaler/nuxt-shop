@@ -10,12 +10,9 @@
 </template>
 
 <script setup lang="ts">
-interface MenuItems {
-  text: String
-  link: String
-}
+import { Link } from '../../ts/interfaces/link'
 
-const itemsList: MenuItems[] = [
+const itemsList: Link[] = [
   { text: 'shop', link: '/' },
   { text: 'faq', link: '/' },
   { text: 'blog', link: '/' },

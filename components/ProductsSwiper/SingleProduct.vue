@@ -32,16 +32,8 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
-  sku: string
-  imageUrl: string
-  text: string
-  desc: String
-  price: number
-  currency: String
-  promotionPrice: number
-}
-const props = defineProps<Props>()
+import { ProductItem } from '../../ts/interfaces/product'
+const props = defineProps<ProductItem>()
 
 const isDiscounted = computed(() => {
   return props.price > props.promotionPrice ? true : false
