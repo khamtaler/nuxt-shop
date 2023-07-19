@@ -16,6 +16,7 @@
           :key="slide.sku"
           :sku="slide.sku"
           :imageUrl="slide.imageUrl"
+          :imageUrl1="slide.imageUrl1"
           :text="slide.text"
           :price="slide.price"
           :desc="slide.desc"

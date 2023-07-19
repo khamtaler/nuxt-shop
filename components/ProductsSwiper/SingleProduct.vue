@@ -1,8 +1,17 @@
 <template>
-  <div>
+  <div class="group">
     <NuxtLink to="/shop">
       <figure>
-        <img :src="`_nuxt/images/${props.imageUrl}`" :alt="props.text" />
+        <img
+          :src="`_nuxt/images/${props.imageUrl}`"
+          :alt="props.text"
+          class="block group-hover:hidden"
+        />
+        <img
+          :src="`_nuxt/images/${props.imageUrl1}`"
+          :alt="props.text"
+          class="hidden group-hover:block"
+        />
       </figure>
       <h5 class="my-3 text-center text-xl">{{ props.text }}</h5>
       <p class="mb-3 px-5 text-center">{{ props.desc }}</p>
@@ -21,11 +30,6 @@
             {{ props.promotionPrice }}{{ props.currency }}
           </span>
         </div>
-        <!-- <BaseButton
-        class="mt-5 hover:bg-orange-600 hover:text-white"
-        text="View"
-        link="/"
-      /> -->
       </div>
     </NuxtLink>
   </div>

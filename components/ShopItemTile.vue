@@ -1,11 +1,16 @@
 <template>
   <NuxtLink to="shop">
-    <div class="rounded-t-lg border-[1px] border-gray-300">
+    <div class="group rounded-t-lg border-[1px] border-gray-300">
       <figure>
         <img
           :src="`_nuxt/images/${props.imageUrl}`"
           :alt="props.text"
-          class="rounded-t-lg"
+          class="block rounded-t-lg group-hover:hidden"
+        />
+        <img
+          :src="`_nuxt/images/${props.imageUrl1}`"
+          :alt="props.text"
+          class="hidden rounded-t-lg group-hover:block"
         />
       </figure>
       <div class="px-5">

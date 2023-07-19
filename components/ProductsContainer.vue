@@ -5,6 +5,7 @@
       :key="item.sku"
       :sku="item.sku"
       :imageUrl="item.imageUrl"
+      :imageUrl1="item.imageUrl1"
       :text="item.text"
       :price="item.price"
       :desc="item.desc"
