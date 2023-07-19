@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { ProductItem } from '../../ts/interfaces/product'
+import { ProductItem } from '@/ts/interfaces/product'
 const props = defineProps<ProductItem>()
 
 const isDiscounted = computed(() => {

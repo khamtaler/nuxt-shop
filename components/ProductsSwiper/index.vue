@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { ProductItems } from '../../ts/interfaces/product'
+import { ProductItems } from '@/ts/interfaces/product'
 
 const props = defineProps({ products: Object as PropType<ProductItems> })
 </script>

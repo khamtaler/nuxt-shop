@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { ImageArray } from '../../ts/interfaces/image'
+import { ImageArray } from '@/ts/interfaces/image'
 
 const categories: ImageArray = [
   {

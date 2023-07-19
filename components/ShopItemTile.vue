@@ -27,11 +27,6 @@
             </span>
           </div>
         </div>
-        <!-- <BaseButton
-        class="hover:bg-orange-600 hover:text-white"
-        text="View"
-        link="/"
-      /> -->
       </div>
     </div>
   </NuxtLink>
