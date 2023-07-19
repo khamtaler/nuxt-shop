@@ -1,5 +1,7 @@
 <template>
-  <Teleport to="body"></Teleport>
+  <Teleport to="body">
+    <div id="login" v-if="open"></div>
+  </Teleport>
 </template>
 
 <script setup lang="ts">
@@ -7,7 +9,7 @@ import { useCounterStore } from '@/stores/login'
 
 const store = useCounterStore()
 const open = computed(() => {
-  return store.open
+  return store.getLogin
 })
 </script>
 

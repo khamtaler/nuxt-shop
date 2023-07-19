@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { Link } from '../ts/interfaces/link'
+import { Link } from '@/ts/interfaces/link'
 
 const props = defineProps<Link>()
 </script>

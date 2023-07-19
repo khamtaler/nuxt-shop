@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { Header } from '../ts/interfaces/header'
+import { Header } from '@/ts/interfaces/header'
 
 const props = defineProps<Header>()
 console.log(props.header, props.text)
