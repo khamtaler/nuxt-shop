@@ -4,7 +4,8 @@
       <main class="min-h-screen min-w-full">
         <section class="container mx-auto px-5 py-24 text-gray-400">
           <form
-            class="mx-auto mt-10 flex w-full flex-col rounded-lg bg-[#000000ff] bg-opacity-50 p-8 shadow-lg md:mt-0 md:w-1/2 lg:w-2/6"
+            ref="form"
+            class="preserve3d rotateX-180 mx-auto mt-10 flex flex-col rounded-lg bg-[#000000] p-28 shadow-lg transition-transform duration-500 md:mt-0 md:w-1/2 lg:w-3/6"
           >
             <h2 class="mb-5 text-lg font-medium text-[#aac8e4]">Register</h2>
             <!-- Email input -->
@@ -55,7 +56,8 @@
             </div>
             <button
               type="submit"
-              class="rounded border-0 bg-blue-500 px-8 py-2 font-bold text-[#213547] transition-colors duration-500 hover:bg-blue-600 focus:outline-none"
+              class="mt-10 rounded border-0 bg-blue-500 px-8 py-2 font-bold text-[#213547] transition-colors duration-500 hover:bg-blue-600 focus:outline-none"
+              @click="store.toggle"
             >
               Submit
             </button>
@@ -67,11 +69,22 @@
 </template>
 
 <script setup lang="ts">
-import { useCounterStore } from '@/stores/login'
+import { useLoginStore } from '@/stores/login'
 
-const store = useCounterStore()
+const form = ref<HTMLFormElement | null>(null)
+const store = useLoginStore()
 const open = computed(() => {
   return store.getLogin
+})
+
+function addClass() {
+  if (form.value) {
+    form.value.classList.add('right')
+  }
+}
+
+onUpdated(() => {
+  setTimeout(addClass, 10)
 })
 </script>
 

@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 
-export const useCounterStore = defineStore('login', {
+export const useLoginStore = defineStore('login', {
   state: () => {
-    return { open: true }
+    return { open: false }
   },
   getters: {
     getLogin: (state) => state.open,

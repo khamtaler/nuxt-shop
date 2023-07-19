@@ -11,3 +11,15 @@
 body {
   position: relative;
 }
+
+.preserve3d {
+  perspective: 500px;
+  transform-style: preserve-3d;
+  transform: rotate3d(0, 1, 0, 90deg);
+  transition: 1000ms ease-in-out;
+}
+
+.preserve3d.right {
+  transform: rotate3d(0, 1, 0, 0deg);
+  transition: 1000ms ease-in-out;
+}
