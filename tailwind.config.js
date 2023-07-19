@@ -14,6 +14,7 @@ module.exports = {
       },
       colors: {
         transparent: 'rgba(0,0,0,0)',
+        blurred: 'rgba(255,255,255,0.5)',
       },
     },
   },

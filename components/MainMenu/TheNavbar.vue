@@ -6,6 +6,7 @@
       :link="item.link"
       :key="index"
     />
+    <font-awesome-icon :icon="['fas', 'user']" />
   </menu>
 </template>
 
