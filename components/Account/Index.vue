@@ -1,15 +1,22 @@
 <template>
   <Teleport to="body">
-    <div
-      id="login"
-      v-if="openModal"
-      class="absolute z-20 min-w-full bg-blurred"
-    >
+    <div v-if="openModal" class="absolute z-20 min-w-full bg-blurred">
       <main class="min-h-screen min-w-full">
-        <section class="container mx-auto px-5 py-24 text-gray-400">
-          <AccountRegister :open="openModal" v-if="store.openRegister" />
-          <AccountLogin :open="openModal" v-if="store.openLogin" />
-        </section>
+        <div
+          class="container mx-auto px-5 py-24 text-gray-400"
+          @click="store.toggleOpen"
+        >
+          <AccountRegister
+            :open="openModal"
+            v-if="store.openRegister"
+            @click.stop.prevent
+          />
+          <AccountLogin
+            :open="openModal"
+            v-if="store.openLogin"
+            @click.stop.prevent
+          />
+        </div>
       </main>
     </div>
   </Teleport>
