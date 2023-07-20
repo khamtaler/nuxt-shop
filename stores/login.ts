@@ -2,15 +2,21 @@ import { defineStore } from 'pinia'
 
 export const useLoginStore = defineStore('login', {
   state: () => {
-    return { open: false }
+    return { openModal: false, openRegister: true, openLogin: false }
   },
   getters: {
-    getLogin: (state) => state.open,
+    getOpen: (state) => state.openModal,
+    getLogin: (state) => state.openRegister,
+    getRegister: (state) => state.openLogin,
   },
 
   actions: {
-    toggle() {
-      this.open = !this.open
+    toggleOpen() {
+      this.openModal = !this.openModal
+    },
+    toggleLoginRegister() {
+      this.openRegister = !this.openRegister
+      this.openLogin = !this.openLogin
     },
   },
 })

@@ -23,3 +23,8 @@ body {
   transform: rotate3d(0, 1, 0, 0deg);
   transition: 1000ms ease-in-out;
 }
+
+.preserve3d.left {
+  transform: rotate3d(0, 1, 0, -0deg);
+  transition: 1000ms ease-in-out;
+}

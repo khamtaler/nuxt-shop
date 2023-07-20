@@ -2,7 +2,7 @@
   <NuxtLayout>
     <router-view></router-view>
   </NuxtLayout>
-  <Login />
+  <Account />
 </template>
 
 <script setup lang="ts"></script>

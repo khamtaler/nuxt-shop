@@ -10,7 +10,7 @@
       <font-awesome-icon
         :icon="['fas', 'user']"
         class="cursor-pointer text-xl"
-        @click="store.toggle"
+        @click="store.toggleOpen()"
       />
     </ClientOnly>
   </menu>
