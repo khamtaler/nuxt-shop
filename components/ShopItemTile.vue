@@ -1,21 +1,35 @@
 <template>
   <NuxtLink to="shop">
     <div class="group rounded-t-lg border-[1px] border-gray-300">
-      <figure>
+      <figure class="flex items-center justify-center">
         <img
-          :src="`_nuxt/images/${props.imageUrl}`"
-          :alt="props.text"
-          class="block rounded-t-lg group-hover:hidden"
+          :src="props.image"
+          :alt="props.image"
+          class="block h-[200px] max-w-[90%] rounded-t-lg p-5 group-hover:hidden"
         />
         <img
-          :src="`_nuxt/images/${props.imageUrl1}`"
-          :alt="props.text"
-          class="hidden rounded-t-lg group-hover:block"
+          :src="`_nuxt/images/rock.png`"
+          :alt="props.imageUrl1"
+          class="hidden max-h-[200px] max-w-[90%] rounded-t-lg p-5 group-hover:block"
         />
       </figure>
       <div class="px-5">
-        <h5 class="my-3 text-center text-xl">{{ props.text }}</h5>
-        <p class="mb-3">{{ props.desc }}</p>
+        <h5 class="my-3 text-center text-xl">{{ props.title }}</h5>
+        <p class="mb-3">{{ props.category }}</p>
+        <p>
+          {{ props.rating['count'] }} / {{ props.rating['rate'] }}
+          <font-awesome-icon
+            class="border-2-yellow text-yellow-400"
+            v-for="i in Math.round(props.rating['rate'])"
+            :icon="['fas', 'star']"
+          />
+          <font-awesome-icon
+            class="text-yellow-400"
+            v-for="i in 5 - Math.round(props.rating['rate'])"
+            :icon="['far', 'star']"
+          />
+        </p>
+
         <div class="mb-3 flex items-center justify-between">
           <div>
             <span
@@ -25,10 +39,12 @@
                   : 'text-xl'
               "
             >
-              {{ props.price }}{{ props.currency }}
+              ${{ props.price }}
+              <!-- {{ props.currency }} -->
             </span>
             <span v-if="isDiscounted" class="text-xl text-green-600">
-              {{ props.promotionPrice }}{{ props.currency }}
+              $ {{ props.promotionPrice }}
+              <!-- {{ props.currency }} -->
             </span>
           </div>
         </div>
@@ -42,7 +58,9 @@ import { ProductItem } from '@/ts/interfaces/product'
 const props = defineProps<ProductItem>()
 
 const isDiscounted = computed(() => {
-  return props.price > props.promotionPrice ? true : false
+  if (props.promotionPrice && props.price) {
+    return props.price > props.promotionPrice ? true : false
+  }
 })
 </script>
 

@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     transpile: [
       '@fortawesome/fontawesome-svg-core',
       '@fortawesome/pro-solid-svg-icons',
-      '@fortawesome/pro-regular-svg-icons',
+      '@fortawesome/free-regular-svg-icons',
       '@fortawesome/pro-light-svg-icons',
       '@fortawesome/free-brands-svg-icons',
     ],

@@ -1,11 +1,16 @@
 export interface ProductItem {
-  sku: string
-  imageUrl: string
+  id: number
+  category: string
+  image: string
   imageUrl1?: string
-  text: string
-  desc: string
+  description: string
+  title: string
   price: number
-  currency: string
-  promotionPrice: number
+  rating: {
+    count: number
+    rate: number
+  }
+
+  promotionPrice?: number
 }
 export interface ProductItems extends Array<ProductItem> {}
