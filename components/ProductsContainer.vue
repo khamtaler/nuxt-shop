@@ -20,11 +20,11 @@
 import { ProductItems } from '@/ts/interfaces/product'
 import axiosClient from '@/axiosClient'
 
-const props = defineProps({ products: Object as PropType<ProductItems> })
+// const props = defineProps({ products: Object as PropType<ProductItems> })
 let products = ref<ProductItems | null>(null)
-const itemsToShow = computed(() => {
-  return props.products?.slice(0, 6)
-})
+// const itemsToShow = computed(() => {
+//   return props.products?.slice(0, 6)
+// })
 
 onMounted(async () => {
   await axiosClient

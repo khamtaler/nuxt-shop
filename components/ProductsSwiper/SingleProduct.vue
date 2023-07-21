@@ -1,33 +1,35 @@
 <template>
-  <div class="group">
-    <NuxtLink to="/shop">
-      <figure>
+  <div class="group flex h-full">
+    <NuxtLink to="/shop " class="flex h-auto flex-col items-center">
+      <figure class="flex items-center justify-center overflow-hidden">
         <img
-          :src="`_nuxt/images/${props.imageUrl}`"
-          :alt="props.text"
-          class="block group-hover:hidden"
+          :src="props.image"
+          :alt="props.title"
+          class="block h-[200px] rounded-t-lg object-cover p-5 group-hover:hidden"
         />
         <img
-          :src="`_nuxt/images/${props.imageUrl1}`"
-          :alt="props.text"
-          class="hidden group-hover:block"
+          :src="`_nuxt/images/rock.png`"
+          :alt="props.title"
+          class="hidden h-[200px] rounded-t-lg object-cover p-5 group-hover:block"
         />
       </figure>
-      <h5 class="my-3 text-center text-xl">{{ props.text }}</h5>
-      <p class="mb-3 px-5 text-center">{{ props.desc }}</p>
-      <div class="mb-3 flex flex-col items-center justify-between">
+      <h5 class="my-3 text-center text-xl">{{ props.title }}</h5>
+      <p class="mb-3 px-5 text-center">{{ props.category }}</p>
+      <div class="mb-3 mt-auto flex items-center justify-end self-center">
         <div>
           <span
             :class="
               isDiscounted
                 ? 'text-md pr-3 text-red-600 line-through'
-                : 'text-xl'
+                : 'text-center text-xl'
             "
           >
-            {{ props.price }}{{ props.currency }}
+            ${{ props.price }}
+            <!-- {{ props.currency }} -->
           </span>
           <span v-if="isDiscounted" class="text-xl text-green-600">
-            {{ props.promotionPrice }}{{ props.currency }}
+            $ {{ props.promotionPrice }}
+            <!-- {{ props.currency }} -->
           </span>
         </div>
       </div>
@@ -40,7 +42,9 @@ import { ProductItem } from '@/ts/interfaces/product'
 const props = defineProps<ProductItem>()
 
 const isDiscounted = computed(() => {
-  return props.price > props.promotionPrice ? true : false
+  if (props.promotionPrice && props.price) {
+    return props.price > props.promotionPrice ? true : false
+  }
 })
 </script>
 

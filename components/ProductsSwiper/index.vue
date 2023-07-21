@@ -11,17 +11,18 @@
         disableOnInteraction: false,
       }"
     >
-      <SwiperSlide v-for="slide in props.products">
+      <SwiperSlide v-for="item in products">
         <ProductsSwiperSingleProduct
-          :key="slide.sku"
-          :sku="slide.sku"
-          :imageUrl="slide.imageUrl"
-          :imageUrl1="slide.imageUrl1"
-          :text="slide.text"
-          :price="slide.price"
-          :desc="slide.desc"
-          :currency="slide.currency"
-          :promotionPrice="slide.promotionPrice"
+          :key="item.id"
+          :sku="item.id"
+          :image="item.image"
+          :imageUrl1="item.imageUrl1"
+          :title="item.title"
+          :price="item.price"
+          :rating="item.rating"
+          :category="item.category"
+          :description="item.description"
+          :desc="item.category"
         />
       </SwiperSlide>
     </Swiper>
@@ -30,8 +31,24 @@
 
 <script setup lang="ts">
 import { ProductItems } from '@/ts/interfaces/product'
-
-const props = defineProps({ products: Object as PropType<ProductItems> })
+import axiosClient from '@/axiosClient'
+// const props = defineProps({ products: Object as PropType<ProductItems> })
+const products = ref<ProductItems>()
+onMounted(async () => {
+  await axiosClient
+    .get('/products?limit=8')
+    .then(({ data }) => {
+      products.value = data
+      console.log(products.value)
+    })
+    .catch((err) => {
+      console.log(err)
+      // throw createError({
+      //   statusCode: 404,
+      //   statusMessage: 'Product has not been found',
+      // })
+    })
+})
 </script>
 
 <style lang="scss" scoped>
@@ -40,9 +57,12 @@ const props = defineProps({ products: Object as PropType<ProductItems> })
   justify-content: center;
   align-items: center;
   font-size: 18px;
+  height: auto;
 }
 .swiper-wrapper {
   min-width: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 </style>

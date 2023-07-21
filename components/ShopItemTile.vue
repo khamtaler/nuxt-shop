@@ -4,12 +4,12 @@
       <figure class="flex items-center justify-center">
         <img
           :src="props.image"
-          :alt="props.image"
+          :alt="props.title"
           class="block h-[200px] max-w-[90%] rounded-t-lg p-5 group-hover:hidden"
         />
         <img
           :src="`_nuxt/images/rock.png`"
-          :alt="props.imageUrl1"
+          :alt="props.title"
           class="hidden max-h-[200px] max-w-[90%] rounded-t-lg p-5 group-hover:block"
         />
       </figure>
