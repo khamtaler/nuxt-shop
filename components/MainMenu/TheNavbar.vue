@@ -23,8 +23,8 @@ import { Link } from '@/ts/interfaces/link'
 const store = useLoginStore()
 
 const itemsList: Link[] = [
-  { text: 'shop', link: '/' },
-  { text: 'faq', link: '/' },
+  { text: 'shop', link: '/shop' },
+  { text: 'faq', link: '/faq' },
   { text: 'blog', link: '/' },
 ]
 </script>
