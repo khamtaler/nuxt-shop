@@ -4,3 +4,4 @@ const axiosClient = axios.create({
   timeout: 1000,
 })
 export default axiosClient
+// https://nuxt.com/docs/getting-started/data-fetching#client-only-fetching

@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto my-10 grid max-w-6xl grid-cols-3 gap-5">
+  <div class="mx-auto my-10 grid max-w-6xl auto-rows-auto grid-cols-3 gap-5">
     <ShopItemTile
       v-for="item in products"
       :key="item.id"

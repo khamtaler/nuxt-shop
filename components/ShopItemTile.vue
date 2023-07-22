@@ -1,6 +1,6 @@
 <template>
-  <NuxtLink to="shop">
-    <div class="group rounded-t-lg border-[1px] border-gray-300">
+  <NuxtLink to="shop" class="grid">
+    <div class="group grid flex-col rounded-t-lg border-[1px] border-gray-300">
       <figure class="flex items-center justify-center">
         <img
           :src="props.image"
@@ -13,7 +13,7 @@
           class="hidden max-h-[200px] max-w-[90%] rounded-t-lg p-5 group-hover:block"
         />
       </figure>
-      <div class="px-5">
+      <div class="flex h-auto flex-col px-5">
         <h5 class="my-3 text-center text-xl">{{ props.title }}</h5>
         <p class="mb-3">{{ props.category }}</p>
         <p>
