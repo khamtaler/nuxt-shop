@@ -35,16 +35,20 @@
             />
           </nuxt-link>
           <nuxt-link to="/" target="_blank">
-            <font-awesome-icon
-              :icon="['fab', 'instagram']"
-              class="mx-2 text-4xl"
-            />
+            <ClientOnly>
+              <font-awesome-icon
+                :icon="['fab', 'instagram']"
+                class="mx-2 text-4xl"
+              />
+            </ClientOnly>
           </nuxt-link>
           <nuxt-link to="/" target="_blank">
-            <font-awesome-icon
-              :icon="['fab', 'twitter']"
-              class="ml-2 text-4xl"
-            />
+            <ClientOnly>
+              <font-awesome-icon
+                :icon="['fab', 'twitter']"
+                class="ml-2 text-4xl"
+              />
+            </ClientOnly>
           </nuxt-link>
         </client-only>
       </div>

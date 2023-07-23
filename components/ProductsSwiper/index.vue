@@ -11,18 +11,19 @@
         disableOnInteraction: false,
       }"
     >
-      <SwiperSlide v-for="item in products">
+      <div v-if="pending">Loading...</div>
+      <SwiperSlide v-else v-for="product in products">
         <ProductsSwiperSingleProduct
-          :key="item.id"
-          :sku="item.id"
-          :image="item.image"
-          :imageUrl1="item.imageUrl1"
-          :title="item.title"
-          :price="item.price"
-          :rating="item.rating"
-          :category="item.category"
-          :description="item.description"
-          :desc="item.category"
+          :key="product.id"
+          :id="product.id"
+          :image="product.image"
+          :imageUrl1="product.imageUrl1"
+          :title="product.title"
+          :price="product.price"
+          :rating="product.rating"
+          :category="product.category"
+          :description="product.description"
+          :desc="product.category"
         />
       </SwiperSlide>
     </Swiper>
@@ -30,25 +31,15 @@
 </template>
 
 <script setup lang="ts">
-import { ProductItems } from '@/ts/interfaces/product'
-import axiosClient from '@/axiosClient'
-// const props = defineProps({ products: Object as PropType<ProductItems> })
-const products = ref<ProductItems>()
-onMounted(async () => {
-  await axiosClient
-    .get('/products?limit=8')
-    .then(({ data }) => {
-      products.value = data
-      console.log(products.value)
-    })
-    .catch((err) => {
-      console.log(err)
-      // throw createError({
-      //   statusCode: 404,
-      //   statusMessage: 'Product has not been found',
-      // })
-    })
-})
+import { ProductItem } from '@/ts/interfaces/product'
+
+const { pending, data: products } = useFetch<ProductItem[]>(
+  'https://fakestoreapi.com/products?limit=6',
+  {
+    lazy: true,
+  },
+)
+console.log(products.value)
 </script>
 
 <style lang="scss" scoped>

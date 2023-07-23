@@ -10,7 +10,6 @@ export interface ProductItem {
     count: number
     rate: number
   }
-
   promotionPrice?: number
 }
 export interface ProductItems extends Array<ProductItem> {}

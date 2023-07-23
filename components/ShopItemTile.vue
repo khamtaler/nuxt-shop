@@ -18,16 +18,18 @@
         <p class="mb-3">{{ props.category }}</p>
         <p>
           {{ props.rating['count'] }} / {{ props.rating['rate'] }}
-          <font-awesome-icon
-            class="border-2-yellow text-yellow-400"
-            v-for="i in Math.round(props.rating['rate'])"
-            :icon="['fas', 'star']"
-          />
-          <font-awesome-icon
-            class="text-yellow-400"
-            v-for="i in 5 - Math.round(props.rating['rate'])"
-            :icon="['far', 'star']"
-          />
+          <ClientOnly>
+            <font-awesome-icon
+              class="border-2-yellow text-yellow-400"
+              v-for="i in Math.round(props.rating['rate'])"
+              :icon="['fas', 'star']"
+            />
+            <font-awesome-icon
+              class="text-yellow-400"
+              v-for="i in 5 - Math.round(props.rating['rate'])"
+              :icon="['far', 'star']"
+            />
+          </ClientOnly>
         </p>
 
         <div class="mb-3 flex items-center justify-between">

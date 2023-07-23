@@ -28,4 +28,5 @@ export default defineNuxtConfig({
       '@fortawesome/free-brands-svg-icons',
     ],
   },
+  buildModules: ['@nuxt/typescript-build'],
 })
