@@ -33,13 +33,12 @@
 <script setup lang="ts">
 import { ProductItem } from '@/ts/interfaces/product'
 
-const { pending, data: products } = useFetch<ProductItem[]>(
+const { pending, data: products } = useFetch<ProductItem[] | null>(
   'https://fakestoreapi.com/products?limit=6',
   {
     lazy: true,
   },
 )
-console.log(products.value)
 </script>
 
 <style lang="scss" scoped>

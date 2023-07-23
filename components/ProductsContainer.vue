@@ -6,7 +6,7 @@
       class="mx-auto my-10 grid max-w-6xl auto-rows-auto grid-cols-3 gap-5"
     >
       <ShopItemTile
-        v-for="product in prods"
+        v-for="product in products"
         :key="product.id"
         :id="product.id"
         :image="product.image"
@@ -31,6 +31,5 @@ const { pending, data: products } = useFetch<ProductItem[]>(
     lazy: true,
   },
 )
-const prods = ref(products.value)
-console.log(prods)
+const prod = ref(products.value)
 </script>

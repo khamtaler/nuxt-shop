@@ -12,4 +12,4 @@ export interface ProductItem {
   }
   promotionPrice?: number
 }
-export interface ProductItems extends Array<ProductItem> {}
+export type ProductItems = Array<ProductItem>
