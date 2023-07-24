@@ -57,7 +57,7 @@
     </button>
     <p>
       Already got account?
-      <span @click="store.toggleLoginRegister">Sign in!</span>
+      <span @click="loginStore.toggleLoginRegister">Sign in!</span>
     </p>
   </form>
 </template>
@@ -65,7 +65,7 @@
 <script setup lang="ts">
 import { useLoginStore } from '@/stores/login'
 
-const store = useLoginStore()
+const loginStore = useLoginStore()
 const register = ref<HTMLFormElement | null>(null)
 const props = defineProps({
   open: Boolean,

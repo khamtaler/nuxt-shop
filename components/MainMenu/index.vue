@@ -1,12 +1,15 @@
 <template>
-  <div class="flex flex-row w-full p-5 justify-between shadow-md items-center">
+  <div
+    class="relative flex w-full flex-row items-center justify-between p-5 shadow-md"
+  >
     <!-- logo component-->
 
     <nuxt-link to="/">LOGO</nuxt-link>
     <MainMenuTheNavbar />
+    <Cart />
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped></style>

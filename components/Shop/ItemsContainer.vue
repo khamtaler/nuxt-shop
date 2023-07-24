@@ -5,7 +5,7 @@
       v-else
       class="mx-auto my-10 grid max-w-6xl auto-rows-auto grid-cols-3 gap-5"
     >
-      <ShopItemTile
+      <ShopSingleItem
         v-for="product in products"
         :key="product.id"
         :id="product.id"

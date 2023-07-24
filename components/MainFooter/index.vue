@@ -6,24 +6,24 @@
         <nuxt-link to="/">LOGO</nuxt-link>
       </div>
       <ul class="flex w-[22%] flex-col">
-        <MainFooterBaseLink
+        <BaseFooterLink
           v-for="item in itemsList"
           :link="item.link"
           :name="item.text"
           class="capital block"
         >
           {{ item.text }}
-        </MainFooterBaseLink>
+        </BaseFooterLink>
       </ul>
       <ul class="flex w-[22%] flex-col">
-        <MainFooterBaseLink
+        <BaseFooterLink
           v-for="item in itemsList"
           :link="item.link"
           :name="item.text"
           class="capital block"
         >
           {{ item.text }}
-        </MainFooterBaseLink>
+        </BaseFooterLink>
       </ul>
       <div class="block w-[22%]">
         <h5 class="mb-3">Socials</h5>

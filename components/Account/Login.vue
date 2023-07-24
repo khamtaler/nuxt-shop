@@ -43,7 +43,7 @@
     </button>
     <p class="mt-5">
       Not having an account?
-      <span @click="store.toggleLoginRegister">Register!</span>
+      <span @click="loginStore.toggleLoginRegister">Register!</span>
     </p>
   </form>
 </template>
@@ -51,7 +51,7 @@
 <script setup lang="ts">
 import { useLoginStore } from '@/stores/login'
 
-const store = useLoginStore()
+const loginStore = useLoginStore()
 const login = ref<HTMLFormElement | null>(null)
 
 const props = defineProps({
