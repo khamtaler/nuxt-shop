@@ -24,9 +24,12 @@
 
 <script setup lang="ts">
 import { ProductItem } from '@/ts/interfaces/product'
+const props = defineProps<{ numberOfProducts?: number | null }>()
 
 const { pending, data: products } = useFetch<ProductItem[] | null>(
-  'https://fakestoreapi.com/products?limit=6',
+  `https://fakestoreapi.com/products${
+    props.numberOfProducts ? `?limit=${props.numberOfProducts}` : ''
+  }`,
   {
     lazy: true,
   },

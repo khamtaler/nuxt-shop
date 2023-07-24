@@ -1,5 +1,7 @@
 <template>
-  <div>test sklep</div>
+  <div>
+    <ProductsContainer />
+  </div>
 </template>
 
 <script setup lang="ts"></script>

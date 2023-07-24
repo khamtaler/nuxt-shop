@@ -12,7 +12,7 @@
     </div>
     <div class="mx-5 flex flex-col items-center">
       <h3 class="my-5 text-center text-5xl underline">Our top products</h3>
-      <ProductsContainer />
+      <ProductsContainer :number-of-products="6" />
       <BaseButton text="View all poroducts" link="shop" />
     </div>
 
