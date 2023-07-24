@@ -1,4 +1,4 @@
 export interface Link {
-  text: String
-  link: String
+  text: string
+  link: string
 }

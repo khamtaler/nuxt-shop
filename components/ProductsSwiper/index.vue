@@ -2,7 +2,7 @@
   <div class="mx-auto my-5 max-w-6xl">
     <Swiper
       :modules="[SwiperAutoplay, SwiperEffectCreative]"
-      :slides-per-view="4"
+      :slides-per-view="props.slidesPerView ? props.slidesPerView : 4"
       :loop="true"
       :space-between="20"
       :effect="'slide'"
@@ -32,9 +32,15 @@
 
 <script setup lang="ts">
 import { ProductItem } from '@/ts/interfaces/product'
+interface Props {
+  slides?: number
+  slidesPerView?: number
+}
+
+const props = defineProps<Props>()
 
 const { pending, data: products } = useFetch<ProductItem[] | null>(
-  'https://fakestoreapi.com/products?limit=6',
+  `https://fakestoreapi.com/products?limit=${props.slides ? props.slides : 8}`,
   {
     lazy: true,
   },
@@ -48,6 +54,7 @@ const { pending, data: products } = useFetch<ProductItem[] | null>(
   align-items: center;
   font-size: 18px;
   height: auto;
+  padding: 10px;
 }
 .swiper-wrapper {
   min-width: 100%;

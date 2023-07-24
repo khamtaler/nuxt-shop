@@ -1,5 +1,5 @@
 export interface ProductItem {
-  id: number
+  id: number | string
   category: string
   image: string
   imageUrl1?: string

@@ -27,7 +27,7 @@ let i = 0
 let j = 0
 const speed = 100
 
-function writeWelcome(text: string) {
+function writeWelcome(text: string): void {
   if (i < text.length && text) {
     let welcome = document.querySelector('#Welcome') as HTMLHeadingElement
     if (text.charAt(i) === ' ') {
@@ -45,7 +45,7 @@ function writeWelcome(text: string) {
   }
 }
 
-function writeGreetings(text: string) {
+function writeGreetings(text: string): void {
   if (j < text.length && text) {
     let greetings = document.querySelector('#Greetings') as HTMLHeadingElement
     if (text.charAt(j) === ' ') {

@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <router-view></router-view>
+    <NuxtPage />
   </NuxtLayout>
   <Account />
 </template>

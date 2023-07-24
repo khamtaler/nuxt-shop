@@ -1,6 +1,9 @@
 <template>
   <div class="group flex h-full">
-    <NuxtLink to="/shop " class="flex h-auto flex-col items-center">
+    <NuxtLink
+      :to="`/shop/${props.category}/${props.id}`"
+      class="flex h-auto flex-col items-center"
+    >
       <figure class="flex items-center justify-center overflow-hidden">
         <img
           :src="props.image"
@@ -25,11 +28,9 @@
             "
           >
             ${{ props.price }}
-            <!-- {{ props.currency }} -->
           </span>
           <span v-if="isDiscounted" class="text-xl text-green-600">
             $ {{ props.promotionPrice }}
-            <!-- {{ props.currency }} -->
           </span>
         </div>
       </div>

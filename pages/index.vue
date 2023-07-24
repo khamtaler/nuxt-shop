@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-[100vh]">
-    <AutomaticTextWrite
+    <BaseTextWrite
       header="Welcome"
       text="Scroll down the page to find our products :)"
     />
