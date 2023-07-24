@@ -15,7 +15,7 @@
           <h6>Price: $ {{ product.price }}</h6>
           <BaseStarScore :rating="product.rating" />
         </div>
-        <BaseButton text="Add to cart" link="shop" />
+        <BaseButton text="Add to cart" link="/" />
       </div>
     </div>
     <div class="my-[100px]">
