@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import { useLoginStore } from '@/stores/login'
-import { Link } from '@/ts/interfaces/link'
+import { Link } from '@/types/components'
 
 const store = useLoginStore()
 

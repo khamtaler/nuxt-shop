@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { ProductItem } from '@/ts/interfaces/product'
+import { ProductItem } from '@/types/components'
 const props = defineProps<{ numberOfProducts?: number | null }>()
 
 const { pending, data: products } = useFetch<ProductItem[] | null>(

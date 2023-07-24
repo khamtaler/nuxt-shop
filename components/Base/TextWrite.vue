@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { Header } from '@/ts/interfaces/header'
+import { Header } from '@/types/components'
 
 const props = defineProps<Header>()
 let i = 0

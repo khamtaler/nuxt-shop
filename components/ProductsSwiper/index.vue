@@ -31,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import { ProductItem } from '@/ts/interfaces/product'
+import { ProductItem } from '@/types/components'
 interface Props {
   slides?: number
   slidesPerView?: number

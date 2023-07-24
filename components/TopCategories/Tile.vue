@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { Image } from '@/ts/interfaces/image'
+import { Image } from '@/types/components'
 const props = defineProps<Image>()
 </script>
 

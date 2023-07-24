@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { ProductItem } from '@/ts/interfaces/product'
+import { ProductItem } from '@/types/components'
 const route = useRoute()
 
 const { pending, data: product } = await useFetch<ProductItem>(

@@ -10,9 +10,9 @@
 </template>
 
 <script setup lang="ts">
-import { ImageArray } from '@/ts/interfaces/image'
+import { Image } from '@/types/components'
 
-const categories: ImageArray = [
+const categories: Image[] = [
   {
     image: 'rock.png',
     name: 'Rock 1',
