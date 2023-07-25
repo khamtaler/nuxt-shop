@@ -26,7 +26,8 @@ const props = defineProps<Header>()
 let i = 0
 let j = 0
 const speed = 100
-
+let headerText = props.header
+let welcomeText = props.text
 function writeWelcome(text: string): void {
   if (i < text.length && text) {
     let welcome = document.querySelector('#Welcome') as HTMLHeadingElement
@@ -40,7 +41,7 @@ function writeWelcome(text: string): void {
     welcome.innerHTML += text.charAt(i)
     i++
     setTimeout(() => {
-      writeWelcome(props.header)
+      writeWelcome(headerText)
     }, speed)
   }
 }
@@ -52,14 +53,17 @@ function writeGreetings(text: string): void {
       greetings.innerHTML += text.charAt(j)
       j++
       setTimeout(() => {
-        writeGreetings(props.text)
+        writeGreetings(welcomeText)
       }, 100)
       return
     }
 
     greetings.innerHTML += text.charAt(j)
     j++
-    setTimeout(() => writeGreetings(props.text), getRandomIntInclusive(50, 200))
+    setTimeout(
+      () => writeGreetings(welcomeText),
+      getRandomIntInclusive(50, 200),
+    )
   }
 }
 
@@ -70,10 +74,18 @@ function getRandomIntInclusive(min: number, max: number): number {
 }
 
 onMounted(() => {
-  writeWelcome(props.header)
-  setTimeout(() => {
-    writeGreetings(props.text)
-  }, speed * props.header.length)
+  writeWelcome(headerText)
+  setTimeout(
+    () => {
+      writeGreetings(welcomeText)
+    },
+    speed * (headerText.length + 2),
+  )
+})
+
+onUnmounted(() => {
+  headerText = ''
+  welcomeText = ''
 })
 </script>
 

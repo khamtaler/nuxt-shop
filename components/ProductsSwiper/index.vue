@@ -11,7 +11,7 @@
         disableOnInteraction: false,
       }"
     >
-      <div v-if="!pending">Loading...</div>
+      <div v-if="pending">Loading...</div>
       <SwiperSlide v-else v-for="product in products">
         <ProductsSwiperSingleProduct
           :key="product.id"
@@ -38,7 +38,7 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const { fetchProducts, ready: pending, products: products } = useProduct()
+const { fetchProducts, pending: pending, products: products } = useProduct()
 
 onMounted(async () => {
   await fetchProducts(props.slides ? props.slides : 8)

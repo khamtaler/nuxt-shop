@@ -26,9 +26,13 @@
 </template>
 
 <script setup lang="ts">
-import { getProduct } from '@/composables/Product'
+import { useProduct } from '@/composables/Product'
 const route = useRoute()
-const { pending, product } = await getProduct(route.params.id)
+const { pending, product, fetchProduct } = useProduct()
+
+onMounted(async () => {
+  await fetchProduct(route.params.id)
+})
 
 useHead({
   title: product.value?.title,

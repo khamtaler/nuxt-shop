@@ -3,11 +3,11 @@ import { ProductItem } from '@/types/components'
 export const useProduct = () => {
   const product = ref<ProductItem | null>(null)
   const products = ref<ProductItem[] | null>(null)
-  const ready = ref<boolean>(false)
+  const pending = ref<boolean>(false)
   const error = ref<any>(undefined)
 
   const fetchProduct = async (id: string | string[]) => {
-    ready.value = false
+    pending.value = true
     try {
       const res = await fetch(`https://fakestoreapi.com/products/${id}`)
       const data = await res.json()
@@ -15,12 +15,12 @@ export const useProduct = () => {
     } catch (err: any) {
       error.value = err
     } finally {
-      ready.value = true
+      pending.value = false
     }
   }
 
   const fetchProducts = async (numberOfProds?: number | string) => {
-    ready.value = false
+    pending.value = true
     if (numberOfProds) {
       try {
         const res = await fetch(
@@ -31,7 +31,7 @@ export const useProduct = () => {
       } catch (err: any) {
         error.value = err
       } finally {
-        ready.value = true
+        pending.value = false
       }
     } else {
       try {
@@ -41,9 +41,9 @@ export const useProduct = () => {
       } catch (err: any) {
         error.value = err
       } finally {
-        ready.value = true
+        pending.value = false
       }
     }
   }
-  return { fetchProduct, fetchProducts, product, products, ready, error }
+  return { fetchProduct, fetchProducts, product, products, pending, error }
 }

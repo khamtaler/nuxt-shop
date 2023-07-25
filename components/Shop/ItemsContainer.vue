@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="!ready">Loading...</div>
+    <div v-if="pending">Loading...</div>
     <div
       v-else
       class="mx-auto my-10 grid max-w-6xl auto-rows-auto grid-cols-3 gap-5"
@@ -27,13 +27,10 @@
 import { useProduct } from '@/composables/Product'
 const props = defineProps<{ numberOfProducts?: number | null }>()
 
-const { fetchProducts, ready, products, error } = useProduct()
+const { fetchProducts, pending, products, error } = useProduct()
 
 onMounted(async () => {
   await fetchProducts(props.numberOfProducts ? props.numberOfProducts : '')
 })
-// const { pending, products } = await getNumberOfProducts(
-//   props.numberOfProducts ? props.numberOfProducts : '',
-// )
 </script>
 composables/Product
