@@ -1,32 +1,39 @@
 <template>
   <div>
-    <div v-if="pending">Loading...</div>
+    <div v-if="!ready">Loading...</div>
     <div
       v-else
       class="mx-auto my-10 grid max-w-6xl auto-rows-auto grid-cols-3 gap-5"
     >
       <ShopSingleItem
-        v-for="product in products"
-        :key="product.id"
-        :id="product.id"
-        :image="product.image"
-        :imageUrl1="product.imageUrl1"
-        :title="product.title"
-        :price="product.price"
-        :rating="product.rating"
-        :category="product.category"
-        :description="product.description"
-        :desc="product.category"
+        v-for="prod in products"
+        :key="prod.id"
+        :id="prod.id"
+        :image="prod.image"
+        :imageUrl1="prod.imageUrl1"
+        :title="prod.title"
+        :price="prod.price"
+        :rating="prod.rating"
+        :category="prod.category"
+        :description="prod.description"
+        :desc="prod.category"
       />
     </div>
+    <div v-if="error">{{ error }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { getNumberOfProducts } from '@/composables/Product'
+import { useProduct } from '@/composables/Product'
 const props = defineProps<{ numberOfProducts?: number | null }>()
-const { pending, products } = await getNumberOfProducts(
-  props.numberOfProducts ? props.numberOfProducts : '',
-)
+
+const { fetchProducts, ready, products, error } = useProduct()
+
+onMounted(async () => {
+  await fetchProducts(props.numberOfProducts ? props.numberOfProducts : '')
+})
+// const { pending, products } = await getNumberOfProducts(
+//   props.numberOfProducts ? props.numberOfProducts : '',
+// )
 </script>
 composables/Product

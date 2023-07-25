@@ -11,7 +11,7 @@
         disableOnInteraction: false,
       }"
     >
-      <div v-if="pending">Loading...</div>
+      <div v-if="!pending">Loading...</div>
       <SwiperSlide v-else v-for="product in products">
         <ProductsSwiperSingleProduct
           :key="product.id"
@@ -31,17 +31,22 @@
 </template>
 
 <script setup lang="ts">
-import { getNumberOfProducts } from '@/composables/Product'
-
-const props = defineProps<Props>()
-const { pending, products } = await getNumberOfProducts(
-  props.slides ? props.slides : 8,
-)
-
+import { useProduct } from '@/composables/Product'
 interface Props {
   slides?: number
   slidesPerView?: number
 }
+
+const props = defineProps<Props>()
+const { fetchProducts, ready: pending, products: products } = useProduct()
+
+onMounted(async () => {
+  await fetchProducts(props.slides ? props.slides : 8)
+  console.log(pending.value, products.value)
+})
+// const { ready, product } = await fetchProducts(
+//   props.slides ? props.slides : 8,
+// )
 </script>
 
 <style lang="scss" scoped>
