@@ -23,15 +23,9 @@
 </template>
 
 <script setup lang="ts">
-import { ProductItem } from '@/types/components'
+import { getNumberOfProducts } from '@/composables/getProduct'
 const props = defineProps<{ numberOfProducts?: number | null }>()
-
-const { pending, data: products } = useFetch<ProductItem[] | null>(
-  `https://fakestoreapi.com/products${
-    props.numberOfProducts ? `?limit=${props.numberOfProducts}` : ''
-  }`,
-  {
-    lazy: true,
-  },
+const { pending, products } = await getNumberOfProducts(
+  props.numberOfProducts ? props.numberOfProducts : '',
 )
 </script>

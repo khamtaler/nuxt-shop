@@ -26,15 +26,9 @@
 </template>
 
 <script setup lang="ts">
-import { ProductItem } from '@/types/components'
+import { getProduct } from '@/composables/getProduct'
 const route = useRoute()
-
-const { pending, data: product } = await useFetch<ProductItem>(
-  `https://fakestoreapi.com/products/${route.params.id}`,
-  {
-    lazy: true,
-  },
-)
+const { pending, product } = await getProduct(route.params.id)
 
 useHead({
   title: product.value?.title,

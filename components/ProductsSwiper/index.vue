@@ -31,20 +31,17 @@
 </template>
 
 <script setup lang="ts">
-import { ProductItem } from '@/types/components'
+import { getNumberOfProducts } from '@/composables/getProduct'
+
+const props = defineProps<Props>()
+const { pending, products } = await getNumberOfProducts(
+  props.slides ? props.slides : 8,
+)
+
 interface Props {
   slides?: number
   slidesPerView?: number
 }
-
-const props = defineProps<Props>()
-
-const { pending, data: products } = useFetch<ProductItem[] | null>(
-  `https://fakestoreapi.com/products?limit=${props.slides ? props.slides : 8}`,
-  {
-    lazy: true,
-  },
-)
 </script>
 
 <style lang="scss" scoped>

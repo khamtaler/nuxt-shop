@@ -8,9 +8,11 @@
         <img
           :src="props.image"
           :alt="props.title"
-          class="block h-[200px] rounded-t-lg object-cover p-5 group-hover:hidden"
+          class="block h-[200px] rounded-t-lg object-cover p-5"
+          :class="props.imageUrl1 ? 'group-hover:hidden' : ''"
         />
         <img
+          v-if="props.imageUrl1"
           :src="`_nuxt/images/rock.png`"
           :alt="props.title"
           class="hidden h-[200px] rounded-t-lg object-cover p-5 group-hover:block"
