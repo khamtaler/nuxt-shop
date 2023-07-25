@@ -42,11 +42,7 @@ const { fetchProducts, ready: pending, products: products } = useProduct()
 
 onMounted(async () => {
   await fetchProducts(props.slides ? props.slides : 8)
-  console.log(pending.value, products.value)
 })
-// const { ready, product } = await fetchProducts(
-//   props.slides ? props.slides : 8,
-// )
 </script>
 
 <style lang="scss" scoped>

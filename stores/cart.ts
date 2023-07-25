@@ -13,7 +13,6 @@ export const useCartStore = defineStore('cart', {
   actions: {
     toggleModal(): void {
       this.openModal = !this.openModal
-      console.log(this.openModal)
     },
     addToCart(item: ProductItem): void {
       if (!this.items.find((i) => i.id === item.id)) {
@@ -28,9 +27,7 @@ export const useCartStore = defineStore('cart', {
       }
     },
     deleteFromCart(id: number | string): void {
-      console.log('del', id)
       if (this.items.length) {
-        console.log('length', id)
         this.items = this.items.filter((i) => {
           return i.id !== id
         })
