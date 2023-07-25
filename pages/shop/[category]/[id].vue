@@ -15,7 +15,7 @@
           <h6>Price: $ {{ product.price }}</h6>
           <BaseStarScore :rating="product.rating" />
         </div>
-        <BaseButton text="Add to cart" link="/" />
+        <BaseAddToCartButton text="Add to cart" :product="product" />
       </div>
     </div>
     <div class="my-[100px]">
@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { getProduct } from '@/composables/getProduct'
+import { getProduct } from '@/composables/Product'
 const route = useRoute()
 const { pending, product } = await getProduct(route.params.id)
 
@@ -36,3 +36,4 @@ useHead({
 </script>
 
 <style scoped></style>
+composables/Product

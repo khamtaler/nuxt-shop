@@ -31,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import { getNumberOfProducts } from '@/composables/getProduct'
+import { getNumberOfProducts } from '@/composables/Product'
 
 const props = defineProps<Props>()
 const { pending, products } = await getNumberOfProducts(
@@ -60,3 +60,4 @@ interface Props {
   align-items: center;
 }
 </style>
+composables/Product

@@ -23,9 +23,10 @@
 </template>
 
 <script setup lang="ts">
-import { getNumberOfProducts } from '@/composables/getProduct'
+import { getNumberOfProducts } from '@/composables/Product'
 const props = defineProps<{ numberOfProducts?: number | null }>()
 const { pending, products } = await getNumberOfProducts(
   props.numberOfProducts ? props.numberOfProducts : '',
 )
 </script>
+composables/Product

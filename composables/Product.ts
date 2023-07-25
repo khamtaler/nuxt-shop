@@ -17,7 +17,7 @@ export const getNumberOfProducts = async (
   numberofProds?: number | string,
 ): Promise<{ pending: Ref<boolean>; products: Ref<ProductItem[] | null> }> => {
   if (numberofProds) {
-    const { pending, data: products } = useFetch<ProductItem[]>(
+    const { pending, data: products } = await useFetch<ProductItem[]>(
       `https://fakestoreapi.com/products?limit=${numberofProds}`,
       {
         lazy: true,
@@ -25,7 +25,7 @@ export const getNumberOfProducts = async (
     )
     return { pending, products }
   } else {
-    const { pending, data: products } = useFetch<ProductItem[]>(
+    const { pending, data: products } = await useFetch<ProductItem[]>(
       `https://fakestoreapi.com/products`,
       {
         lazy: true,
