@@ -1,32 +1,33 @@
 export interface ProductItem {
-  id: number | string
+  id: number
   category: string
-  image?: string
+  image: string
   imageUrl1?: string
-  description?: string
+  description: string
   title: string
-  price?: number
-  rating?: {
+  price: number
+  rating: {
     rate: number
     count: number
   }
   promotionPrice?: number
-  count?: number
 }
-
+export interface CartProductItem extends ProductItem {
+  count: number
+}
 export interface Link {
-  text?: string
-  link?: string
+  text: string
+  link: string
 }
 
 export interface Image {
-  image?: string
-  name?: string
+  image: string
+  name: string
 }
 
 export interface Header {
-  header?: string
-  text?: string
+  header: string
+  text: string
 }
 
 export interface CartButton {
