@@ -3,11 +3,11 @@ import { ProductItem } from '@/types/components'
 export const useProduct = () => {
   const product = ref<ProductItem | null>(null)
   const products = ref<ProductItem[] | null>(null)
-  const pending = ref<boolean>(false)
+  const wait = ref<boolean>(false)
   const error = ref<any>(undefined)
 
   const fetchProduct = async (id: string | string[]) => {
-    pending.value = true
+    wait.value = true
     try {
       const res = await fetch(`https://fakestoreapi.com/products/${id}`)
       const data = await res.json()
@@ -15,35 +15,18 @@ export const useProduct = () => {
     } catch (err: any) {
       error.value = err
     } finally {
-      pending.value = false
+      wait.value = false
     }
   }
 
   const fetchProducts = async (numberOfProds?: number | string) => {
-    pending.value = true
-    if (numberOfProds) {
-      try {
-        const res = await fetch(
-          `https://fakestoreapi.com/products?limit=${numberOfProds}`,
-        )
-        const data = await res.json()
-        products.value = data
-      } catch (err: any) {
-        error.value = err
-      } finally {
-        pending.value = false
-      }
-    } else {
-      try {
-        const res = await fetch('https://fakestoreapi.com/products')
-        const data = await res.json()
-        products.value = data
-      } catch (err: any) {
-        error.value = err
-      } finally {
-        pending.value = false
-      }
-    }
+    const { data, pending } = await useFetch<ProductItem[]>(
+      `https://fakestoreapi.com/products`,
+      { query: { limit: numberOfProds }, server: true },
+    )
+    products.value = data.value as ProductItem[]
+    wait.value = pending.value as boolean
   }
-  return { fetchProduct, fetchProducts, product, products, pending, error }
+
+  return { fetchProduct, fetchProducts, product, products, wait, error }
 }

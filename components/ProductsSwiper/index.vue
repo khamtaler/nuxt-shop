@@ -38,11 +38,8 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const { fetchProducts, pending: pending, products: products } = useProduct()
-
-onMounted(async () => {
-  await fetchProducts(props.slides ? props.slides : 8)
-})
+const { fetchProducts, wait: pending, products } = useProduct()
+await fetchProducts(props.slides ? props.slides : 8)
 </script>
 
 <style lang="scss" scoped>

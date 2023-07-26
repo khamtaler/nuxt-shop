@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto mt-10 max-w-5xl">
-    <div v-if="pending">Loading...</div>
+    <div v-if="wait">Loading...</div>
     <div v-else-if="product !== null" class="grid grid-cols-2 gap-10">
       <div class="px-10">
         <figure>
@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import { useProduct } from '@/composables/Product'
 const route = useRoute()
-const { pending, product, fetchProduct } = useProduct()
+const { wait, product, fetchProduct } = useProduct()
 
 onMounted(async () => {
   await fetchProduct(route.params.id)

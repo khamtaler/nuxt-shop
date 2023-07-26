@@ -1,10 +1,10 @@
 export interface ProductItem {
   id: number | string
-  category?: string
+  category: string
   image?: string
   imageUrl1?: string
   description?: string
-  title?: string
+  title: string
   price?: number
   rating?: {
     rate: number

@@ -27,10 +27,7 @@
 import { useProduct } from '@/composables/Product'
 const props = defineProps<{ numberOfProducts?: number | null }>()
 
-const { fetchProducts, pending, products, error } = useProduct()
+const { fetchProducts, wait: pending, products, error } = useProduct()
 
-onMounted(async () => {
-  await fetchProducts(props.numberOfProducts ? props.numberOfProducts : '')
-})
+await fetchProducts(props.numberOfProducts ? props.numberOfProducts : '')
 </script>
-composables/Product

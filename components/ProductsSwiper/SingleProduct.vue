@@ -1,7 +1,7 @@
 <template>
   <div class="group flex h-full">
     <NuxtLink
-      :to="`/shop/${props.category}/${props.id}`"
+      :to="`/shop/${slugify(props.category)}/${props.id}`"
       class="flex h-auto flex-col items-center"
     >
       <figure class="flex items-center justify-center overflow-hidden">
@@ -48,6 +48,10 @@ const isDiscounted = computed(() => {
   if (props.promotionPrice && props.price) {
     return props.price > props.promotionPrice ? true : false
   }
+})
+
+useHead({
+  title: props.title,
 })
 </script>
 
