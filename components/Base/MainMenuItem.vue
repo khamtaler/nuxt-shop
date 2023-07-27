@@ -1,8 +1,9 @@
 <template>
   <li class="p-3">
     <nuxt-link
-      :to="props.link"
+      :to="props.link ? props.link : '/'"
       class="uppercase ease-in-out after:block after:h-[4px] after:w-0 after:rounded-lg after:bg-red-500 after:transition-[width] after:content-[''] hover:after:w-full"
+      :disabled="!props.link"
     >
       {{ props.name }}
     </nuxt-link>

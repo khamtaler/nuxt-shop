@@ -31,6 +31,7 @@ const cartStore = useCartStore()
 
 const itemsList: Link[] = [
   { text: 'shop', link: '/shop' },
+  { text: 'categories' },
   { text: 'faq', link: '/faq' },
   { text: 'blog', link: '/' },
 ]

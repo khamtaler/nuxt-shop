@@ -38,4 +38,3 @@ useHead({
 </script>
 
 <style scoped></style>
-composables/Product

@@ -17,7 +17,7 @@ export interface CartProductItem extends ProductItem {
 }
 export interface Link {
   text: string
-  link: string
+  link?: string
 }
 export interface Header {
   header: string
