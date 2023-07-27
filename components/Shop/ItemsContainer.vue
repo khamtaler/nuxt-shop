@@ -5,7 +5,7 @@
       v-else
       class="mx-auto my-10 grid max-w-6xl auto-rows-auto grid-cols-3 gap-5"
     >
-      <ShopSingleItem
+      <BaseSingleProduct
         v-for="prod in products"
         :key="prod.id"
         :id="prod.id"
@@ -19,7 +19,6 @@
         :desc="prod.category"
       />
     </div>
-    <div v-if="error">{{ error }}</div>
   </div>
 </template>
 

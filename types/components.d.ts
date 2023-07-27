@@ -19,12 +19,6 @@ export interface Link {
   text: string
   link: string
 }
-
-export interface Image {
-  image: string
-  name: string
-}
-
 export interface Header {
   header: string
   text: string

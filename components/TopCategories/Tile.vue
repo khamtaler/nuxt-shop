@@ -4,7 +4,7 @@
       <figure class="relative flex max-h-[150px] overflow-hidden rounded-lg">
         <img
           :src="`_nuxt/images/rock3.png`"
-          :alt="props.image"
+          alt="category image"
           class="rounded-lg object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div>
@@ -20,8 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { Image } from '@/types/components'
-const props = defineProps<Image>()
+const props = defineProps<{ name: string }>()
 </script>
 
 <style scoped></style>

@@ -30,9 +30,7 @@ import { useProduct } from '@/composables/Product'
 const route = useRoute()
 const { wait, product, fetchProduct } = useProduct()
 
-onMounted(async () => {
-  await fetchProduct(route.params.id)
-})
+await fetchProduct(route.params.id)
 
 useHead({
   title: product.value?.title,

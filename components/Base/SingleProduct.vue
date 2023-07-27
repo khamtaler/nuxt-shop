@@ -1,13 +1,15 @@
 <template>
-  <NuxtLink :to="`shop/${slugify(props.category)}/${props.id}`" class="grid">
+  <NuxtLink :to="`/shop/${slugify(props.category)}/${props.id}`" class="grid">
     <div class="group grid flex-col rounded-t-lg border-[1px] border-gray-300">
       <figure class="flex items-center justify-center">
         <img
           :src="props.image"
           :alt="props.title"
-          class="block h-[200px] max-w-[90%] rounded-t-lg p-5 group-hover:hidden"
+          class="block h-[200px] max-w-[90%] rounded-t-lg p-5"
+          :class="props.imageUrl1 ? 'group-hover:hidden' : ''"
         />
         <img
+          v-if="props.imageUrl1"
           :src="`_nuxt/images/rock.png`"
           :alt="props.title"
           class="hidden max-h-[200px] max-w-[90%] rounded-t-lg p-5 group-hover:block"
