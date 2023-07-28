@@ -4,17 +4,19 @@ export const useCategory = () => {
   const products = ref<ProductItem[] | null>()
   const wait = ref<boolean>()
 
-  const getCategories = async (amount: number) => {
+  const getCategories = async (amount?: number) => {
     const { data, pending } = await useFetch<string[]>(
       'https://fakestoreapi.com/products/categories',
       {
         server: true,
         transform: (data) => {
-          return data.slice(0, amount)
+          if (amount) {
+            return data.slice(0, amount)
+          }
+          return data
         },
       },
     )
-    console.log(data.value, pending.value)
     categories.value = data.value as string[]
     wait.value = pending.value as boolean
   }
@@ -26,7 +28,6 @@ export const useCategory = () => {
         server: true,
       },
     )
-    console.log(data.value, pending.value)
     products.value = data.value as ProductItem[]
     wait.value = pending.value as boolean
   }

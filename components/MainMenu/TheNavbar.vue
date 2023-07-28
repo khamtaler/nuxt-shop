@@ -6,6 +6,7 @@
       :link="item.link"
       :key="index"
     />
+
     <ClientOnly>
       <font-awesome-icon
         :icon="['fas', 'user']"
