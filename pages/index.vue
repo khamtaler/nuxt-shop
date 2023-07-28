@@ -20,6 +20,7 @@
       <h2 class="text-center text-2xl">View our most selling products!</h2>
       <ProductsSwiper />
     </div>
+    <Newsletter />
   </div>
 </template>
 
