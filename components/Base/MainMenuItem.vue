@@ -17,6 +17,11 @@
           v-for="category in categories"
           class="w-[200px] cursor-pointer px-5 py-3 hover:bg-gray-400"
           :to="`/shop/${category}`"
+          @click="
+            () => {
+              visible = !visible
+            }
+          "
         >
           {{ category }}
         </NuxtLink>
