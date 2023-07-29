@@ -2,14 +2,14 @@
   <li class="relative p-3">
     <nuxt-link
       v-if="props.link"
-      class="cursor-pointer uppercase ease-in-out after:block after:h-[4px] after:w-0 after:rounded-lg after:bg-red-500 after:transition-[width] after:content-[''] hover:after:w-full"
+      class="cursor-pointer text-xl uppercase ease-in-out after:block after:h-[4px] after:w-0 after:rounded-lg after:bg-gradient-to-r after:from-lightblue after:to-darkblue after:transition-[width] after:content-[''] hover:after:w-full"
       :to="props.link"
     >
       {{ props.name }}
     </nuxt-link>
     <span
       v-else
-      class="cursor-pointer uppercase ease-in-out after:block after:h-[4px] after:w-0 after:rounded-lg after:bg-red-500 after:transition-[width] after:content-[''] hover:after:w-full"
+      class="cursor-pointer text-xl uppercase ease-in-out after:block after:h-[4px] after:w-0 after:rounded-lg after:bg-gradient-to-r after:from-lightblue after:to-darkblue after:transition-[width] after:content-[''] hover:after:w-full"
     >
       {{ props.name }}
     </span>

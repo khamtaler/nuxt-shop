@@ -2,8 +2,11 @@
   <footer class="border-t-2">
     <div class="mx-auto my-10 flex max-w-6xl justify-around">
       <div class="flex w-[22%] flex-col">
-        <!-- logo component-->
-        <nuxt-link to="/">LOGO</nuxt-link>
+        <nuxt-link to="/">
+          <figure>
+            <img src="@/images/logo.png" alt="logo" class="max-h-[100px]" />
+          </figure>
+        </nuxt-link>
       </div>
       <ul class="flex w-[22%] flex-col">
         <BaseFooterLink

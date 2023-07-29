@@ -9,14 +9,22 @@ module.exports = {
   ],
   theme: {
     extend: {
-      transitionProperty: {
-        width: 'width',
-      },
       colors: {
         transparent: 'rgba(0,0,0,0)',
         blurred: 'rgba(255,255,255,0.5)',
+        lightblue: '#21AFC1',
+        darkblue: '#0A687A',
+      },
+      transitionProperty: {
+        width: 'width',
       },
     },
   },
   plugins: [],
+  safelist: [
+    {
+      pattern:
+        /(bg|text|border|to|from)-(bluedark|bluelight|blurred|transparent)/,
+    },
+  ],
 }

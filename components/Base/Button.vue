@@ -4,9 +4,11 @@
       v-if="props.link"
       :to="props.link"
       type="button"
-      class="rounded-lg bg-indigo-400 px-5 py-2"
+      class="transition-scale group rounded-lg border-4 border-darkblue bg-lightblue bg-gradient-to-r px-7 py-3 text-xl text-white duration-300 ease-in-out hover:bg-darkblue"
     >
+      <font-awesome-icon :icon="['fas', 'arrow-right-long']" />
       {{ props.text }}
+      <font-awesome-icon :icon="['fas', 'arrow-left-long']" />
     </nuxt-link>
   </div>
 </template>

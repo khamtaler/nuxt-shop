@@ -29,7 +29,6 @@ const route = useRoute()
 const { products, wait, fetchProductsByCategory } = useCategory()
 
 await fetchProductsByCategory(route.params.category as string)
-console.log(products.value, wait.value)
 </script>
 
 <style scoped></style>

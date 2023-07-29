@@ -1,10 +1,14 @@
 <template>
   <div
-    class="relative flex w-full flex-row items-center justify-between p-5 shadow-md"
+    class="relative flex w-full flex-row items-center justify-between px-5 py-3 shadow-md"
   >
     <!-- logo component-->
 
-    <nuxt-link to="/">LOGO</nuxt-link>
+    <nuxt-link to="/">
+      <figure>
+        <img src="@/images/logo.png" class="max-h-[70px]" alt="logo" />
+      </figure>
+    </nuxt-link>
     <MainMenuTheNavbar />
     <Cart />
   </div>

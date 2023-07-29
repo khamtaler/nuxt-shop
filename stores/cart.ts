@@ -20,8 +20,6 @@ export const useCartStore = defineStore('cart', {
       this.openModal = !this.openModal
     },
     addToCart(item: CartProductItem): void {
-      console.log('added')
-      console.log(this.items)
       if (!this.items.find((i) => i.id === item.id)) {
         item.count = 1
         this.items.unshift(item)
