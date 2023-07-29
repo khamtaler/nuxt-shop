@@ -1,11 +1,15 @@
 <template>
-  <menu class="flex items-center gap-5">
-    <BaseMainMenuItem
-      v-for="(item, index) in itemsList"
-      :name="item.text"
-      :link="item.link"
-      :key="index"
-    />
+  <Menu as="div" class="flex items-center gap-5">
+    <ul class="relative flex gap-5">
+      <BaseMainMenuItem name="shop" link="/shop" />
+      <MainMenuDropdown
+        name="Categories"
+        :categories="categories"
+        v-if="categories"
+      />
+      <BaseMainMenuItem name="faq" link="/faq" />
+      <BaseMainMenuItem name="blog" link="/" />
+    </ul>
 
     <ClientOnly>
       <font-awesome-icon
@@ -19,21 +23,18 @@
         @click="cartStore.toggleModal"
       />
     </ClientOnly>
-  </menu>
+  </Menu>
 </template>
 
 <script setup lang="ts">
 import { useLoginStore } from '@/stores/login'
 import { useCartStore } from '@/stores/cart'
-import { Link } from '@/types/components'
+import { Menu } from '@headlessui/vue'
+import { useCategory } from '@/composables/Categories'
+
+const { categories, getCategories } = useCategory()
+await getCategories()
 
 const loginStore = useLoginStore()
 const cartStore = useCartStore()
-
-const itemsList: Link[] = [
-  { text: 'shop', link: '/shop' },
-  { text: 'categories' },
-  { text: 'faq', link: '/faq' },
-  { text: 'blog', link: '/' },
-]
 </script>

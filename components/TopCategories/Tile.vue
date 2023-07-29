@@ -1,6 +1,6 @@
 <template>
   <div class="group">
-    <NuxtLink :to="`/shop/${slugify(props.name)}`">
+    <NuxtLink :to="`/shop/${props.name}`">
       <figure class="relative flex max-h-[150px] overflow-hidden rounded-lg">
         <img
           :src="`_nuxt/images/rock3.png`"

@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="`/shop/${slugify(props.category)}/${props.id}`" class="grid">
+  <NuxtLink :to="`/shop/${props.category}/${props.id}`" class="grid">
     <div class="group grid flex-col rounded-t-lg border-[1px] border-gray-300">
       <figure class="flex items-center justify-center">
         <img
@@ -43,7 +43,7 @@
 
 <script setup lang="ts">
 import { ProductItem } from '@/types/components'
-import { slugify } from '@/utils/strings'
+
 const props = defineProps<ProductItem>()
 
 const isDiscounted = computed(() => {
