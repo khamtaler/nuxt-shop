@@ -68,6 +68,9 @@ export const useCartStore = defineStore('cart', {
           i.count > 0
         ) {
           i.count--
+          if (i.count === 0) {
+            this.deleteFromCart(id)
+          }
         }
       })
 
