@@ -2,7 +2,7 @@
   <div>
     <button
       type="button"
-      class="rounded-lg bg-indigo-400 px-5 py-2"
+      class="rounded-lg bg-darkblue px-5 py-2 text-white"
       @click="cartStore.addToCart(props.product)"
     >
       {{ props.text }}

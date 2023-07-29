@@ -17,11 +17,19 @@
         class="cursor-pointer text-xl"
         @click="loginStore.toggleOpen()"
       />
-      <font-awesome-icon
-        class="cursor-pointer text-xl"
-        :icon="['fas', 'cart-shopping']"
-        @click="cartStore.toggleModal"
-      />
+      <div class="relative flex align-bottom">
+        <font-awesome-icon
+          class="cursor-pointer text-xl"
+          :icon="['fas', 'cart-shopping']"
+          @click="cartStore.toggleModal"
+        />
+        <div
+          class="absolute right-[-10px] top-[-13px] flex h-5 w-5 items-center justify-center rounded-full bg-darkblue text-center text-white"
+          :class="cartStore.getProductsNumber >= 100 ? 'text-[9px]' : 'text-sm'"
+        >
+          {{ cartStore.getProductsNumber }}
+        </div>
+      </div>
     </ClientOnly>
   </Menu>
 </template>

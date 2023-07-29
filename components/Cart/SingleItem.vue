@@ -1,20 +1,34 @@
 <template>
-  <div class="flex flex-row items-center justify-around gap-5">
-    <figure>
+  <div
+    class="grid grid-cols-12 items-center justify-items-center gap-3 border-b-[1px] py-2"
+  >
+    <figure class="col-start-1 col-end-2">
       <img :src="$props.img" :alt="title" class="max-h-[100px]" />
     </figure>
-    <div>{{ props.title }}</div>
-    <button type="button" @click="cartStore.decreaseCount(props.id)">-</button>
-    <div>
-      {{ count }}
+    <div class="col-start-2 col-end-9 justify-self-start">
+      {{ props.title }}
     </div>
+    <div
+      class="col-start-9 col-end-10 flex flex-col items-center justify-center"
+    >
+      <button type="button" @click="cartStore.decreaseCount(props.id)">
+        -
+      </button>
+      <div>
+        {{ count }}
+      </div>
 
-    <button type="button" @click="cartStore.increaseCount(props.id)">+</button>
-    <div v-if="count && props.price">${{ count * props.price }}</div>
+      <button type="button" @click="cartStore.increaseCount(props.id)">
+        +
+      </button>
+    </div>
+    <div v-if="count && props.price" class="col-start-10 col-end-12">
+      ${{ count * props.price }}
+    </div>
     <font-awesome-icon
       :icon="['fas', 'trash']"
       @click="cartStore.deleteFromCart(props.id)"
-      class="cursor-pointer"
+      class="col-start-12 col-end-13 cursor-pointer text-center"
     />
   </div>
 </template>

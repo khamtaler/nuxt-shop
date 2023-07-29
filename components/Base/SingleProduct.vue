@@ -19,23 +19,25 @@
       </figure>
       <div class="flex h-auto flex-col px-5">
         <h5 class="my-3 text-center text-xl">{{ props.title }}</h5>
-        <p class="mb-3">{{ props.category }}</p>
-        <BaseStarScore :rating="props.rating" />
+        <p class="mb-3 text-center">{{ props.category }}</p>
+        <div class="mt-auto">
+          <BaseStarScore :rating="props.rating" />
 
-        <div class="mb-3 flex items-center justify-between">
-          <div>
-            <span
-              :class="
-                isDiscounted
-                  ? 'text-md pr-3 text-red-600 line-through'
-                  : 'text-xl'
-              "
-            >
-              ${{ props.price }}
-            </span>
-            <span v-if="isDiscounted" class="text-xl text-green-600">
-              $ {{ props.promotionPrice }}
-            </span>
+          <div class="mb-3 flex items-center justify-start">
+            <div>
+              <span
+                :class="
+                  isDiscounted
+                    ? 'text-md pr-3 text-red-600 line-through'
+                    : 'text-xl'
+                "
+              >
+                ${{ props.price }}
+              </span>
+              <span v-if="isDiscounted" class="text-xl text-green-600">
+                $ {{ props.promotionPrice }}
+              </span>
+            </div>
           </div>
         </div>
       </div>

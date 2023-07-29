@@ -25,6 +25,6 @@ export interface Header {
 }
 
 export interface CartButton {
-  product: ProductItem
+  product: CartProductItem
   text: string
 }

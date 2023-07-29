@@ -7,12 +7,14 @@ export const useCartStore = defineStore('cart', {
       openModal: false,
       items: [] as CartProductItem[],
       total: ref(0),
+      productsNumber: ref(0),
     }
   },
   getters: {
     getModal: (state) => state.openModal,
     getItems: (state) => state.items,
     gettotal: (state) => state.total,
+    getProductsNumber: (state) => state.productsNumber,
   },
 
   actions: {
@@ -30,7 +32,8 @@ export const useCartStore = defineStore('cart', {
           }
         })
       }
-      this.countTotal()
+
+      this.countCart()
     },
     deleteFromCart(id: number | string): void {
       if (this.items.length) {
@@ -38,7 +41,8 @@ export const useCartStore = defineStore('cart', {
           return i.id !== id
         })
       }
-      this.countTotal()
+
+      this.countCart()
     },
     increaseCount(id: number | string): void {
       if (!this.items.length) {
@@ -49,7 +53,8 @@ export const useCartStore = defineStore('cart', {
           i.count++
         }
       })
-      this.countTotal()
+
+      this.countCart()
     },
     decreaseCount(id: number | string): void {
       if (!this.items.length) {
@@ -65,17 +70,22 @@ export const useCartStore = defineStore('cart', {
           i.count--
         }
       })
-      this.countTotal()
+
+      this.countCart()
     },
-    countTotal(): void {
+    countCart(): void {
       const count = ref(0)
+      const itemsCount = ref(0)
       if (!this.items.length) {
         count.value = 0
+        itemsCount.value = 0
       }
       for (let i = 0; i < this.items.length; i++) {
         count.value += this.items[i].price * this.items[i].count
+        itemsCount.value += this.items[i].count
       }
       this.total = count.value
+      this.productsNumber = itemsCount.value
     },
   },
 })
