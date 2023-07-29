@@ -21,8 +21,8 @@
             <NuxtLink
               :to="`/shop/${category}`"
               :class="[
-                active ? 'bg-gray-500 text-white' : 'text-gray-900',
-                'text-md group flex w-full items-center rounded-b-md px-2 py-2',
+                active ? 'bg-darkblue text-white' : 'text-gray-900',
+                'text-md group flex w-full items-center rounded-b-md px-2 py-2 capitalize',
               ]"
             >
               {{ category }}

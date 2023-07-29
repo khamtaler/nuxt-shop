@@ -6,9 +6,14 @@
       type="button"
       class="transition-scale group rounded-lg border-4 border-darkblue bg-lightblue bg-gradient-to-r px-7 py-3 text-xl text-white duration-300 ease-in-out hover:bg-darkblue"
     >
-      <font-awesome-icon :icon="['fas', 'arrow-right-long']" />
+      <client-only>
+        <font-awesome-icon :icon="['fas', 'arrow-right-long']" />
+      </client-only>
+
       {{ props.text }}
-      <font-awesome-icon :icon="['fas', 'arrow-left-long']" />
+      <client-only>
+        <font-awesome-icon :icon="['fas', 'arrow-left-long']" />
+      </client-only>
     </nuxt-link>
   </div>
 </template>

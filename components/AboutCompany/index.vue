@@ -1,8 +1,12 @@
 <template>
   <div class="grid max-w-5xl grid-cols-2 items-center gap-10">
     <div>
-      <figure>
-        <img src="@/images/rock.png" alt="company people" class="rounded-xl" />
+      <figure class="overflow-hidden">
+        <img
+          src="@/images/club2.png"
+          alt="company people"
+          class="aspect-square rounded-xl object-cover"
+        />
       </figure>
     </div>
     <div class="text-center">

@@ -1,6 +1,8 @@
 <template>
   <NuxtLink :to="`/shop/${props.category}/${props.id}`" class="grid">
-    <div class="group grid flex-col rounded-t-lg border-[1px] border-gray-300">
+    <div
+      class="group grid flex-col rounded-lg border-2 border-orange-500 hover:border-lightblue"
+    >
       <figure class="flex items-center justify-center">
         <img
           :src="props.image"
