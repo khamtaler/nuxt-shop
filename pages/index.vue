@@ -5,13 +5,11 @@
       text="Scroll down the page to find our products :)"
     />
     <div class="mx-5 flex flex-col items-center">
-      <h3 class="my-5 text-center text-5xl underline">
-        Most viewed categories
-      </h3>
+      <BaseHeader text="Most viewed categories" />
       <TopCategories />
     </div>
     <div class="mx-5 flex flex-col items-center">
-      <h3 class="my-5 text-center text-5xl underline">Our top products</h3>
+      <BaseHeader text="Our top products" />
       <ShopItemsContainer :number-of-products="6" />
       <BaseButton text="View all poroducts" link="shop" />
     </div>
@@ -19,7 +17,7 @@
       <AboutCompany />
     </div>
     <div class="mx-5 mt-[100px] flex flex-col items-center">
-      <h2 class="text-center text-2xl">View our most selling products!</h2>
+      <BaseHeader text="View our most selling products!" />
       <ProductsSwiper />
     </div>
     <Newsletter />

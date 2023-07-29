@@ -19,6 +19,9 @@ module.exports = {
       transitionProperty: {
         width: 'width',
       },
+      boxShadow: {
+        blueheader: '-7px 21px 8px -20px #21AFC1',
+      },
     },
   },
   plugins: [],
