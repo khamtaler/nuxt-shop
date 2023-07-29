@@ -15,7 +15,9 @@
       <ShopItemsContainer :number-of-products="6" />
       <BaseButton text="View all poroducts" link="shop" />
     </div>
-
+    <div class="mx-5 mt-[100px] flex flex-col items-center">
+      <AboutCompany />
+    </div>
     <div class="mx-5 mt-[100px] flex flex-col items-center">
       <h2 class="text-center text-2xl">View our most selling products!</h2>
       <ProductsSwiper />

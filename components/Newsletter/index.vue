@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex min-h-[400px] bg-[url('@/images/rock.png')] bg-cover bg-center bg-no-repeat"
+    class="flex min-h-[400px] bg-[url('@/images/club1.png')] bg-cover bg-center bg-no-repeat"
   >
     <div
-      class="mx-auto my-[50px] grid max-w-5xl grid-cols-2 content-center rounded-lg border-2 border-black bg-blurred p-10"
+      class="mx-auto my-[50px] grid max-w-5xl grid-cols-2 content-center rounded-lg border-2 border-black bg-[rgba(255,255,255,0.7)] p-10"
     >
       <div
         class="flex items-center justify-center px-10 text-black opacity-100"
