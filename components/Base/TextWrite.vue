@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid min-h-[400px] items-stretch justify-stretch bg-[url('@/images/wallpaper.png')]"
+    class="grid min-h-[400px] items-stretch justify-stretch bg-[url('@/images/wallpaper.png')] shadow-md shadow-lightblue"
   >
     <div
       class="flex h-full w-full items-center justify-center bg-gradient-to-r from-transparent via-black to-transparent"

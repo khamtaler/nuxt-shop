@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         transparent: 'rgba(0,0,0,0)',
         blurred: 'rgba(255,255,255,0.5)',
+        blurreddark: 'rgba(0,0,0,0.5)',
         lightblue: '#21AFC1',
         darkblue: '#0A687A',
       },
