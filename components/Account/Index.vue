@@ -1,6 +1,9 @@
 <template>
   <Teleport to="body">
-    <div v-if="loginStore.getOpen" class="absolute z-20 min-w-full bg-blurred">
+    <div
+      v-if="loginStore.getOpen"
+      class="absolute z-20 min-w-full bg-blurreddark"
+    >
       <main class="min-h-screen min-w-full">
         <div
           class="container mx-auto px-5 py-24 text-gray-400"

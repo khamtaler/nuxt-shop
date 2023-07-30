@@ -1,7 +1,7 @@
 <template>
   <form
     ref="register"
-    class="preserve3d rotateX-180 mx-auto mt-10 flex flex-col rounded-lg border-2 border-orange-500 bg-darkblue p-28 shadow-lg transition-transform duration-500 md:mt-0 md:w-1/2 lg:w-3/6"
+    class="preserve3d rotateX-180 mx-auto mt-10 flex flex-col rounded-lg border-4 border-lightpurple bg-lightblue p-28 shadow-lg transition-transform duration-500 md:mt-0 md:w-1/2 lg:w-3/6"
   >
     <h2 class="mb-5 text-2xl font-medium text-white">Register</h2>
     <!-- Email input -->
@@ -51,7 +51,7 @@
     <button
       :disabled="props.open ? false : true"
       type="submit"
-      class="mt-10 rounded border-0 bg-orange-500 px-8 py-2 font-bold text-white transition-colors duration-500 hover:bg-lightblue focus:outline-none"
+      class="mt-10 rounded border-0 bg-lightpurple px-8 py-2 font-bold text-white transition-colors duration-500 hover:bg-darkpurple focus:outline-none"
     >
       Submit
     </button>

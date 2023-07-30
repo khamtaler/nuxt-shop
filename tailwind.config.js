@@ -15,6 +15,8 @@ module.exports = {
         blurreddark: 'rgba(0,0,0,0.5)',
         lightblue: '#21AFC1',
         darkblue: '#0A687A',
+        lightpurple: '#8C2678',
+        darkpurple: '#9D2C82',
       },
       transitionProperty: {
         width: 'width',
