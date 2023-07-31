@@ -3,13 +3,26 @@
     <div class="text-center">
       <BaseHeader text="Welcome in checkout" class="inline-block" />
     </div>
-    <div class="mx-auto my-10 flex max-w-7xl flex-row gap-10">
-      <CartItemsList class="flex-1" />
-      <CheckoutForm class="flex-1" />
+    <div class="mx-auto my-10 max-w-7xl flex-row gap-10">
+      <div class="flex flex-row" v-if="cartStore.getItems.length > 0">
+        <CartItemsList class="flex-1" />
+        <CheckoutForm class="flex-1" />
+      </div>
+
+      <div v-else class="text-center">
+        <h3 class="flex-1 pt-10 text-xl">
+          Your cart is empty... return to store to get your products
+        </h3>
+        <BaseButton link="/shop" text="Return to store" class="mt-10" />
+      </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useCartStore } from '@/stores/cart'
+
+const cartStore = useCartStore()
+</script>
 
 <style scoped></style>

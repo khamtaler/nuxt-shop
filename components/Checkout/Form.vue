@@ -2,6 +2,12 @@
   <div
     class="checkout grid grid-cols-12 rounded-md border-2 border-lightpurple p-5"
   >
+    <div class="col-start-1 col-end-13">
+      <h3 class="text-center text-red-600">
+        Unfortunatelly I will not validate your data this time, come back soon
+        to get your data validated before stepping forward &#128519;
+      </h3>
+    </div>
     <div class="relative col-start-1 col-end-7 my-2 flex flex-col">
       <label
         class="absolute mb-2 px-2 transition-all duration-75"
@@ -165,10 +171,12 @@
     <div class="col-start-1 col-end-13 mt-5 flex items-center justify-center">
       <button
         type="button"
-        class="transition-scale group rounded-lg border-4 border-darkblue bg-lightblue bg-gradient-to-r px-7 py-3 text-xl text-white duration-300 ease-in-out hover:bg-darkblue"
+        class="transition-scale group w-[200px] rounded-lg border-4 border-darkblue bg-lightblue bg-gradient-to-r px-5 py-2 text-xl text-white duration-300 ease-in-out hover:bg-darkblue"
         @click="submit"
+        @mouseenter="hover = !hover"
+        @mouseleave="hover = !hover"
       >
-        Go to payments
+        {{ hover ? 'Lets pay!' : 'Ready?' }}
       </button>
     </div>
   </div>
@@ -186,6 +194,7 @@ const formData = ref({
   phoneNumber: '',
 })
 
+const hover = ref(false)
 const submit = () => {
   alert(`sorry, we are not ready for orders`)
 }
