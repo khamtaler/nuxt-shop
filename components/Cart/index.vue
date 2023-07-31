@@ -1,7 +1,8 @@
 <template>
   <div
-    class="absolute right-10 top-[100%] z-10 max-w-[500px] rounded-b-md border-2 border-lightblue bg-white px-3 pb-5"
+    class="absolute right-0 top-[100%] z-10 w-full max-w-[80%] rounded-b-md border-2 border-lightblue bg-white px-3 pb-5 md:right-10 md:max-w-[500px]"
     v-if="cartStore.getModal"
+    @click.stop.prevent
   >
     <div v-if="cartStore.getItems.length">
       <CartItemsList />
@@ -12,6 +13,7 @@
       <NuxtLink
         to="/checkout"
         class="float-right mt-3 block rounded-md bg-darkblue px-4 py-2 text-white"
+        @click="cartStore.toggleModal"
       >
         Checkout
       </NuxtLink>

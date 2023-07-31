@@ -1,9 +1,12 @@
 <template>
-  <div>
+  <div class="w-full">
     <div v-if="wait">
       <p>Loading...</p>
     </div>
-    <div v-else class="flex max-w-6xl gap-7">
+    <div
+      v-else
+      class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-5"
+    >
       <TopCategoriesTile
         v-for="(category, index) in categories"
         :key="index"

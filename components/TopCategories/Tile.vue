@@ -1,11 +1,11 @@
 <template>
-  <div class="group">
+  <div class="group w-[47%] md:w-[22%]">
     <NuxtLink :to="`/shop/${props.name}`">
-      <figure class="relative flex max-h-[200px] overflow-hidden rounded-lg">
+      <figure class="relative flex w-full overflow-hidden rounded-lg">
         <img
           :src="`_nuxt/images/${slugify(props.name)}.jpg`"
           alt="category image"
-          class="rounded-lg object-cover transition-transform duration-500 group-hover:scale-105"
+          class="max-h-[200px] w-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div>
           <span

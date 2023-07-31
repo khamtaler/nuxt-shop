@@ -1,5 +1,5 @@
 <template>
-  <div class="grid max-w-5xl grid-cols-2 items-center gap-10">
+  <div class="grid max-w-5xl grid-cols-1 items-center gap-10 md:grid-cols-2">
     <div>
       <figure class="overflow-hidden">
         <img

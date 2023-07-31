@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto my-5 max-w-6xl">
+  <div class="mx-auto my-5 w-full max-w-6xl">
     <Swiper
       :modules="[SwiperAutoplay, SwiperEffectCreative]"
       :slides-per-view="props.slidesPerView ? props.slidesPerView : 4"
@@ -9,6 +9,11 @@
       :autoplay="{
         delay: 2000,
         disableOnInteraction: false,
+      }"
+      :breakpoints="{
+        300: { slidesPerView: 1 },
+        600: { slidesPerView: 2 },
+        900: { slidesPerView: 4 },
       }"
     >
       <div v-if="pending">Loading...</div>

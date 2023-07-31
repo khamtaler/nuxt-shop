@@ -3,8 +3,11 @@
     <div class="text-center">
       <BaseHeader text="Welcome in checkout" class="inline-block" />
     </div>
-    <div class="mx-auto my-10 max-w-7xl flex-row gap-10">
-      <div class="flex flex-row" v-if="cartStore.getItems.length > 0">
+    <div class="mx-auto my-10 max-w-7xl flex-row">
+      <div
+        class="mx-10 flex flex-col gap-10 md:flex-row"
+        v-if="cartStore.getItems.length > 0"
+      >
         <CartItemsList class="flex-1" />
         <CheckoutForm class="flex-1" />
       </div>

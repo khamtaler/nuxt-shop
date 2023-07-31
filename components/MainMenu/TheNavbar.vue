@@ -1,6 +1,6 @@
 <template>
-  <Menu as="div" class="flex items-center gap-5">
-    <ul class="relative flex gap-5">
+  <Menu as="div" class="flex items-center gap-2 md:gap-5">
+    <ul class="relative flex gap-1 md:gap-5">
       <BaseMainMenuItem name="shop" link="/shop" />
       <MainMenuDropdown
         name="Categories"
@@ -21,7 +21,7 @@
         <font-awesome-icon
           class="cursor-pointer text-xl"
           :icon="['fas', 'cart-shopping']"
-          @click="cartStore.toggleModal"
+          @click.stop.prevent="openCart"
         />
         <div
           class="absolute right-[-10px] top-[-13px] flex h-5 w-5 items-center justify-center rounded-full bg-darkblue text-center text-white"
@@ -42,7 +42,17 @@ import { useCategory } from '@/composables/Categories'
 
 const { categories, getCategories } = useCategory()
 await getCategories()
-
 const loginStore = useLoginStore()
 const cartStore = useCartStore()
+
+const openCart = () => {
+  cartStore.toggleModal()
+  window.addEventListener('click', toggleModal)
+}
+function toggleModal() {
+  if (cartStore.getModal) {
+    cartStore.toggleModal()
+    window.removeEventListener('click', toggleModal)
+  }
+}
 </script>

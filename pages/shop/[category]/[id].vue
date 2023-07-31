@@ -1,8 +1,11 @@
 <template>
   <div class="mx-auto mt-10 max-w-5xl">
     <div v-if="wait">Loading...</div>
-    <div v-else-if="product !== null" class="grid grid-cols-2 gap-10">
-      <div class="px-10">
+    <div
+      v-else-if="product !== null"
+      class="mx-10 grid grid-cols-1 gap-10 md:grid-cols-2"
+    >
+      <div class="mx-auto w-[50%] px-10 md:w-full">
         <figure>
           <img :src="product.image" :alt="product.image" />
         </figure>
@@ -15,7 +18,11 @@
           <h6>Price: $ {{ product.price }}</h6>
           <BaseStarScore :rating="product.rating" />
         </div>
-        <BaseAddToCartButton text="Add to cart" :product="product" />
+        <BaseAddToCartButton
+          text="Add to cart"
+          :product="product"
+          class="text-center"
+        />
       </div>
     </div>
     <div class="my-[100px]">

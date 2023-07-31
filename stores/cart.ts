@@ -19,6 +19,7 @@ export const useCartStore = defineStore('cart', {
 
   actions: {
     toggleModal(): void {
+      console.log(this.openModal)
       this.openModal = !this.openModal
     },
     addToCart(item: CartProductItem): void {
