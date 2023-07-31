@@ -8,7 +8,7 @@
         v-if="categories"
       />
       <BaseMainMenuItem name="faq" link="/faq" />
-      <BaseMainMenuItem name="blog" link="/" />
+      <BaseMainMenuItem name="blog" link="/blog" />
     </ul>
 
     <ClientOnly>

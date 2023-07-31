@@ -29,6 +29,10 @@ const route = useRoute()
 const { products, wait, fetchProductsByCategory } = useCategory()
 
 await fetchProductsByCategory(route.params.category as string)
+
+useHead({
+  title: `Shopy - ${route.params.category as string}`,
+})
 </script>
 
 <style scoped></style>

@@ -7,7 +7,3 @@
 </template>
 
 <script setup lang="ts"></script>
-
-<!-- // composables -->
-
-<!-- nuxt devtools -->

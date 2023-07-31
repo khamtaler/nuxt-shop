@@ -50,9 +50,9 @@ const isDiscounted = computed(() => {
   }
 })
 
-useHead({
-  title: props.title,
-})
+// useHead({
+//   title: props.title,
+// })
 </script>
 
 <style scoped></style>

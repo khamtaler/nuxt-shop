@@ -21,7 +21,6 @@
 
 <script setup lang="ts">
 const props = defineProps<{ name: string }>()
-console.log(props.name)
 </script>
 
 <style scoped></style>

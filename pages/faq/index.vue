@@ -1,12 +1,10 @@
 <template>
-  <div class="my-[50px]">
-    <ShopItemsContainer />
-  </div>
+  <div>Faq page</div>
 </template>
 
 <script setup lang="ts">
 useHead({
-  title: 'Shopy - shop',
+  title: 'Shopy - faq',
 })
 </script>
 

@@ -1,5 +1,10 @@
 <template>
   <div class="my-[50px] min-h-[100vh]">
+    <div>
+      <Head>
+        <Title>Shopy</Title>
+      </Head>
+    </div>
     <BaseTextWrite
       header="Welcome"
       text="Scroll down the page to find our products :)"
@@ -24,6 +29,10 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  title: 'Shopy',
+})
+</script>
 
 <style lang="scss" scoped></style>
