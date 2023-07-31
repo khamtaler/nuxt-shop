@@ -7,7 +7,7 @@
     </div>
     <BaseTextWrite
       header="Welcome"
-      text="Scroll down the page to find our products :)"
+      text="Since 2024 providing best clothes :)"
     />
     <div class="mx-5 flex flex-col items-center">
       <BaseHeader text="Most viewed categories" />
