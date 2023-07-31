@@ -1,6 +1,6 @@
 <template>
   <div
-    class="checkout grid grid-cols-12 rounded-md border-2 border-lightpurple p-5"
+    class="checkout grid grid-cols-12 gap-2 rounded-md border-2 border-lightpurple p-5"
   >
     <div class="col-start-1 col-end-13">
       <h3 class="text-center text-red-600">
@@ -8,13 +8,13 @@
         to get your data validated before stepping forward &#128519;
       </h3>
     </div>
-    <div class="relative col-start-1 col-end-7 my-2 flex flex-col">
+    <div class="relative col-start-1 col-end-7 my-1 flex flex-col">
       <label
-        class="absolute mb-2 px-2 transition-all duration-75"
+        class="absolute px-2 transition-all duration-75"
         :class="
           formData.firstName.length > 0
-            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-sm'
-            : 'text-md left-1 top-2 z-[-1]'
+            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-xs md:text-sm'
+            : 'left-1 top-2 z-[-1] text-sm md:text-base'
         "
         for="firstName"
       >
@@ -27,13 +27,13 @@
         v-model="formData.firstName"
       />
     </div>
-    <div class="relative col-start-8 col-end-13 my-2 flex flex-col">
+    <div class="relative col-start-7 col-end-13 my-1 flex flex-col">
       <label
-        class="dura absolute left-1 mb-2 px-2 transition-all duration-75"
+        class="dura absolute left-1 px-2 transition-all duration-75"
         :class="
           formData.lastName.length > 0
-            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-sm'
-            : 'text-md left-1 top-2 z-[-1]'
+            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-xs md:text-sm'
+            : 'left-1 top-2 z-[-1] text-sm md:text-base'
         "
         for="lastName"
       >
@@ -47,13 +47,13 @@
         :class="formData.lastName ? 'top-[-5px]' : 'top-3'"
       />
     </div>
-    <div class="relative col-start-1 col-end-13 my-2 flex flex-col">
+    <div class="relative col-start-1 col-end-13 my-1 flex flex-col">
       <label
-        class="absolute left-1 mb-2 px-2 transition-all duration-75"
+        class="absolute left-1 px-2 transition-all duration-75"
         :class="
           formData.email.length > 0
-            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-sm'
-            : 'text-md left-1 top-2 z-[-1]'
+            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-xs md:text-sm'
+            : 'left-1 top-2 z-[-1] text-sm md:text-base'
         "
         for="email"
       >
@@ -67,13 +67,13 @@
         :class="formData.email ? 'top-[-5px]' : 'top-3'"
       />
     </div>
-    <div class="relative col-start-1 col-end-7 my-2 flex flex-col">
+    <div class="relative col-start-1 col-end-7 my-1 flex flex-col">
       <label
-        class="absolute left-1 mb-2 px-2 transition-all duration-75"
+        class="absolute left-1 px-2 transition-all duration-75"
         :class="
           formData.street.length > 0
-            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-sm'
-            : 'text-md left-1 top-2 z-[-1]'
+            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-xs md:text-sm'
+            : 'left-1 top-2 z-[-1] text-sm md:text-base'
         "
         for="street"
       >
@@ -87,13 +87,13 @@
         :class="formData.street ? 'top-[-5px]' : 'top-3'"
       />
     </div>
-    <div class="relative col-start-8 col-end-13 my-2 flex flex-col">
+    <div class="relative col-start-7 col-end-13 my-1 flex flex-col">
       <label
-        class="absolute left-1 mb-2 px-2 transition-all duration-75"
+        class="absolute left-1 px-2 transition-all duration-75"
         :class="
           formData.houseNumber.length > 0
-            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-sm'
-            : 'text-md left-1 top-2 z-[-1]'
+            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-xs md:text-sm'
+            : 'left-1 top-2 z-[-1] text-sm md:text-base'
         "
         for="houseNumber"
       >
@@ -108,13 +108,13 @@
       />
     </div>
 
-    <div class="relative col-start-1 col-end-7 my-2 flex flex-col">
+    <div class="relative col-start-1 col-end-7 my-1 flex flex-col">
       <label
-        class="absolute left-1 mb-2 px-2 transition-all duration-75"
+        class="absolute left-1 px-2 transition-all duration-75"
         :class="
           formData.city.length > 0
-            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-sm'
-            : 'text-md left-1 top-2 z-[-1]'
+            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-xs md:text-sm'
+            : 'left-1 top-2 z-[-1] text-sm md:text-base'
         "
         for="city"
       >
@@ -128,13 +128,13 @@
         :class="formData.city ? 'top-[-5px]' : 'top-3'"
       />
     </div>
-    <div class="relative col-start-8 col-end-13 my-2 flex flex-col">
+    <div class="relative col-start-7 col-end-13 my-1 flex flex-col">
       <label
-        class="absolute left-1 mb-2 px-2 transition-all duration-75"
+        class="absolute left-1 px-2 transition-all duration-75"
         :class="
           formData.postalCode.length > 0
-            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-sm'
-            : 'text-md left-1 top-2 z-[-1]'
+            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-xs md:text-sm'
+            : 'left-1 top-2 z-[-1] text-sm md:text-base'
         "
         for="postalCode"
       >
@@ -148,13 +148,13 @@
         :class="formData.postalCode ? 'top-[-5px]' : 'top-3'"
       />
     </div>
-    <div class="relative col-start-1 col-end-13 my-2 flex flex-col">
+    <div class="relative col-start-1 col-end-13 my-1 flex flex-col">
       <label
-        class="absolute left-1 mb-2 px-2 transition-all duration-75"
+        class="absolute left-1 px-2 transition-all duration-75"
         :class="
           formData.phoneNumber.length > 0
-            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-sm'
-            : 'text-md left-1 top-2 z-[-1]'
+            ? 'left-3  top-[-12px] z-10 rounded-md bg-white text-xs md:text-sm'
+            : 'left-1 top-2 z-[-1] text-sm md:text-base'
         "
         for="phoneNumber"
       >

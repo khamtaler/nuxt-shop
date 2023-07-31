@@ -1,6 +1,6 @@
 <template>
   <div v-if="props.rating !== undefined">
-    <p>
+    <p class="text- text-xs md:text-base">
       {{ props.rating.count }} / {{ props.rating.rate }}
       <ClientOnly>
         <font-awesome-icon

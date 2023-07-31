@@ -1,11 +1,12 @@
 <template>
-  <Menu as="div" class="flex items-center gap-2 md:gap-5">
+  <Menu as="div" class="flex items-center gap-4 md:gap-5">
     <ul class="relative flex gap-1 md:gap-5">
-      <BaseMainMenuItem name="shop" link="/shop" />
+      <BaseMainMenuItem name="shop" link="/shop" class="mt-[6px] sm:mt-0" />
       <MainMenuDropdown
         name="Categories"
         :categories="categories"
         v-if="categories"
+        class="mt-[6px] sm:mt-0"
       />
       <!-- <BaseMainMenuItem name="faq" link="/faq" />
       <BaseMainMenuItem name="blog" link="/blog" /> -->
@@ -14,12 +15,12 @@
     <ClientOnly>
       <font-awesome-icon
         :icon="['fas', 'user']"
-        class="cursor-pointer text-xl"
+        class="cursor-pointer text-base md:text-xl"
         @click="loginStore.toggleOpen()"
       />
       <div class="relative flex align-bottom">
         <font-awesome-icon
-          class="cursor-pointer text-xl"
+          class="cursor-pointer text-base md:text-xl"
           :icon="['fas', 'cart-shopping']"
           @click.stop.prevent="openCart"
         />

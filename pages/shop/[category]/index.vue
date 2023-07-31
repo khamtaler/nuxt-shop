@@ -1,9 +1,9 @@
 <template>
-  <div class="my-[50px]">
+  <div class="mx-[50px]">
     <div v-if="wait">Loading...</div>
     <div
       v-else-if="products?.length"
-      class="mx-auto my-10 grid max-w-6xl auto-rows-auto grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3"
+      class="mx-auto my-10 grid max-w-6xl auto-rows-auto grid-cols-2 gap-5 md:grid-cols-3"
     >
       <BaseSingleProduct
         v-for="prod in products"

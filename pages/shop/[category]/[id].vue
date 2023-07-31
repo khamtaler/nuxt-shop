@@ -11,12 +11,12 @@
         </figure>
       </div>
       <div>
-        <h4 class="text-3xl">{{ product.title }}</h4>
-        <h5 class="text-lg">category: {{ product.category }}</h5>
+        <h4 class="text-xl sm:text-2xl md:text-3xl">{{ product.title }}</h4>
+        <h5 class="text-base md:text-lg">category: {{ product.category }}</h5>
         <p class="mt-10">{{ product.description }}</p>
         <div class="my-10">
-          <h6>Price: $ {{ product.price }}</h6>
           <BaseStarScore :rating="product.rating" />
+          <h6>Price: $ {{ product.price }}</h6>
         </div>
         <BaseAddToCartButton
           text="Add to cart"

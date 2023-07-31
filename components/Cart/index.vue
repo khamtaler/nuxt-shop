@@ -8,7 +8,7 @@
       <CartItemsList />
       <div class="mt-3 text-right">
         cart total: $
-        <span class="text-md">{{ roundNumber(cartStore.gettotal) }}</span>
+        <span class="text-base">{{ roundNumber(cartStore.gettotal) }}</span>
       </div>
       <NuxtLink
         to="/checkout"

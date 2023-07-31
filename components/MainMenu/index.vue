@@ -4,7 +4,11 @@
   >
     <nuxt-link to="/">
       <figure>
-        <img src="/images/logo.png" class="max-h-[70px]" alt="logo" />
+        <img
+          src="/images/logo.png"
+          class="max-h-[40px] md:max-h-[70px]"
+          alt="logo"
+        />
       </figure>
     </nuxt-link>
     <MainMenuTheNavbar />

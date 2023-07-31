@@ -1,59 +1,55 @@
 <template>
   <footer class="border-t-2">
-    <div class="mx-auto my-10 flex max-w-6xl justify-around">
-      <div class="flex w-[22%] flex-col">
+    <div
+      class="mx-auto my-10 flex max-w-6xl flex-col items-center justify-around md:flex-row"
+    >
+      <div class="flex w-[50%] flex-col md:w-[33%]">
         <nuxt-link to="/">
           <figure>
-            <img src="/images/logo.png" alt="logo" class="max-h-[100px]" />
+            <img
+              src="/images/logo.png"
+              alt="logo"
+              class="mx-auto max-h-[100px] w-full md:w-auto"
+            />
           </figure>
         </nuxt-link>
       </div>
-      <ul class="flex w-[22%] flex-col">
+      <ul class="mt-5 flex w-[33%] flex-col md:mt-0">
         <BaseFooterLink
           v-for="item in itemsList"
           :link="item.link"
           :name="item.text"
-          class="capital block"
+          class="capital block text-center md:text-left"
         >
           {{ item.text }}
         </BaseFooterLink>
       </ul>
-      <ul class="flex w-[22%] flex-col">
-        <BaseFooterLink
-          v-for="item in itemsList"
-          :link="item.link"
-          :name="item.text"
-          class="capital block"
-        >
-          {{ item.text }}
-        </BaseFooterLink>
-      </ul>
-      <div class="block w-[22%]">
-        <h5 class="mb-3">Socials</h5>
-        <client-only>
-          <nuxt-link to="/" target="_blank">
-            <font-awesome-icon
-              :icon="['fab', 'facebook-f']"
-              class="mr-2 text-4xl"
-            />
-          </nuxt-link>
+
+      <div class="mt-5 block w-[50%] md:w-[33%]">
+        <div class="flex items-center justify-center gap-3">
           <nuxt-link to="/" target="_blank">
             <ClientOnly>
               <font-awesome-icon
                 :icon="['fab', 'instagram']"
-                class="mx-2 text-4xl"
+                class="text-4xl"
               />
             </ClientOnly>
           </nuxt-link>
           <nuxt-link to="/" target="_blank">
-            <ClientOnly>
+            <client-only>
               <font-awesome-icon
-                :icon="['fab', 'twitter']"
-                class="ml-2 text-4xl"
+                :icon="['fab', 'facebook-f']"
+                class="mx-2 text-4xl"
               />
+            </client-only>
+          </nuxt-link>
+
+          <nuxt-link to="/" target="_blank">
+            <ClientOnly>
+              <font-awesome-icon :icon="['fab', 'twitter']" class="text-4xl" />
             </ClientOnly>
           </nuxt-link>
-        </client-only>
+        </div>
       </div>
     </div>
   </footer>

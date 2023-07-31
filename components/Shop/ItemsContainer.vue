@@ -1,23 +1,25 @@
 <template>
   <div class="mx-auto max-w-6xl">
-    <div v-if="pending">Loading...</div>
-    <div
-      v-else
-      class="mx-5 my-10 grid auto-rows-auto grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3"
-    >
-      <BaseSingleProduct
-        v-for="prod in products"
-        :key="prod.id"
-        :id="prod.id"
-        :image="prod.image"
-        :imageUrl1="prod.imageUrl1"
-        :title="prod.title"
-        :price="prod.price"
-        :rating="prod.rating"
-        :category="prod.category"
-        :description="prod.description"
-        :desc="prod.category"
-      />
+    <div>
+      <div v-if="pending">Loading...</div>
+      <div
+        v-else
+        class="mx-[20px] my-10 grid auto-rows-auto grid-cols-2 gap-5 md:mx-[50px] md:grid-cols-3"
+      >
+        <BaseSingleProduct
+          v-for="prod in products"
+          :key="prod.id"
+          :id="prod.id"
+          :image="prod.image"
+          :imageUrl1="prod.imageUrl1"
+          :title="prod.title"
+          :price="prod.price"
+          :rating="prod.rating"
+          :category="prod.category"
+          :description="prod.description"
+          :desc="prod.category"
+        />
+      </div>
     </div>
   </div>
 </template>

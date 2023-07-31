@@ -25,7 +25,7 @@
           <span
             :class="
               isDiscounted
-                ? 'text-md pr-3 text-red-600 line-through'
+                ? 'pr-3 text-base text-red-600 line-through'
                 : 'text-center text-xl'
             "
           >

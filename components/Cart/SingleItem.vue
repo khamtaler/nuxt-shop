@@ -11,15 +11,16 @@
     <div
       class="col-start-9 col-end-10 flex flex-col items-center justify-center"
     >
-      <button type="button" @click="cartStore.decreaseCount(props.id)">
-        -
+      <button type="button" @click="cartStore.increaseCount(props.id)">
+        +
       </button>
+
       <div>
         {{ count }}
       </div>
 
-      <button type="button" @click="cartStore.increaseCount(props.id)">
-        +
+      <button type="button" @click="cartStore.decreaseCount(props.id)">
+        -
       </button>
     </div>
     <div v-if="count && props.price" class="col-start-10 col-end-12">

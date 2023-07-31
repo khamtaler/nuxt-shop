@@ -1,25 +1,27 @@
 <template>
   <NuxtLink :to="`/shop/${props.category}/${props.id}`" class="grid">
     <div
-      class="group grid flex-col rounded-lg border-2 border-lightblue hover:border-orange-500"
+      class="group flex flex-col rounded-lg border-2 border-lightblue hover:border-orange-500"
     >
-      <figure class="flex items-center justify-center">
+      <figure class="flex h-[120px] max-h-[200px] items-center justify-center">
         <img
           :src="props.image"
           :alt="props.title"
-          class="block h-[200px] max-w-[90%] rounded-t-lg p-5"
+          class="block h-full max-w-[90%] rounded-t-lg p-5"
           :class="props.imageUrl1 ? 'group-hover:hidden' : ''"
         />
         <img
           v-if="props.imageUrl1"
           :src="`/images/rock.png`"
           :alt="props.title"
-          class="hidden max-h-[200px] max-w-[90%] rounded-t-lg p-5 group-hover:block"
+          class="hidden h-full max-w-[90%] rounded-t-lg p-5 group-hover:block"
         />
       </figure>
-      <div class="flex h-auto flex-col px-5">
-        <h5 class="my-3 text-center text-xl">{{ props.title }}</h5>
-        <p class="mb-3 text-center">{{ props.category }}</p>
+      <div class="flex h-full flex-col px-5">
+        <h5 class="my-3 text-center text-sm md:text-xl">{{ props.title }}</h5>
+        <p class="mb-3 text-center text-sm md:text-base">
+          {{ props.category }}
+        </p>
         <div class="mt-auto">
           <BaseStarScore :rating="props.rating" />
 
@@ -28,7 +30,7 @@
               <span
                 :class="
                   isDiscounted
-                    ? 'text-md pr-3 text-red-600 line-through'
+                    ? 'pr-3 text-base text-red-600 line-through'
                     : 'text-xl'
                 "
               >

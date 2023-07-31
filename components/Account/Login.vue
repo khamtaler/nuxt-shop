@@ -6,7 +6,7 @@
     <h2 class="mb-5 text-3xl font-medium text-white">Login</h2>
     <!-- Email input -->
     <div class="relative mb-4">
-      <label for="email" class="text-md leading-7 text-gray-100">Email</label>
+      <label for="email" class="text-base leading-7 text-gray-100">Email</label>
       <div class="relative">
         <input
           :disabled="props.open ? false : true"
@@ -20,7 +20,7 @@
     </div>
     <!-- Password input -->
     <div class="relative mb-4">
-      <label for="password" class="text-md leading-7 text-gray-100">
+      <label for="password" class="text-base leading-7 text-gray-100">
         Password
       </label>
       <div class="relative">

@@ -13,7 +13,7 @@
       <BaseHeader text="Most viewed categories" />
       <TopCategories />
     </div>
-    <div class="mx-5 flex flex-col items-center">
+    <div class="flex flex-col items-center md:mx-5">
       <BaseHeader text="Our top products" />
       <ShopItemsContainer :number-of-products="6" />
       <BaseButton text="View all poroducts" link="shop" />
