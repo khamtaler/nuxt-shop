@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="my-[50px]">
     <div v-if="wait">Loading...</div>
     <div
       v-else-if="products?.length"

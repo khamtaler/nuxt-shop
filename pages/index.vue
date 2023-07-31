@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-[100vh]">
+  <div class="my-[50px] min-h-[100vh]">
     <BaseTextWrite
       header="Welcome"
       text="Scroll down the page to find our products :)"

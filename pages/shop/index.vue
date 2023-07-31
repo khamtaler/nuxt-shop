@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="my-[50px]">
     <ShopItemsContainer />
   </div>
 </template>

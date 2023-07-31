@@ -1,5 +1,5 @@
 <template>
-  <div class="my-10">
+  <div class="my-[50px]">
     <div class="text-center">
       <BaseHeader text="Welcome in checkout" class="inline-block" />
     </div>

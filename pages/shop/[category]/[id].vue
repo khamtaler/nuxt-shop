@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto mt-10 max-w-5xl">
+  <div class="mx-auto my-[50px] max-w-5xl">
     <div v-if="wait">Loading...</div>
     <div
       v-else-if="product !== null"

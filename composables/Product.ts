@@ -18,19 +18,6 @@ export const useProduct = () => {
     )
     product.value = data.value as CartProductItem
     wait.value = pending.value as boolean
-
-    // wait.value = true
-    // try {
-    //   const res = await fetch(`https://fakestoreapi.com/products/${id}`).then(
-    //     res => res.map(product => product)
-    //   )
-    //   const data = await res.json()
-    //   product.value = data
-    // } catch (err: any) {
-    //   error.value = err
-    // } finally {
-    //   wait.value = false
-    // }
   }
 
   const fetchProducts = async (numberOfProds?: number | string) => {
