@@ -1,5 +1,5 @@
 <template>
-  <div class="group w-[47%] md:w-[22%]">
+  <div class="group w-[45%] md:w-[22%]">
     <NuxtLink :to="`/shop/${props.name}`">
       <figure class="relative flex w-full overflow-hidden rounded-lg">
         <img

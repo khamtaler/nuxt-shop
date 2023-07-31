@@ -7,8 +7,8 @@
         :categories="categories"
         v-if="categories"
       />
-      <BaseMainMenuItem name="faq" link="/faq" />
-      <BaseMainMenuItem name="blog" link="/blog" />
+      <!-- <BaseMainMenuItem name="faq" link="/faq" />
+      <BaseMainMenuItem name="blog" link="/blog" /> -->
     </ul>
 
     <ClientOnly>
