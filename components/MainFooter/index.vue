@@ -4,7 +4,7 @@
       <div class="flex w-[22%] flex-col">
         <nuxt-link to="/">
           <figure>
-            <img src="@/images/logo.png" alt="logo" class="max-h-[100px]" />
+            <img src="/images/logo.png" alt="logo" class="max-h-[100px]" />
           </figure>
         </nuxt-link>
       </div>

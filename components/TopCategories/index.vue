@@ -21,13 +21,6 @@ import { useCategory } from '@/composables/Categories'
 
 const { categories, wait, getCategories } = useCategory()
 await getCategories(4)
-
-const images = [
-  'electronics.png',
-  'jewelety.png',
-  'mans-clothing.png',
-  'womans-clothing.png',
-]
 </script>
 
 <style scoped></style>

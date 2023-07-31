@@ -3,7 +3,7 @@
     <NuxtLink :to="`/shop/${props.name}`">
       <figure class="relative flex w-full overflow-hidden rounded-lg">
         <img
-          :src="`_nuxt/images/${slugify(props.name)}.jpg`"
+          :src="`/images/${slugify(props.name)}.jpg`"
           alt="category image"
           class="max-h-[200px] w-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-105"
         />

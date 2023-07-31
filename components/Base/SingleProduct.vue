@@ -12,7 +12,7 @@
         />
         <img
           v-if="props.imageUrl1"
-          :src="`_nuxt/images/rock.png`"
+          :src="`/images/rock.png`"
           :alt="props.title"
           class="hidden max-h-[200px] max-w-[90%] rounded-t-lg p-5 group-hover:block"
         />
