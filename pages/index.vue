@@ -1,5 +1,5 @@
 <template>
-  <div class="my-[50px] min-h-[100vh]">
+  <div class="mb-[50px] min-h-[100vh]">
     <div>
       <Head>
         <Title>Shopy</Title>

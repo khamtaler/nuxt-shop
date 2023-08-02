@@ -28,7 +28,7 @@
 import { useProduct } from '@/composables/Product'
 const props = defineProps<{ numberOfProducts?: number | null }>()
 
-const { fetchProducts, wait: pending, products, error } = useProduct()
+const { fetchProducts, wait: pending, products } = useProduct()
 
 await fetchProducts(props.numberOfProducts ? props.numberOfProducts : '')
 </script>

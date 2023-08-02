@@ -11,7 +11,7 @@
         <div class="flex-1">
           <CartItemsList />
           <div>
-            <p class="text-right">
+            <p class="text-right text-xl">
               Total:
               <span class="font-bold">${{ cartStore.gettotal }}</span>
             </p>

@@ -49,10 +49,6 @@ const isDiscounted = computed(() => {
     return props.price > props.promotionPrice ? true : false
   }
 })
-
-// useHead({
-//   title: props.title,
-// })
 </script>
 
 <style scoped></style>

@@ -28,3 +28,9 @@ export interface CartButton {
   product: CartProductItem
   text: string
 }
+
+export interface Tab {
+  title: string
+  ariaTitle: string
+  tabText: string
+}

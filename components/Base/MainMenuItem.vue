@@ -1,5 +1,5 @@
 <template>
-  <li class="relative p-3">
+  <li class="relative mt-[6px] p-3 sm:mt-0">
     <nuxt-link
       v-if="props.link"
       class="cursor-pointer text-sm uppercase ease-in-out after:block after:h-[4px] after:w-0 after:rounded-lg after:bg-gradient-to-r after:from-lightblue after:to-darkblue after:transition-[width] after:content-[''] hover:after:w-full md:text-xl"
