@@ -3,7 +3,6 @@
     <MainMenu />
     <slot />
     <MainFooter />
-    <!-- Usunac app,vue, przeniesc component tutaj albo inny layout -->
   </div>
 </template>
 
