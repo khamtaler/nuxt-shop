@@ -8,7 +8,15 @@
         class="mx-10 flex flex-col gap-10 md:flex-row"
         v-if="cartStore.getItems.length > 0"
       >
-        <CartItemsList class="flex-1" />
+        <div class="flex-1">
+          <CartItemsList />
+          <div>
+            <p class="text-right">
+              Total:
+              <span class="font-bold">${{ cartStore.gettotal }}</span>
+            </p>
+          </div>
+        </div>
         <CheckoutForm class="flex-1" />
       </div>
 
