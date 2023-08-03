@@ -3,7 +3,7 @@
     <div
       class="mx-auto my-10 flex max-w-6xl flex-col items-center justify-around md:flex-row"
     >
-      <div class="flex w-[50%] flex-col md:w-[33%]">
+      <div class="flex max-w-[50%] flex-col md:w-[33%]">
         <nuxt-link to="/">
           <figure>
             <img
@@ -14,7 +14,7 @@
           </figure>
         </nuxt-link>
       </div>
-      <ul class="mt-5 flex w-[33%] flex-col md:mt-0">
+      <ul class="mt-5 flex w-[33%] flex-col text-lg md:mt-0">
         <BaseFooterLink
           v-for="item in itemsList"
           :link="item.link"
@@ -59,10 +59,10 @@
 import { Link } from '@/types/components'
 
 const itemsList: Link[] = [
-  { text: 'shop', link: '/' },
-  { text: 'faq', link: '/' },
-  { text: 'contact', link: '/' },
-  { text: 'blog', link: '/' },
+  { text: 'shop', link: '/shop' },
+  { text: 'faq', link: '/faq' },
+  // { text: 'contact', link: '/' },
+  // { text: 'blog', link: '/' },
 ]
 </script>
 

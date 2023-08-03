@@ -11,11 +11,23 @@
         />
       </figure>
     </nuxt-link>
-    <MainMenuTheNavbar />
-    <Cart />
+    <MainMenuTheNavbar class="hidden md:flex" />
+    <Cart class="hidden md:flex" />
+    <ClientOnly>
+      <div class="block md:hidden">
+        <font-awesome-icon
+          :icon="['fas', 'bars']"
+          class="cursor-pointer text-xl"
+          @click="mobileMenuStore.toggleOpen"
+        />
+      </div>
+    </ClientOnly>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { usemobileMenuStore } from '@/stores/mobileMenu'
+const mobileMenuStore = usemobileMenuStore()
+</script>
 
 <style lang="scss" scoped></style>

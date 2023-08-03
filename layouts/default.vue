@@ -1,6 +1,7 @@
 <template>
   <div>
     <MainMenu />
+
     <slot />
     <MainFooter />
   </div>
