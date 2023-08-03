@@ -9,19 +9,19 @@
       header="Welcome"
       text="Since 2024 providing best clothes :)"
     />
-    <div class="mx-5 flex flex-col items-center">
+    <div class="mx-5 my-[50px] flex flex-col items-center">
       <BaseHeader text="Most viewed categories" />
       <TopCategories />
     </div>
-    <div class="flex flex-col items-center md:mx-5">
+    <div class="my-[50px] flex flex-col items-center md:mx-5">
       <BaseHeader text="Our top products" />
       <ShopItemsContainer :number-of-products="6" />
       <BaseButton text="View all poroducts" link="shop" />
     </div>
-    <div class="mx-5 mt-[100px] flex flex-col items-center">
+    <div class="mx-5 my-[50px] mt-[100px] flex flex-col items-center">
       <AboutCompany />
     </div>
-    <div class="mx-5 mt-[100px] flex flex-col items-center">
+    <div class="mx-5 my-[50px] mt-[100px] flex flex-col items-center">
       <BaseHeader text="View our most selling products!" />
       <ProductsSwiper />
     </div>

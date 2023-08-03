@@ -10,7 +10,7 @@
       </figure>
     </div>
     <div class="text-center">
-      <h3 class="mb-10 text-3xl">About us</h3>
+      <BaseHeader text="About us" />
       <p class="text-xl">
         At Shoppy, we believe that fashion is an expression of individuality and
         style. Our passion for all things chic and trendy drives us to curate a
