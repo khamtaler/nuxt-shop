@@ -16,7 +16,7 @@
       <font-awesome-icon
         :icon="['fas', 'user']"
         class="cursor-pointer text-base md:text-xl"
-        @click="loginStore.toggleOpen()"
+        @click="toggleLogin"
       />
       <div class="relative flex align-bottom">
         <font-awesome-icon
@@ -55,5 +55,9 @@ function toggleModal() {
     cartStore.toggleModal()
     window.removeEventListener('click', toggleModal)
   }
+}
+const toggleLogin = () => {
+  loginStore.toggleOpen()
+  document.body.style.overflow = 'hidden'
 }
 </script>

@@ -18,7 +18,7 @@
         <font-awesome-icon
           :icon="['fas', 'bars']"
           class="cursor-pointer text-xl"
-          @click="mobileMenuStore.toggleOpen"
+          @click="toggleOpen"
         />
       </div>
     </ClientOnly>
@@ -28,6 +28,11 @@
 <script setup lang="ts">
 import { usemobileMenuStore } from '@/stores/mobileMenu'
 const mobileMenuStore = usemobileMenuStore()
+
+const toggleOpen = () => {
+  mobileMenuStore.toggleOpen()
+  document.body.style.overflow = 'hidden'
+}
 </script>
 
 <style lang="scss" scoped></style>

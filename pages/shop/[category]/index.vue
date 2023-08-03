@@ -34,10 +34,6 @@ await fetchProductsByCategory(route.params.category as string)
 useHead({
   title: `Shopy - ${route.params.category as string}`,
 })
-onMounted(() => {
-  console.log('here')
-  console.log(route.params)
-})
 </script>
 
 <style scoped></style>

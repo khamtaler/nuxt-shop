@@ -2,10 +2,10 @@
   <teleport to="body">
     <div
       v-if="mobileMenuStore.getOpen"
-      class="absolute right-0 top-0 z-10 h-screen w-screen bg-blurreddark md:hidden"
+      class="absolute right-0 top-0 z-10 h-full w-screen bg-blurreddark md:hidden"
     >
       <div
-        class="ml-auto flex h-screen w-[200px] origin-right flex-col bg-white pt-[20px] font-bold transition-all duration-500"
+        class="ml-auto flex h-full w-[200px] origin-right flex-col bg-white pt-[20px] font-bold transition-all duration-500"
         :class="
           slide ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
         "
@@ -14,7 +14,7 @@
           <font-awesome-icon
             :icon="['fas', 'xmark']"
             class="mb-[25px] ml-auto mr-5 cursor-pointer text-2xl"
-            @click="mobileMenuStore.toggleOpen"
+            @click="toggleOpen"
           />
         </ClientOnly>
         <BaseMobileMenuItem
@@ -86,6 +86,11 @@ watch(
     setTimeout(toggleSlide, 10)
   },
 )
+
+const toggleOpen = () => {
+  mobileMenuStore.toggleOpen()
+  document.body.style.overflow = 'visible'
+}
 </script>
 
 <style scoped></style>

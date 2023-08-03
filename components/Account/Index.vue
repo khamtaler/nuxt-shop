@@ -7,7 +7,7 @@
       <main class="min-h-screen min-w-full">
         <div
           class="container mx-auto px-5 py-24 text-gray-400"
-          @click="loginStore.toggleOpen"
+          @click="toggleLogin"
         >
           <AccountRegister
             :open="loginStore.getOpen"
@@ -29,6 +29,10 @@
 import { useLoginStore } from '@/stores/login'
 
 const loginStore = useLoginStore()
+const toggleLogin = () => {
+  loginStore.toggleOpen()
+  document.body.style.overflow = 'visible'
+}
 </script>
 
 <style scoped></style>
