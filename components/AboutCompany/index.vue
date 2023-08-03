@@ -3,7 +3,7 @@
     <div>
       <figure class="overflow-hidden">
         <img
-          src="/images/club2.png"
+          src="/images/club2.webp"
           alt="company people"
           class="aspect-square rounded-xl object-cover"
         />

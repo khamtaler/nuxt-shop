@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex min-h-[400px] items-center justify-center bg-[url('/images/club1.png')] bg-cover bg-center bg-no-repeat"
+    class="flex min-h-[400px] items-center justify-center bg-[url('/images/club1.webp')] bg-cover bg-center bg-no-repeat"
   >
     <div
       class="bg-blur mx-5 my-[50px] grid max-w-5xl grid-cols-1 content-center rounded-lg border-2 border-black bg-[rgba(255,255,255,0.7)] p-10 md:grid-cols-2"

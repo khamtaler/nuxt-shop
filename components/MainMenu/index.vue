@@ -5,7 +5,7 @@
     <nuxt-link to="/">
       <figure>
         <img
-          src="/images/logo.png"
+          src="/images/logo.webp"
           class="max-h-[40px] md:max-h-[70px]"
           alt="logo"
         />

@@ -13,7 +13,7 @@
         />
         <img
           v-if="props.imageUrl1"
-          :src="`/images/rock.png`"
+          :src="`/images/rock.webp`"
           :alt="props.title"
           class="hidden h-[200px] rounded-t-lg object-cover p-5 group-hover:block"
         />
