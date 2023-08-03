@@ -4,7 +4,7 @@
       <h1 class="mb-5 text-5xl">{{ error.statusCode }}</h1>
       <h2 class="mb-5 text-4xl">Opsss</h2>
       <p class="mb-5 text-xl">{{ error.message }}</p>
-      <button class="bg-black px-5 py-3 text-white">Return Home...</button>
+      <button class="bg-sBlack px-5 py-3 text-white">Return Home...</button>
     </div>
   </div>
 </template>

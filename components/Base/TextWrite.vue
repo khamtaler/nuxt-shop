@@ -3,7 +3,7 @@
     class="grid min-h-[300px] items-stretch justify-stretch bg-[url('/images/wallpaper.webp')] shadow-md shadow-lightblue md:min-h-[400px]"
   >
     <div
-      class="flex h-full w-full items-center justify-center bg-gradient-to-r from-blurreddark via-black to-blurreddark md:from-transparent md:via-black md:to-transparent"
+      class="via-sBlack md:via-sBlack flex h-full w-full items-center justify-center bg-gradient-to-r from-blurreddark to-blurreddark md:from-transparent md:to-transparent"
     >
       <div class="p-6 text-center text-white">
         <h2 id="Welcome" class="mb-5 text-5xl"></h2>

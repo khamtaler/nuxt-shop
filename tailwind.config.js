@@ -17,6 +17,7 @@ module.exports = {
         darkblue: '#0A687A',
         lightpurple: '#8C2678',
         darkpurple: '#9D2C82',
+        sBlack: '#0C0C0C',
       },
       transitionProperty: {
         width: 'width',
