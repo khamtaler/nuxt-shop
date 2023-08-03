@@ -4,7 +4,7 @@
       v-if="mobileMenuStore.getOpen"
       class="absolute right-0 top-0 z-10 h-full w-screen bg-blurreddark md:hidden"
     >
-      <ul
+      <div
         class="ml-auto flex h-full w-[200px] origin-right flex-col bg-white pt-[20px] font-bold transition-all duration-500"
         :class="
           slide ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
@@ -17,22 +17,24 @@
             @click="toggleOpen"
           />
         </ClientOnly>
-        <BaseMobileMenuItem
-          name="shop"
-          link="/shop"
-          class="ml-2 inline-block list-none"
-        />
-        <MobileMenuDropdown
-          name="Categories"
-          :categories="categories"
-          v-if="categories"
-          class="ml-2 inline-block p-3"
-        />
-        <BaseMobileMenuItem
-          name="faq"
-          link="/faq"
-          class="ml-2 inline-block list-none"
-        />
+        <ul>
+          <BaseMobileMenuItem
+            name="shop"
+            link="/shop"
+            class="ml-2 inline-block list-none"
+          />
+          <MobileMenuDropdown
+            name="Categories"
+            :categories="categories"
+            v-if="categories"
+            class="ml-2 inline-block p-3"
+          />
+          <BaseMobileMenuItem
+            name="faq"
+            link="/faq"
+            class="ml-2 inline-block list-none"
+          />
+        </ul>
         <ClientOnly>
           <div class="mt-5 flex flex-row items-center justify-center gap-5">
             <font-awesome-icon
@@ -59,7 +61,7 @@
             </div>
           </div>
         </ClientOnly>
-      </ul>
+      </div>
     </div>
   </teleport>
 </template>

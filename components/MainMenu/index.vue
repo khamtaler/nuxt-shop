@@ -1,16 +1,18 @@
 <template>
-  <ul
+  <div
     class="relative flex w-full flex-row items-center justify-between px-5 py-3 shadow-md shadow-lightblue"
   >
-    <nuxt-link to="/" aria-label="navigate to homepage">
-      <figure>
-        <img
-          src="/images/logo.webp"
-          class="max-h-[40px] md:max-h-[70px]"
-          alt="logo"
-        />
-      </figure>
-    </nuxt-link>
+    <ul>
+      <nuxt-link to="/" aria-label="navigate to homepage">
+        <figure>
+          <img
+            src="/images/logo.webp"
+            class="max-h-[40px] md:max-h-[70px]"
+            alt="logo"
+          />
+        </figure>
+      </nuxt-link>
+    </ul>
     <MainMenuTheNavbar class="hidden md:flex" />
     <Cart class="hidden md:flex" />
     <ClientOnly>
@@ -22,7 +24,7 @@
         />
       </div>
     </ClientOnly>
-  </ul>
+  </div>
 </template>
 
 <script setup lang="ts">
