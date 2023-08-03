@@ -5,6 +5,12 @@
         class="cursor-pointer text-sm uppercase ease-in-out after:block after:h-[4px] after:origin-left after:scale-0 after:rounded-lg after:bg-gradient-to-r after:from-lightblue after:to-darkblue after:transition-transform after:duration-500 after:content-[''] hover:after:scale-100 md:text-xl"
       >
         {{ props.name }}
+        <client-only>
+          <font-awesome-icon
+            :icon="['fas', 'angle-down']"
+            class="text-large text-lightpurple transition-all"
+          />
+        </client-only>
       </MenuButton>
       <transition
         enter-active-class="transition duration-100 ease-out"

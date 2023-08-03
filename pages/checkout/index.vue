@@ -13,7 +13,9 @@
           <div>
             <p class="text-right text-xl">
               Total:
-              <span class="font-bold">${{ cartStore.gettotal }}</span>
+              <span class="font-bold">
+                ${{ roundNumber(cartStore.gettotal) }}
+              </span>
             </p>
           </div>
         </div>
@@ -34,6 +36,9 @@
 import { useCartStore } from '@/stores/cart'
 
 const cartStore = useCartStore()
+useHead({
+  title: 'Shopy - checkout',
+})
 </script>
 
 <style scoped></style>

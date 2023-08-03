@@ -1,5 +1,5 @@
 <template>
-  <li class="relative mt-[6px] p-3 sm:mt-0">
+  <li class="relative mt-[6px] inline-block list-disc p-3 sm:mt-0">
     <nuxt-link
       :aria-label="`navigate to: ${props.link}`"
       v-if="props.link"

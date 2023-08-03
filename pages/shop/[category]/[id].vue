@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="my-[100px]">
-      <h2 class="text-center text-4xl">View other products</h2>
+      <BaseHeader text="View other products" />
       <ProductsSwiper :slides="8" :slides-per-view="4" />
     </div>
   </div>

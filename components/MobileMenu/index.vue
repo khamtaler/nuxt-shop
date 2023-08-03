@@ -17,7 +17,7 @@
             @click="toggleOpen"
           />
         </ClientOnly>
-        <ul>
+        <ul class="flex flex-col">
           <BaseMobileMenuItem
             name="shop"
             link="/shop"
