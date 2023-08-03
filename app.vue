@@ -6,4 +6,10 @@
   <MobileMenu />
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  htmlAttrs: {
+    lang: 'en',
+  },
+})
+</script>

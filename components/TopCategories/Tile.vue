@@ -1,6 +1,9 @@
 <template>
   <div class="group w-[45%] md:w-[22%]">
-    <NuxtLink :to="`/shop/${props.name}`">
+    <NuxtLink
+      :to="`/shop/${props.name}`"
+      :aria-label="`navigate to ${props.name}category`"
+    >
       <figure class="relative flex w-full overflow-hidden rounded-lg">
         <img
           :src="`/images/${slugify(props.name)}.webp`"

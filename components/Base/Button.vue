@@ -1,6 +1,7 @@
 <template>
   <div>
     <nuxt-link
+      :aria-label="`navigate to: ${props.text}`"
       v-if="props.link"
       :to="props.link"
       type="button"

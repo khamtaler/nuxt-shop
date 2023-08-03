@@ -2,6 +2,7 @@
   <div class="group flex h-full">
     <NuxtLink
       :to="`/shop/${props.category}/${props.id}`"
+      :aria-label="`navigate to ${props.title}`"
       class="flex h-auto flex-col items-center"
     >
       <figure class="flex items-center justify-center overflow-hidden">

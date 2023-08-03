@@ -1,5 +1,9 @@
 <template>
-  <NuxtLink :to="`/shop/${props.category}/${props.id}`" class="grid">
+  <NuxtLink
+    :to="`/shop/${props.category}/${props.id}`"
+    class="grid"
+    :aria-label="`navigate to ${props.title}`"
+  >
     <div
       class="group flex flex-col rounded-lg border-2 border-lightblue hover:border-orange-500"
     >

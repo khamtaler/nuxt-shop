@@ -33,6 +33,7 @@
             <MenuItem v-slot="{ active }" v-for="category in props.categories">
               <NuxtLink
                 :to="`/shop/${category}`"
+                :aria-label="`navigate to ${category} category`"
                 :class="[
                   active ? 'bg-darkblue text-white' : 'text-gray-900',
                   'group block  w-full items-center rounded-b-md text-sm capitalize',

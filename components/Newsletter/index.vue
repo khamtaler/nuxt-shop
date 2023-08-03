@@ -16,9 +16,9 @@
         />
       </div>
       <div class="text-center text-black opacity-100">
-        <h3 class="mb-5 text-center text-3xl font-bold uppercase">
+        <h4 class="mb-5 text-center text-3xl font-bold uppercase">
           Newsletter
-        </h3>
+        </h4>
         <p class="text-center text-xl">
           By sharing your email with us You're opening Your inbox for newest
           promotions.

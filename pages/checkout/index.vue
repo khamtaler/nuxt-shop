@@ -21,9 +21,9 @@
       </div>
 
       <div v-else class="text-center">
-        <h3 class="flex-1 pt-10 text-xl">
+        <h4 class="flex-1 pt-10 text-xl">
           Your cart is empty... return to store to get your products
-        </h3>
+        </h4>
         <BaseButton link="/shop" text="Return to store" class="mt-10" />
       </div>
     </div>

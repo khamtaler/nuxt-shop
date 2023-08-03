@@ -4,7 +4,7 @@
       class="mx-auto my-10 flex max-w-6xl flex-col items-center justify-around md:flex-row"
     >
       <div class="flex max-w-[50%] flex-col md:w-[33%]">
-        <nuxt-link to="/">
+        <nuxt-link to="/" aria-label="navigate to homepage">
           <figure>
             <img
               src="/images/logo.webp"
@@ -18,7 +18,8 @@
         <BaseFooterLink
           v-for="item in itemsList"
           :link="item.link"
-          :name="item.text"
+          :text="item.text"
+          :aria-label="`navigate to ${item.text}`"
           class="capital block text-center md:text-left"
         >
           {{ item.text }}
@@ -27,7 +28,11 @@
 
       <div class="mt-5 block w-[50%] md:w-[33%]">
         <div class="flex items-center justify-center gap-3">
-          <nuxt-link to="/" target="_blank">
+          <nuxt-link
+            to="/"
+            target="_blank"
+            aria-label="navigate to our instagram"
+          >
             <ClientOnly>
               <font-awesome-icon
                 :icon="['fab', 'instagram']"
@@ -35,7 +40,11 @@
               />
             </ClientOnly>
           </nuxt-link>
-          <nuxt-link to="/" target="_blank">
+          <nuxt-link
+            to="/"
+            target="_blank"
+            aria-label="navigate to our facebook"
+          >
             <client-only>
               <font-awesome-icon
                 :icon="['fab', 'facebook-f']"
@@ -44,7 +53,11 @@
             </client-only>
           </nuxt-link>
 
-          <nuxt-link to="/" target="_blank">
+          <nuxt-link
+            to="/"
+            target="_blank"
+            aria-label="navigate to our twitter"
+          >
             <ClientOnly>
               <font-awesome-icon :icon="['fab', 'twitter']" class="text-4xl" />
             </ClientOnly>
@@ -61,8 +74,6 @@ import { Link } from '@/types/components'
 const itemsList: Link[] = [
   { text: 'shop', link: '/shop' },
   { text: 'faq', link: '/faq' },
-  // { text: 'contact', link: '/' },
-  // { text: 'blog', link: '/' },
 ]
 </script>
 

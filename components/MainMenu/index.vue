@@ -2,7 +2,7 @@
   <div
     class="relative flex w-full flex-row items-center justify-between px-5 py-3 shadow-md shadow-lightblue"
   >
-    <nuxt-link to="/">
+    <nuxt-link to="/" aria-label="navigate to homepage">
       <figure>
         <img
           src="/images/logo.webp"

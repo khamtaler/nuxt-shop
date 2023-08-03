@@ -41,7 +41,7 @@
               @click="loginStore.toggleOpen()"
             />
             <div class="relative flex align-bottom">
-              <NuxtLink to="/checkout">
+              <NuxtLink to="/checkout" aria-label="navigate to checkout">
                 <font-awesome-icon
                   class="cursor-pointer text-xl"
                   :icon="['fas', 'cart-shopping']"

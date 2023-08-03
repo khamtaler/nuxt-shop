@@ -3,6 +3,7 @@
     <button
       @click.prevent="togglePanel"
       class="ml-auto block w-full p-4 text-left text-xl"
+      :aria-label="props.ariaTitle"
     >
       <client-only>
         <font-awesome-icon
