@@ -14,10 +14,10 @@
           v-if="props.imageUrl1"
           :src="`/images/rock.png`"
           :alt="props.title"
-          class="hidden h-full max-w-[90%] rounded-t-lg p-5 group-hover:block"
+          class="hidden h-full max-w-[90%] rounded-t-lg px-2 py-5 group-hover:block md:px-5"
         />
       </figure>
-      <div class="flex h-full flex-col px-5">
+      <div class="flex h-full flex-col px-2 md:px-5">
         <h5 class="my-3 text-center text-sm md:text-xl">{{ props.title }}</h5>
         <p class="mb-3 text-center text-sm md:text-base">
           {{ props.category }}
