@@ -2,10 +2,10 @@
   <div
     class="grid grid-cols-12 items-center justify-items-center gap-3 border-b-[1px] py-2"
   >
-    <figure class="col-start-1 col-end-2">
-      <img :src="$props.img" :alt="title" class="max-h-[100px]" />
+    <figure class="col-start-1 col-end-3 w-full">
+      <img :src="$props.img" :alt="title" class="max-h-[100px] w-full" />
     </figure>
-    <div class="col-start-2 col-end-9 justify-self-start">
+    <div class="col-start-3 col-end-9 justify-self-start">
       {{ props.title }}
     </div>
     <div
