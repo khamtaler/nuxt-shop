@@ -1,7 +1,7 @@
 <template>
   <form
     ref="register"
-    class="preserve3d rotateX-180 mx-auto mt-10 flex flex-col rounded-lg border-4 border-lightpurple bg-lightblue px-5 py-28 shadow-lg transition-transform duration-500 md:mt-0 md:w-1/2 md:px-10 lg:w-3/6"
+    class="preserve3d rotateX-180 mx-auto mt-5 flex origin-top flex-col rounded-lg border-4 border-lightpurple bg-lightblue px-5 py-28 shadow-lg transition-transform duration-500 md:mt-0 md:w-1/2 md:px-10 lg:w-3/6"
   >
     <h2 class="mb-5 text-2xl font-medium text-white">Register</h2>
     <!-- Email input -->

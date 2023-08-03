@@ -13,18 +13,19 @@ body {
 }
 
 .preserve3d {
-  perspective: 500px;
+  perspective: 1000px;
   transform-style: preserve-3d;
-  transform: rotate3d(0, 1, 0, 90deg);
-  transition: 500ms cubic-bezier(0, -0.02, 1, 0.36);
+  transform: rotate3d(0, 1, 1, 90deg);
+  opacity: 0;
+  transition: 500ms ease-in-out;
 }
 
 .preserve3d.right {
   transform: rotate3d(0, 1, 0, 0deg);
-  transition: 500ms cubic-bezier(0, -0.02, 1, 0.36);
+  opacity: 1;
 }
 
 .preserve3d.left {
   transform: rotate3d(0, 1, 0, -0deg);
-  transition: 500ms cubic-bezier(0, -0.02, 1, 0.36);
+  opacity: 1;
 }
