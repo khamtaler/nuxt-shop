@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex items-center justify-center">
+  <li class="relative flex items-center justify-center">
     <Menu>
       <MenuButton
         class="cursor-pointer text-sm uppercase ease-in-out after:block after:h-[4px] after:origin-left after:scale-0 after:rounded-lg after:bg-gradient-to-r after:from-lightblue after:to-darkblue after:transition-transform after:duration-500 after:content-[''] hover:after:scale-100 md:text-xl"
@@ -15,7 +15,7 @@
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="ring-sBlack absolute right-0 top-[100%] w-56 origin-right translate-x-[30%] divide-y divide-gray-100 rounded-b-md bg-white shadow-lg ring-1 ring-opacity-5 focus:outline-none md:right-0 md:translate-x-0"
+          class="absolute right-0 top-[100%] w-56 origin-right translate-x-[30%] divide-y divide-gray-100 rounded-b-md bg-white shadow-lg ring-1 ring-sBlack ring-opacity-5 focus:outline-none md:right-0 md:translate-x-0"
         >
           <div class="px-1 py-1">
             <MenuItem v-slot="{ active }" v-for="category in props.categories">
@@ -34,7 +34,7 @@
         </MenuItems>
       </transition>
     </Menu>
-  </div>
+  </li>
 </template>
 
 <script setup lang="ts">

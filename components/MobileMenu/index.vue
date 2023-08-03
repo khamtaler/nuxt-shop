@@ -4,7 +4,7 @@
       v-if="mobileMenuStore.getOpen"
       class="absolute right-0 top-0 z-10 h-full w-screen bg-blurreddark md:hidden"
     >
-      <div
+      <ul
         class="ml-auto flex h-full w-[200px] origin-right flex-col bg-white pt-[20px] font-bold transition-all duration-500"
         :class="
           slide ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
@@ -59,7 +59,7 @@
             </div>
           </div>
         </ClientOnly>
-      </div>
+      </ul>
     </div>
   </teleport>
 </template>

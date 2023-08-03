@@ -1,5 +1,5 @@
 <template>
-  <div
+  <ul
     class="relative flex w-full flex-row items-center justify-between px-5 py-3 shadow-md shadow-lightblue"
   >
     <nuxt-link to="/" aria-label="navigate to homepage">
@@ -22,7 +22,7 @@
         />
       </div>
     </ClientOnly>
-  </div>
+  </ul>
 </template>
 
 <script setup lang="ts">
