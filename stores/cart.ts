@@ -6,8 +6,8 @@ export const useCartStore = defineStore('cart', {
     return {
       openModal: false,
       items: [] as CartProductItem[],
-      total: ref(0),
-      productsNumber: ref(0),
+      total: 0,
+      productsNumber: 0,
     }
   },
   getters: {
