@@ -24,16 +24,21 @@
           class="absolute right-0 top-[100%] w-56 origin-right translate-x-[30%] divide-y divide-gray-100 rounded-b-md bg-white shadow-lg ring-1 ring-sBlack ring-opacity-5 focus:outline-none md:right-0 md:translate-x-0"
         >
           <div class="px-1 py-1">
-            <MenuItem v-slot="{ active }" v-for="category in props.categories">
+            <MenuItem
+              v-slot="{ active, close }"
+              v-for="category in props.categories"
+            >
               <NuxtLink
                 :to="`/shop/${category}`"
                 :aria-label="`navigate to ${category} category`"
                 :class="[
                   active ? 'bg-darkblue text-white' : 'text-gray-900',
-                  'group flex w-full items-center rounded-b-md px-2 py-2 text-base capitalize',
+                  'group flex w-full items-center rounded-b-md text-base capitalize',
                 ]"
               >
-                {{ category }}
+                <span class="w-full px-2 py-2" @click="close">
+                  {{ category }}
+                </span>
               </NuxtLink>
             </MenuItem>
           </div>

@@ -1,6 +1,7 @@
 <template>
   <div class="mb-2 rounded-xl border-l-2 border-r-2 border-t-2 bg-gray-200 p-2">
     <button
+      type="button"
       @click.prevent="togglePanel"
       class="ml-auto block w-full p-4 text-left text-xl"
       :aria-label="props.ariaTitle"
