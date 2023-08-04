@@ -19,8 +19,8 @@
 </template>
 
 <script setup lang="ts">
-import { usemobileMenuStore } from '@/stores/mobileMenu'
-const mobileMenuStore = usemobileMenuStore()
+import { useMobileMenuStore } from '@/stores/mobileMenu'
+const mobileMenuStore = useMobileMenuStore()
 const props = defineProps({
   name: String,
   link: String,

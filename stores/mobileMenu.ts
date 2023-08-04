@@ -1,16 +1,16 @@
 import { defineStore } from 'pinia'
 
-export const usemobileMenuStore = defineStore('mobileMenu', {
+export const useMobileMenuStore = defineStore('mobileMenu', {
   state: () => {
-    return { openMenu: false }
+    return { isMobileMenuOpen: false }
   },
   getters: {
-    getOpen: (state) => state.openMenu,
+    getOpen: (state) => state.isMobileMenuOpen,
   },
 
   actions: {
     toggleOpen() {
-      this.openMenu = !this.openMenu
+      this.isMobileMenuOpen = !this.isMobileMenuOpen
     },
   },
 })

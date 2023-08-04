@@ -31,21 +31,23 @@
         >
           <div class="px-1 py-1">
             <MenuItem v-slot="{ active }" v-for="category in props.categories">
-              <NuxtLink
-                :to="`/shop/${category}`"
-                :aria-label="`navigate to ${category} category`"
-                :class="[
-                  active ? 'bg-darkblue text-white' : 'text-gray-900',
-                  'group block  w-full items-center rounded-b-md text-sm capitalize',
-                ]"
-              >
-                <span
-                  @click.prevent="mobileMenuStore.toggleOpen"
-                  class="block px-2 py-2"
+              <div>
+                <NuxtLink
+                  :to="`/shop/${category}`"
+                  :aria-label="`navigate to ${category} category`"
+                  :class="[
+                    active ? 'bg-darkblue text-white' : 'text-gray-900',
+                    'group block  w-full items-center rounded-b-md text-sm capitalize',
+                  ]"
                 >
-                  {{ category }}
-                </span>
-              </NuxtLink>
+                  <span
+                    @click="mobileMenuStore.toggleOpen"
+                    class="block px-2 py-2"
+                  >
+                    {{ category }}
+                  </span>
+                </NuxtLink>
+              </div>
             </MenuItem>
           </div>
         </MenuItems>
@@ -56,9 +58,9 @@
 
 <script setup lang="ts">
 import { MenuButton, MenuItems, MenuItem, Menu } from '@headlessui/vue'
-import { usemobileMenuStore } from '@/stores/mobileMenu'
+import { useMobileMenuStore } from '@/stores/mobileMenu'
 
-const mobileMenuStore = usemobileMenuStore()
+const mobileMenuStore = useMobileMenuStore()
 
 const props = defineProps<{ categories: string[]; name: string }>()
 const showPanel = ref(false)

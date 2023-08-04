@@ -67,12 +67,12 @@
 </template>
 
 <script setup lang="ts">
-import { usemobileMenuStore } from '@/stores/mobileMenu'
+import { useMobileMenuStore } from '@/stores/mobileMenu'
 import { useLoginStore } from '@/stores/login'
 import { useCartStore } from '@/stores/cart'
 import { useCategory } from '@/composables/Categories'
 
-const mobileMenuStore = usemobileMenuStore()
+const mobileMenuStore = useMobileMenuStore()
 
 const loginStore = useLoginStore()
 const cartStore = useCartStore()

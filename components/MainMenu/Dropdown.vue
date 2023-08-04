@@ -27,19 +27,21 @@
             <MenuItem
               v-slot="{ active, close }"
               v-for="category in props.categories"
+              as="template"
             >
-              <NuxtLink
-                :to="`/shop/${category}`"
-                :aria-label="`navigate to ${category} category`"
-                :class="[
-                  active ? 'bg-darkblue text-white' : 'text-gray-900',
-                  'group flex w-full items-center rounded-b-md text-base capitalize',
-                ]"
-              >
-                <span class="w-full px-2 py-2" @click="close">
+              <div>
+                <NuxtLink
+                  @click.native="close"
+                  :to="`/shop/${category}`"
+                  :aria-label="`navigate to ${category} category`"
+                  :class="[
+                    active ? 'bg-darkblue text-white' : 'text-gray-900',
+                    'group flex w-full items-center rounded-b-md p-2 text-base capitalize',
+                  ]"
+                >
                   {{ category }}
-                </span>
-              </NuxtLink>
+                </NuxtLink>
+              </div>
             </MenuItem>
           </div>
         </MenuItems>
