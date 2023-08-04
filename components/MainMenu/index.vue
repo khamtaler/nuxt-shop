@@ -20,7 +20,7 @@
         <font-awesome-icon
           :icon="['fas', 'bars']"
           class="cursor-pointer text-xl"
-          @click="toggleOpen"
+          @click.prevent="toggleOpen"
         />
       </div>
     </ClientOnly>

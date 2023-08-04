@@ -43,7 +43,7 @@
     </button>
     <p class="mt-2 text-center text-gray-200">
       Not having an account?
-      <span @click="loginStore.toggleLoginRegister" class="font-bold">
+      <span @click.prevent="loginStore.toggleLoginRegister" class="font-bold">
         Register!
       </span>
     </p>

@@ -3,7 +3,7 @@
     <button
       type="button"
       class="rounded-lg bg-darkblue px-5 py-2 text-white"
-      @click="cartStore.addToCart(props.product)"
+      @click.prevent="cartStore.addToCart(props.product)"
     >
       {{ props.text }}
     </button>

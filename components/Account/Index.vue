@@ -7,7 +7,7 @@
       <main class="min-h-screen min-w-full">
         <div
           class="container mx-auto px-5 py-24 text-gray-400"
-          @click="toggleLogin"
+          @click.prevent="toggleLogin"
         >
           <AccountRegister
             :open="loginStore.getOpen"

@@ -14,7 +14,7 @@
         to="/checkout"
         aria-label="navigate to checkout"
         class="float-right mt-3 block rounded-md bg-darkblue px-4 py-2 text-white"
-        @click="cartStore.toggleModal"
+        @click.prevent="cartStore.toggleModal"
       >
         Checkout
       </NuxtLink>

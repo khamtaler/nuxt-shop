@@ -1,5 +1,5 @@
 <template>
-  <div class="my-[50px]">
+  <div class="mx-5 my-[50px]">
     <BaseHeader text="FAQ" />
     <Accordion :tabs="accordionTabs" />
   </div>

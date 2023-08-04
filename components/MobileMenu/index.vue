@@ -14,7 +14,7 @@
           <font-awesome-icon
             :icon="['fas', 'xmark']"
             class="mb-[25px] ml-auto mr-5 cursor-pointer text-2xl"
-            @click="toggleOpen"
+            @click.prevent="toggleOpen"
           />
         </ClientOnly>
         <ul class="flex flex-col">
@@ -40,14 +40,14 @@
             <font-awesome-icon
               :icon="['fas', 'user']"
               class="cursor-pointer text-xl"
-              @click="loginStore.toggleOpen()"
+              @click.prevent="loginStore.toggleOpen()"
             />
             <div class="relative flex align-bottom">
               <NuxtLink to="/checkout" aria-label="navigate to checkout">
                 <font-awesome-icon
                   class="cursor-pointer text-xl"
                   :icon="['fas', 'cart-shopping']"
-                  @click="mobileMenuStore.toggleOpen"
+                  @click.prevent="mobileMenuStore.toggleOpen"
                 />
               </NuxtLink>
               <div

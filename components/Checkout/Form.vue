@@ -172,7 +172,7 @@
       <button
         type="button"
         class="transition-scale group w-[200px] rounded-lg border-4 border-darkblue bg-lightblue bg-gradient-to-r px-5 py-2 text-xl text-white duration-300 ease-in-out hover:bg-darkblue"
-        @click="submit"
+        @click.prevent="submit"
         @mouseenter="hover = !hover"
         @mouseleave="hover = !hover"
       >

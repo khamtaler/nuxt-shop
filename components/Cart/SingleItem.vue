@@ -11,7 +11,7 @@
     <div
       class="col-start-9 col-end-10 flex flex-col items-center justify-center"
     >
-      <button type="button" @click="cartStore.increaseCount(props.id)">
+      <button type="button" @click.prevent="cartStore.increaseCount(props.id)">
         +
       </button>
 
@@ -19,7 +19,7 @@
         {{ count }}
       </div>
 
-      <button type="button" @click="cartStore.decreaseCount(props.id)">
+      <button type="button" @click.prevent="cartStore.decreaseCount(props.id)">
         -
       </button>
     </div>
@@ -28,7 +28,7 @@
     </div>
     <font-awesome-icon
       :icon="['fas', 'trash']"
-      @click="cartStore.deleteFromCart(props.id)"
+      @click.prevent="cartStore.deleteFromCart(props.id)"
       class="col-start-12 col-end-13 cursor-pointer text-center"
     />
   </div>

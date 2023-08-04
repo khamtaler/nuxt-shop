@@ -3,7 +3,7 @@
     <Menu>
       <MenuButton
         class="cursor-pointer text-sm uppercase ease-in-out after:block after:h-[4px] after:origin-left after:scale-0 after:rounded-lg after:bg-gradient-to-r after:from-lightblue after:to-darkblue after:transition-transform after:duration-500 after:content-[''] hover:after:scale-100 md:text-xl"
-        @click="
+        @click.prevent="
           () => {
             showPanel = !showPanel
           }
@@ -40,7 +40,7 @@
                 ]"
               >
                 <span
-                  @click="mobileMenuStore.toggleOpen"
+                  @click.prevent="mobileMenuStore.toggleOpen"
                   class="block px-2 py-2"
                 >
                   {{ category }}

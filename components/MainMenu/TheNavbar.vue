@@ -16,7 +16,7 @@
       <font-awesome-icon
         :icon="['fas', 'user']"
         class="cursor-pointer text-base md:text-xl"
-        @click="toggleLogin"
+        @click.prevent="toggleLogin"
       />
       <div class="relative flex align-bottom">
         <font-awesome-icon
