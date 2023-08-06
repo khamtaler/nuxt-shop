@@ -40,10 +40,7 @@
                     'group block  w-full items-center rounded-b-md text-sm capitalize',
                   ]"
                 >
-                  <span
-                    @click="mobileMenuStore.toggleOpen"
-                    class="block px-2 py-2"
-                  >
+                  <span @click="navigate" class="block p-2">
                     {{ category }}
                   </span>
                 </NuxtLink>
@@ -64,6 +61,11 @@ const mobileMenuStore = useMobileMenuStore()
 
 const props = defineProps<{ categories: string[]; name: string }>()
 const showPanel = ref(false)
+
+const navigate = () => {
+  mobileMenuStore.toggleOpen()
+  document.body.style.overflow = 'visible'
+}
 </script>
 
 <style scoped></style>
