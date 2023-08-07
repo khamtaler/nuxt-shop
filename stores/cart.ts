@@ -36,17 +36,17 @@ export const useCartStore = defineStore('cart', {
       this.countCart()
     },
     deleteFromCart(id: number | string): void {
-      if (this.items.length) {
-        this.items = this.items.filter((i) => {
-          return i.id !== id
-        })
+      if (!this.items.length) {
+        throw new Error('this product doesnt exist')
       }
-
+      this.items = this.items.filter((i) => {
+        return i.id !== id
+      })
       this.countCart()
     },
     increaseCount(id: number | string): void {
       if (!this.items.length) {
-        return
+        throw new Error('this product doesnt exist')
       }
       this.items.map((i) => {
         if (i.id == id && i !== undefined && i.count !== undefined) {
@@ -58,7 +58,7 @@ export const useCartStore = defineStore('cart', {
     },
     decreaseCount(id: number | string): void {
       if (!this.items.length) {
-        return
+        throw new Error('this product doesnt exist')
       }
       this.items.map((i) => {
         if (
@@ -77,18 +77,18 @@ export const useCartStore = defineStore('cart', {
       this.countCart()
     },
     countCart(): void {
-      const count = ref(0)
-      const itemsCount = ref(0)
+      let count = 0
+      let itemsCount = 0
       if (!this.items.length) {
-        count.value = 0
-        itemsCount.value = 0
+        count = 0
+        itemsCount = 0
       }
       for (let i = 0; i < this.items.length; i++) {
-        count.value += this.items[i].price * this.items[i].count
-        itemsCount.value += this.items[i].count
+        count += this.items[i].price * this.items[i].count
+        itemsCount += this.items[i].count
       }
-      this.total = count.value
-      this.productsNumber = itemsCount.value
+      this.total = count
+      this.productsNumber = itemsCount
     },
   },
 })
