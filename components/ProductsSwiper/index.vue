@@ -37,12 +37,9 @@
 
 <script setup lang="ts">
 import { useProduct } from '@/composables/Product'
-interface Props {
-  slides?: number
-  slidesPerView?: number
-}
+import { Slider } from '@/types/components'
 
-const props = defineProps<Props>()
+const props = defineProps<Slider>()
 const { fetchProducts, wait: pending, products } = useProduct()
 await fetchProducts(props.slides ? props.slides : 8)
 </script>

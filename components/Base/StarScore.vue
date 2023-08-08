@@ -21,14 +21,7 @@
 </template>
 
 <script setup lang="ts">
-interface Rating {
-  rating:
-    | {
-        rate: number
-        count: number
-      }
-    | undefined
-}
+import { Rating } from '@/types/components'
 
 const props = defineProps<Rating>()
 </script>

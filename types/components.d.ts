@@ -34,3 +34,16 @@ export interface Tab {
   ariaTitle: string
   tabText: string
 }
+export interface Rating {
+  rating:
+    | {
+        rate: number
+        count: number
+      }
+    | undefined
+}
+
+export interface Slider {
+  slides?: number
+  slidesPerView?: number
+}
