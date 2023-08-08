@@ -38,7 +38,6 @@ const route = useRoute()
 const { wait, product, fetchProduct } = useProduct()
 
 await fetchProduct(route.params.id)
-console.log(product.value)
 
 useHead({
   title: product.value?.title,

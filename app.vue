@@ -4,6 +4,7 @@
   </NuxtLayout>
   <Account />
   <MobileMenu />
+  <!-- <AddToCartModal /> -->
 </template>
 
 <script setup lang="ts">

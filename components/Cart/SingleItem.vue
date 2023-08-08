@@ -5,8 +5,8 @@
     <figure class="col-start-1 col-end-3 w-full">
       <img :src="$props.img" :alt="title" class="max-h-[100px] w-full" />
     </figure>
-    <div class="col-start-3 col-end-9 justify-self-start">
-      {{ props.title }}
+    <div class="col-start-3 col-end-9 ml-3 justify-self-start">
+      <p>{{ props.title }}</p>
     </div>
     <div
       class="col-start-9 col-end-10 flex flex-col items-center justify-center"
