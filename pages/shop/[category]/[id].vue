@@ -12,7 +12,12 @@
       </div>
       <div>
         <h4 class="text-xl sm:text-2xl md:text-3xl">{{ product.title }}</h4>
-        <h5 class="text-base md:text-lg">category: {{ product.category }}</h5>
+        <h5 class="text-base md:text-lg">
+          category:
+          <NuxtLink :to="`/shop/${product.category}`">
+            {{ product.category }}
+          </NuxtLink>
+        </h5>
         <p class="mt-10">{{ product.description }}</p>
         <div class="my-10">
           <BaseStarScore :rating="product.rating" />

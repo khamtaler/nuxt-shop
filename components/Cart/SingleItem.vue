@@ -1,36 +1,45 @@
 <template>
-  <div
-    class="grid grid-cols-12 items-center justify-items-center gap-3 border-b-[1px] py-2"
-  >
-    <figure class="col-start-1 col-end-3 w-full">
-      <img :src="$props.img" :alt="title" class="max-h-[100px] w-full" />
-    </figure>
-    <div class="col-start-3 col-end-9 ml-3 justify-self-start">
-      <p>{{ props.title }}</p>
-    </div>
-    <div
-      class="col-start-9 col-end-10 flex flex-col items-center justify-center"
+  <div>
+    <NuxtLink
+      :to="`/shop/${props.category}/${props.id}`"
+      class="grid grid-cols-12 items-center justify-items-center gap-3 border-b-[1px] py-2"
     >
-      <button type="button" @click.prevent="cartStore.increaseCount(props.id)">
-        +
-      </button>
-
-      <div>
-        {{ count }}
+      <figure class="col-start-1 col-end-3 w-full">
+        <img :src="$props.img" :alt="title" class="max-h-[100px] w-full" />
+      </figure>
+      <div class="col-start-3 col-end-9 ml-3 justify-self-start">
+        <p>{{ props.title }}</p>
       </div>
+      <div
+        class="col-start-9 col-end-10 flex flex-col items-center justify-center"
+      >
+        <button
+          type="button"
+          @click.prevent="cartStore.increaseCount(props.id)"
+        >
+          +
+        </button>
 
-      <button type="button" @click.prevent="cartStore.decreaseCount(props.id)">
-        -
-      </button>
-    </div>
-    <div v-if="count && props.price" class="col-start-10 col-end-12">
-      ${{ count * props.price }}
-    </div>
-    <font-awesome-icon
-      :icon="['fas', 'trash']"
-      @click.prevent="cartStore.deleteFromCart(props.id)"
-      class="col-start-12 col-end-13 cursor-pointer text-center"
-    />
+        <div>
+          {{ count }}
+        </div>
+
+        <button
+          type="button"
+          @click.prevent="cartStore.decreaseCount(props.id)"
+        >
+          -
+        </button>
+      </div>
+      <div v-if="count && props.price" class="col-start-10 col-end-12">
+        ${{ count * props.price }}
+      </div>
+      <font-awesome-icon
+        :icon="['fas', 'trash']"
+        @click.prevent="cartStore.deleteFromCart(props.id)"
+        class="col-start-12 col-end-13 cursor-pointer text-center"
+      />
+    </NuxtLink>
   </div>
 </template>
 
@@ -41,6 +50,7 @@ const props = defineProps<{
   img?: string
   title?: string
   count?: number
+  category?: string
   id: string | number
   price?: number
 }>()

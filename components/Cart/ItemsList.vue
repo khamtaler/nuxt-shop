@@ -4,6 +4,7 @@
       v-for="item in cartStore.getItems"
       :img="item.image"
       :title="item.title"
+      :category="item.category"
       :count="item.count"
       :id="item.id"
       :price="item.price"
