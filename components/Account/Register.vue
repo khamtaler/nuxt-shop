@@ -57,7 +57,10 @@
     </button>
     <p class="mt-2 text-center text-gray-200">
       Already got account?
-      <span @click.prevent="loginStore.toggleLoginRegister" class="font-bold">
+      <span
+        @click.prevent="$emit('switch-modal')"
+        class="cursor-pointer font-bold"
+      >
         Sign in!
       </span>
     </p>
@@ -65,9 +68,6 @@
 </template>
 
 <script setup lang="ts">
-import { useLoginStore } from '@/stores/login'
-
-const loginStore = useLoginStore()
 const register = ref<HTMLFormElement | null>(null)
 const props = defineProps({
   open: Boolean,

@@ -1,22 +1,24 @@
 <template>
   <Teleport to="body">
     <div
-      v-if="loginStore.getOpen"
+      v-if="props.isAccountModalOpen"
       class="absolute z-20 min-w-full bg-blurreddark"
     >
       <main class="min-h-screen min-w-full">
         <div
           class="container mx-auto px-5 py-24 text-gray-400"
-          @click.prevent="toggleLogin"
+          @click.stop.prevent="closeModal"
         >
           <AccountRegister
-            :open="loginStore.getOpen"
-            v-if="loginStore.openRegister"
+            :open="!props.isLoginOpen"
+            v-if="!props.isLoginOpen"
+            @switch-modal="switchModal"
             @click.stop.prevent
           />
           <AccountLogin
-            :open="loginStore.getOpen"
-            v-if="loginStore.openLogin"
+            :open="props.isLoginOpen"
+            v-if="props.isLoginOpen"
+            @switch-modal="switchModal"
             @click.stop.prevent
           />
         </div>
@@ -26,12 +28,17 @@
 </template>
 
 <script setup lang="ts">
-import { useLoginStore } from '@/stores/login'
+const props = defineProps<{
+  isLoginOpen: boolean
+  isAccountModalOpen: boolean
+}>()
 
-const loginStore = useLoginStore()
-const toggleLogin = () => {
-  loginStore.toggleOpen()
-  document.body.style.overflow = 'visible'
+const emit = defineEmits(['switch-modal', 'close-modal'])
+const switchModal = () => {
+  emit('switch-modal')
+}
+const closeModal = () => {
+  emit('close-modal')
 }
 </script>
 

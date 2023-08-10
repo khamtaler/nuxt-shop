@@ -11,56 +11,12 @@
       />
       <BaseMainMenuItem name="faq" link="/faq" />
     </div>
-
-    <ClientOnly>
-      <font-awesome-icon
-        :icon="['fas', 'user']"
-        class="cursor-pointer text-base md:text-xl"
-        @click.prevent="toggleLogin"
-      />
-      <div class="relative flex align-bottom">
-        <font-awesome-icon
-          class="cursor-pointer text-base md:text-xl"
-          :icon="['fas', 'cart-shopping']"
-          :isOpen="isCartOpen"
-          @click.stop.prevent="openCart"
-        />
-
-        <div
-          class="absolute right-[-10px] top-[-13px] flex h-5 w-5 items-center justify-center rounded-full bg-darkblue text-center text-white"
-          :class="cartStore.getProductsNumber >= 100 ? 'text-[9px]' : 'text-sm'"
-        >
-          {{ cartStore.getProductsNumber }}
-        </div>
-      </div>
-    </ClientOnly>
-    <Cart :isOpen="isCartOpen" @toggle-open="toggleModal" />
   </Menu>
 </template>
 
 <script setup lang="ts">
-import { useLoginStore } from '@/stores/login'
-import { useCartStore } from '@/stores/cart'
 import { Menu } from '@headlessui/vue'
 import { useCategory } from '@/composables/Categories'
-
 const { categories, getCategories } = useCategory()
 await getCategories()
-const loginStore = useLoginStore()
-const cartStore = useCartStore()
-const isCartOpen = ref(false)
-const openCart = () => {
-  isCartOpen.value = !isCartOpen.value
-  window.addEventListener('click', toggleModal)
-}
-function toggleModal() {
-  if (isCartOpen.value) {
-    isCartOpen.value = !isCartOpen.value
-    window.removeEventListener('click', toggleModal)
-  }
-}
-const toggleLogin = () => {
-  loginStore.toggleOpen()
-  document.body.style.overflow = 'hidden'
-}
 </script>

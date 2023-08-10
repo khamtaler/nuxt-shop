@@ -21,65 +21,31 @@
           <BaseMobileMenuItem
             name="shop"
             link="/shop"
-            class="ml-2 inline-block list-none"
+            class="ml-2 list-none"
             @click.prevent="toggleOpen"
           />
           <MobileMenuDropdown
             name="Categories"
             :categories="categories"
             v-if="categories"
-            class="ml-2 inline-block p-3"
+            class="ml-2 p-3"
             @navigate="toggleOpen"
           />
           <BaseMobileMenuItem
             name="faq"
             link="/faq"
-            class="ml-2 inline-block list-none"
+            class="ml-2 list-none"
             @click.prevent="toggleOpen"
           />
         </ul>
-        <ClientOnly>
-          <div class="mt-5 flex flex-row items-center justify-center gap-5">
-            <font-awesome-icon
-              :icon="['fas', 'user']"
-              class="cursor-pointer text-xl"
-              @click.prevent="loginStore.toggleOpen()"
-            />
-            <div class="relative flex align-bottom">
-              <NuxtLink
-                to="/checkout"
-                aria-label="navigate to checkout"
-                @click.prevent
-              >
-                <font-awesome-icon
-                  class="cursor-pointer text-xl"
-                  :icon="['fas', 'cart-shopping']"
-                  @click="toggleOpen"
-                />
-              </NuxtLink>
-              <div
-                class="absolute right-[-10px] top-[-13px] flex h-5 w-5 items-center justify-center rounded-full bg-darkblue text-center text-white"
-                :class="
-                  cartStore.getProductsNumber >= 100 ? 'text-[9px]' : 'text-sm'
-                "
-              >
-                {{ cartStore.getProductsNumber }}
-              </div>
-            </div>
-          </div>
-        </ClientOnly>
       </div>
     </div>
   </teleport>
 </template>
 
 <script setup lang="ts">
-import { useLoginStore } from '@/stores/login'
-import { useCartStore } from '@/stores/cart'
 import { useCategory } from '@/composables/Categories'
 
-const loginStore = useLoginStore()
-const cartStore = useCartStore()
 const props = defineProps<{ isOpen: boolean }>()
 const { categories, getCategories } = useCategory()
 await getCategories()
