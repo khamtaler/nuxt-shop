@@ -1,7 +1,7 @@
 import { ProductItem } from 'types/components'
 export const useCategory = () => {
-  const categories = ref<string[] | null>()
-  const products = ref<ProductItem[] | null>()
+  const categories = ref<string[]>()
+  const products = ref<ProductItem[]>()
   const wait = ref<boolean>()
 
   const getCategories = async (amount?: number) => {

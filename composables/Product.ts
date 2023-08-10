@@ -1,8 +1,8 @@
 import { CartProductItem, ProductItem } from '@/types/components'
 
 export const useProduct = () => {
-  const product = ref<CartProductItem | null>(null)
-  const products = ref<ProductItem[] | null>(null)
+  const product = ref<CartProductItem>()
+  const products = ref<ProductItem[]>()
   const wait = ref<boolean>(false)
   const error = ref<any>(undefined)
 
