@@ -15,7 +15,7 @@
         </nuxt-link>
       </div>
       <ul class="mt-5 flex w-[33%] flex-col text-lg md:mt-0">
-        <BaseFooterLink
+        <MainFooterSingleItem
           v-for="item in itemsList"
           :link="item.link"
           :text="item.text"
@@ -23,7 +23,7 @@
           class="capital block text-center md:text-left"
         >
           {{ item.text }}
-        </BaseFooterLink>
+        </MainFooterSingleItem>
       </ul>
 
       <div class="mt-5 block w-[50%] md:w-[33%]">
