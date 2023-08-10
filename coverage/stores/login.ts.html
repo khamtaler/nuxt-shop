@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for utils/numbers.ts</title>
+    <title>Code coverage report for stores/login.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">utils</a> numbers.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">stores</a> login.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/18</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>4/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>18/18</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
@@ -81,8 +81,16 @@
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
-<a name='L19'></a><a href='#L19'>19</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -91,32 +99,36 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const roundNumber = (number: number): number =&gt;
-  Number((Math.round(number * 100) / 100).toFixed(2))
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { defineStore } from 'pinia'
 &nbsp;
-if (import.meta.vitest) {
-  const { describe, expect, it } = import.meta.vitest
+export const useLoginStore = defineStore('login', {
+  state: () =&gt; {
+    return { isLoginModalOpen: false, openRegister: true, openLogin: false }
+  },
+  getters: {
+    getOpen: (state) =&gt; state.isLoginModalOpen,
+    getLogin: <span class="fstat-no" title="function not covered" >(state) =&gt; state.openRegister,</span>
+    getRegister: <span class="fstat-no" title="function not covered" >(state) =&gt; state.openLogin,</span>
+  },
 &nbsp;
-  describe('#roundNumbers', () =&gt; {
-    it('returns rounded to 2 decimals number floored', () =&gt; {
-      expect(roundNumber(1.111)).toBe(1.11)
-    })
-    it('returns rounded to 2 decimals number floored', () =&gt; {
-      expect(roundNumber(1.111)).toBe(1.11)
-    })
-    it('returns rounded to 2 decimals number rounded up', () =&gt; {
-      expect(roundNumber(1.777)).toBe(1.78)
-    })
-  })
-}
+  actions: {
+    toggleOpen() {
+      this.isLoginModalOpen = !this.isLoginModalOpen
+    },
+    toggleLoginRegister() {
+      this.openRegister = !this.openRegister
+      this.openLogin = !this.openLogin
+    },
+  },
+})
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

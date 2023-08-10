@@ -22,8 +22,10 @@
         <font-awesome-icon
           class="cursor-pointer text-base md:text-xl"
           :icon="['fas', 'cart-shopping']"
+          :isOpen="isCartOpen"
           @click.stop.prevent="openCart"
         />
+
         <div
           class="absolute right-[-10px] top-[-13px] flex h-5 w-5 items-center justify-center rounded-full bg-darkblue text-center text-white"
           :class="cartStore.getProductsNumber >= 100 ? 'text-[9px]' : 'text-sm'"
@@ -32,6 +34,7 @@
         </div>
       </div>
     </ClientOnly>
+    <Cart :isOpen="isCartOpen" @toggle-open="toggleModal" />
   </Menu>
 </template>
 
@@ -45,14 +48,14 @@ const { categories, getCategories } = useCategory()
 await getCategories()
 const loginStore = useLoginStore()
 const cartStore = useCartStore()
-
+const isCartOpen = ref(false)
 const openCart = () => {
-  cartStore.toggleModal()
+  isCartOpen.value = !isCartOpen.value
   window.addEventListener('click', toggleModal)
 }
 function toggleModal() {
-  if (cartStore.getModal) {
-    cartStore.toggleModal()
+  if (isCartOpen.value) {
+    isCartOpen.value = !isCartOpen.value
     window.removeEventListener('click', toggleModal)
   }
 }

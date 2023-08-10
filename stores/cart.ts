@@ -4,23 +4,18 @@ import { CartProductItem } from 'types/components'
 export const useCartStore = defineStore('cart', {
   state: () => {
     return {
-      openModal: false,
       items: [] as CartProductItem[],
       total: 0,
       productsNumber: 0,
     }
   },
   getters: {
-    getModal: (state) => state.openModal,
     getItems: (state) => state.items,
-    gettotal: (state) => state.total,
+    getTotal: (state) => state.total,
     getProductsNumber: (state) => state.productsNumber,
   },
 
   actions: {
-    toggleModal(): void {
-      this.openModal = !this.openModal
-    },
     addToCart(item: CartProductItem): void {
       if (!this.items.find((i) => i.id === item.id)) {
         item.count = 1
@@ -80,8 +75,8 @@ export const useCartStore = defineStore('cart', {
       let count = 0
       let itemsCount = 0
       if (!this.items.length) {
-        count = 0
-        itemsCount = 0
+        this.total = 0
+        this.productsNumber = 0
       }
       for (let i = 0; i < this.items.length; i++) {
         count += this.items[i].price * this.items[i].count

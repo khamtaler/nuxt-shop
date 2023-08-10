@@ -14,7 +14,7 @@
             <p class="text-right text-xl">
               Total:
               <span class="font-bold">
-                ${{ roundNumber(cartStore.gettotal) }}
+                ${{ roundNumber(cartStore.getTotal) }}
               </span>
             </p>
           </div>

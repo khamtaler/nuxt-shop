@@ -25,21 +25,6 @@ const testProduct2 = {
 
 if (import.meta.vitest) {
   const { describe, expect, it, beforeEach } = import.meta.vitest
-  describe('cart store', () => {
-    beforeEach(() => {
-      setActivePinia(createPinia())
-    })
-
-    it('check if cart modal is initially hide and switches to open', () => {
-      const cartStore = useCartStore()
-      expect(cartStore.getModal).toBe(false)
-    })
-    it('check if cart modal switches to open', () => {
-      const cartStore = useCartStore()
-      cartStore.toggleModal()
-      expect(cartStore.getModal).toBe(true)
-    })
-  })
 
   describe('cart functionalities', () => {
     beforeEach(() => {
@@ -50,14 +35,14 @@ if (import.meta.vitest) {
       cartStore.addToCart(testProduct)
       expect(cartStore.items[0]).toStrictEqual(testProduct)
       expect(cartStore.getProductsNumber).toBe(1)
-      expect(cartStore.gettotal).toBe(testProduct.price)
+      expect(cartStore.getTotal).toBe(testProduct.price)
     })
     it('check if double add of product increases amount of products in cart', () => {
       const cartStore = useCartStore()
       cartStore.addToCart(testProduct)
       cartStore.addToCart(testProduct)
       expect(cartStore.getProductsNumber).toBe(2)
-      expect(cartStore.gettotal).toBe(roundNumber(testProduct.price * 2))
+      expect(cartStore.getTotal).toBe(roundNumber(testProduct.price * 2))
     })
     it('check if adding 2 products make a reversed array of products', () => {
       const cartStore = useCartStore()

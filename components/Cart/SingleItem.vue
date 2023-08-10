@@ -15,6 +15,7 @@
       >
         <button
           type="button"
+          class="px-2"
           @click.prevent="cartStore.increaseCount(props.id)"
         >
           +
@@ -26,6 +27,7 @@
 
         <button
           type="button"
+          class="px-2"
           @click.prevent="cartStore.decreaseCount(props.id)"
         >
           -

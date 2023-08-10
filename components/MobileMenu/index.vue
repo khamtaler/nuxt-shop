@@ -1,7 +1,7 @@
 <template>
   <teleport to="body">
     <div
-      v-if="mobileMenuStore.getOpen"
+      v-if="props.isOpen"
       class="absolute right-0 top-0 z-10 h-full w-screen bg-blurreddark md:hidden"
     >
       <div
@@ -22,17 +22,20 @@
             name="shop"
             link="/shop"
             class="ml-2 inline-block list-none"
+            @click.prevent="toggleOpen"
           />
           <MobileMenuDropdown
             name="Categories"
             :categories="categories"
             v-if="categories"
             class="ml-2 inline-block p-3"
+            @navigate="toggleOpen"
           />
           <BaseMobileMenuItem
             name="faq"
             link="/faq"
             class="ml-2 inline-block list-none"
+            @click.prevent="toggleOpen"
           />
         </ul>
         <ClientOnly>
@@ -43,11 +46,15 @@
               @click.prevent="loginStore.toggleOpen()"
             />
             <div class="relative flex align-bottom">
-              <NuxtLink to="/checkout" aria-label="navigate to checkout">
+              <NuxtLink
+                to="/checkout"
+                aria-label="navigate to checkout"
+                @click.prevent
+              >
                 <font-awesome-icon
                   class="cursor-pointer text-xl"
                   :icon="['fas', 'cart-shopping']"
-                  @click.prevent="mobileMenuStore.toggleOpen"
+                  @click="toggleOpen"
                 />
               </NuxtLink>
               <div
@@ -67,15 +74,13 @@
 </template>
 
 <script setup lang="ts">
-import { useMobileMenuStore } from '@/stores/mobileMenu'
 import { useLoginStore } from '@/stores/login'
 import { useCartStore } from '@/stores/cart'
 import { useCategory } from '@/composables/Categories'
 
-const mobileMenuStore = useMobileMenuStore()
-
 const loginStore = useLoginStore()
 const cartStore = useCartStore()
+const props = defineProps<{ isOpen: boolean }>()
 const { categories, getCategories } = useCategory()
 await getCategories()
 const slide = ref(false)
@@ -83,14 +88,14 @@ const toggleSlide = () => {
   slide.value = !slide.value
 }
 watch(
-  () => mobileMenuStore.getOpen,
+  () => props.isOpen,
   () => {
     setTimeout(toggleSlide, 10)
   },
 )
-
+const emit = defineEmits(['toggle-open'])
 const toggleOpen = () => {
-  mobileMenuStore.toggleOpen()
+  emit('toggle-open')
   document.body.style.overflow = 'visible'
 }
 </script>

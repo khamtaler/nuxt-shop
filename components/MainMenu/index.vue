@@ -14,26 +14,26 @@
       </nuxt-link>
     </ul>
     <MainMenuTheNavbar class="hidden md:flex" />
-    <Cart class="hidden md:flex" />
+
     <ClientOnly>
       <div class="block md:hidden">
         <font-awesome-icon
           :icon="['fas', 'bars']"
           class="cursor-pointer text-xl"
-          @click.prevent="toggleOpen"
+          @click.prevent="toggleOpen()"
         />
       </div>
     </ClientOnly>
+    <MobileMenu :isOpen="openMobileMenu" @toggle-open="toggleOpen" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useMobileMenuStore } from '@/stores/mobileMenu'
-const mobileMenuStore = useMobileMenuStore()
-
+const openMobileMenu = ref(false)
 const toggleOpen = () => {
-  mobileMenuStore.toggleOpen()
-  document.body.style.overflow = 'hidden'
+  console.log(openMobileMenu.value)
+  openMobileMenu.value = !openMobileMenu.value
+  console.log(openMobileMenu.value)
 }
 </script>
 

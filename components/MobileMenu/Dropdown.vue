@@ -40,7 +40,7 @@
                     'group block  w-full items-center rounded-b-md text-sm capitalize',
                   ]"
                 >
-                  <span @click="navigate" class="block p-2">
+                  <span @click="$emit('navigate')" class="block p-2">
                     {{ category }}
                   </span>
                 </NuxtLink>
@@ -55,17 +55,9 @@
 
 <script setup lang="ts">
 import { MenuButton, MenuItems, MenuItem, Menu } from '@headlessui/vue'
-import { useMobileMenuStore } from '@/stores/mobileMenu'
-
-const mobileMenuStore = useMobileMenuStore()
 
 const props = defineProps<{ categories: string[]; name: string }>()
 const showPanel = ref(false)
-
-const navigate = () => {
-  mobileMenuStore.toggleOpen()
-  document.body.style.overflow = 'visible'
-}
 </script>
 
 <style scoped></style>
