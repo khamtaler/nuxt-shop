@@ -18,7 +18,7 @@
           />
         </ClientOnly>
         <ul class="flex flex-col">
-          <BaseMobileMenuItem
+          <MobileMenuSingleItem
             name="shop"
             link="/shop"
             class="ml-2 list-none"
@@ -31,7 +31,7 @@
             class="ml-2 p-3"
             @navigate="toggleOpen"
           />
-          <BaseMobileMenuItem
+          <MobileMenuSingleItem
             name="faq"
             link="/faq"
             class="ml-2 list-none"
