@@ -15,7 +15,7 @@ export interface ProductItem {
 export interface CartProductItem extends ProductItem {
   count: number
 }
-export interface NavigationButton {
+export interface NavigationLink {
   text: string
   link?: string
 }

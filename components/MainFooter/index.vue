@@ -69,9 +69,9 @@
 </template>
 
 <script setup lang="ts">
-import { Link } from '@/types/components'
+import { NavigationLink } from '@/types/components'
 
-const itemsList: Link[] = [
+const itemsList: NavigationLink[] = [
   { text: 'shop', link: '/shop' },
   { text: 'faq', link: '/faq' },
 ]
