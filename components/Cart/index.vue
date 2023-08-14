@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute right-0 top-[100%] z-10 w-full max-w-[80%] rounded-b-md border-2 border-lightblue bg-white px-3 pb-5 md:right-10 md:max-w-[500px]"
+    class="absolute right-0 top-[100%] z-10 w-full rounded-b-md border-2 border-lightblue bg-white px-3 pb-5 md:right-10 md:max-w-[500px]"
     v-if="props.isOpen"
     @click.stop.prevent
   >
