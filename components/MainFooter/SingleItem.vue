@@ -11,6 +11,6 @@
 </template>
 
 <script setup lang="ts">
-import { Link } from '@/types/components'
-const props = defineProps<Link>()
+import { NavigationLink } from '@/types/components'
+const props = defineProps<NavigationLink>()
 </script>

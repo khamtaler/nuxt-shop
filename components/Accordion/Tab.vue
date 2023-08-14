@@ -31,9 +31,9 @@
 </template>
 
 <script setup lang="ts">
-import { Tab } from '@/types/components'
+import { AccordionTab } from '@/types/components'
 
-const props = defineProps<Tab>()
+const props = defineProps<AccordionTab>()
 const showPanel = ref(false)
 const togglePanel = () => {
   showPanel.value = !showPanel.value

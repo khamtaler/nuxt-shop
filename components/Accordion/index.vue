@@ -10,8 +10,8 @@
 </template>
 
 <script setup lang="ts">
-import { Tab } from '@/types/components'
-const props = defineProps<{ tabs: Tab[] }>()
+import { AccordionTab } from '@/types/components'
+const props = defineProps<{ tabs: AccordionTab[] }>()
 </script>
 
 <style scoped></style>

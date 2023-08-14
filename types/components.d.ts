@@ -15,7 +15,7 @@ export interface ProductItem {
 export interface CartProductItem extends ProductItem {
   count: number
 }
-export interface Link {
+export interface NavigationLink {
   text: string
   link?: string
 }
@@ -29,7 +29,7 @@ export interface CartButton {
   text: string
 }
 
-export interface Tab {
+export interface AccordionTab {
   title: string
   ariaTitle: string
   tabText: string

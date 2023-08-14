@@ -20,9 +20,9 @@
 </template>
 
 <script setup lang="ts">
-import { Link } from '@/types/components'
+import { NavigationLink } from '@/types/components'
 
-const props = defineProps<Link>()
+const props = defineProps<NavigationLink>()
 </script>
 
 <style lang="scss" scoped></style>
