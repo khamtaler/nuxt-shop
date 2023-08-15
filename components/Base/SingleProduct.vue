@@ -26,10 +26,10 @@
         <p class="mb-3 text-center text-sm md:text-base">
           {{ props.category }}
         </p>
-        <div class="mt-auto">
+        <div class="mt-auto grid grid-cols-2">
           <BaseStarScore :rating="props.rating" />
 
-          <div class="mb-3 flex items-center justify-start">
+          <div class="mb-3 ml-auto flex items-center justify-start">
             <div>
               <span
                 :class="

@@ -16,7 +16,7 @@
     <div class="my-[50px] flex flex-col items-center md:mx-5">
       <BaseHeader text="Our top products" />
       <ShopItemsContainer :number-of-products="6" />
-      <BaseButton text="View all poroducts" link="shop" />
+      <BaseButton text="View all products" link="shop" />
     </div>
     <div class="mx-5 my-[50px] mt-[100px] flex flex-col items-center">
       <AboutCompany />
